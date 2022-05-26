@@ -3,4 +3,4 @@
 	url = ../../TryGhost/Casper.git
 [submodule "core/admin"]
 	path = core/admin
-	url = ../../TryGhost/Admin.git
+	url = https://github.com/ivangil-dev/Admin.git
