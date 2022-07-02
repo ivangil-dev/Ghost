@@ -48,16 +48,16 @@ function createApiInstance(config) {
                 const siteTitle = settingsCache.get('title');
                 switch (type) {
                 case 'subscribe':
-                    return `📫 Confirm your subscription to ${siteTitle}`;
+                    return `📫 Confirma tu suscripción a ${siteTitle}`;
                 case 'signup':
-                    return `🙌 Complete your sign up to ${siteTitle}!`;
+                    return `🙌 Completa tu registro en ${siteTitle}!`;
                 case 'signup-paid':
-                    return `🙌 Thank you for signing up to ${siteTitle}!`;
+                    return `🙌 Gracias por unirte a ${siteTitle}!`;
                 case 'updateEmail':
-                    return `📫 Confirm your email update for ${siteTitle}!`;
+                    return `📫 Confirma tu cambio de email para ${siteTitle}!`;
                 case 'signin':
                 default:
-                    return `🔑 Secure sign in link for ${siteTitle}`;
+                    return `🔑 Enlace de acceso seguro para ${siteTitle}`;
                 }
             },
             getText(url, type, email) {
@@ -65,87 +65,87 @@ function createApiInstance(config) {
                 switch (type) {
                 case 'subscribe':
                     return `
-                        Hey there,
+                        ¡Hola!,
 
-                        You're one tap away from subscribing to ${siteTitle} — please confirm your email address with this link:
+                        Estás a solo un clic de suscribirte a ${siteTitle} — Confirma tu email haciendo clic en el siguiente enlace:
 
                         ${url}
 
-                        For your security, the link will expire in 24 hours time.
+                        Por tu seguridad, el enlace caducará en 24 horas.
 
-                        All the best!
+                        ¡Nos vemos pronto!
 
                         ---
 
-                        Sent to ${email}
-                        If you did not make this request, you can simply delete this message. You will not be subscribed.
+                        Enviado a ${email}
+                        Si te estás preguntando, ¿quien diablos son estos? Es posible que tu no hicieras esta solicitud, no te preocupes. Borra este email y ya está. No te suscribirás a nada.
                         `;
                 case 'signup':
                     return `
-                        Hey there!
+                        ¡Hola, hola!
 
-                        Tap the link below to complete the signup process for ${siteTitle}, and be automatically signed in:
+                        Toca el enlace a continuación para completar el proceso de registro para ${siteTitle}, cuando lo hagas tu sesión se iniciará automáticamente:
 
                         ${url}
 
-                        For your security, the link will expire in 24 hours time.
+                        Por tu seguridad, este enlace será devorado por un por un agujero negro en 24 horas y ya nunca más funcionará.
 
-                        See you soon!
+                        ¡Te veo pronto!
 
                         ---
 
-                        Sent to ${email}
-                        If you did not make this request, you can simply delete this message. You will not be signed up, and no account will be created for you.
+                        Enviado a ${email}
+                        Si te estás preguntando, ¿quien diablos son estos? Es posible que tu no hicieras esta solicitud, no te preocupes. Borra este email y ya está. No te suscribirás a nada.
                         `;
                 case 'signup-paid':
                     return `
-                        Hey there!
+                        ¡Es un placer conocerte!
 
-                        Thank you for subscribing to ${siteTitle}. Tap the link below to be automatically signed in:
+                        Gracias por suscribirte a ${siteTitle}. Toca el enlace a continuación para que se inicie tu sesión automáticamente:
 
                         ${url}
 
-                        For your security, the link will expire in 24 hours time.
+                        Por tu seguridad, este enlace será devorado por un por un agujero negro en 24 horas y ya nunca más funcionará.
 
-                        See you soon!
+                        ¡Nos vemos!
 
                         ---
 
-                        Sent to ${email}
-                        Thank you for subscribing to ${siteTitle}!
+                        Enviado a ${email}
+                        Gracias por apuntarte y apoyar el proyecto ${siteTitle}!
                         `;
                 case 'updateEmail':
                     return `
-                            Hey there,
+                            ¡Hola!,
 
-                            Please confirm your email address with this link:
+                            Confirma el cambio de tu dirección de correo electrónico con este enlace:
 
                             ${url}
 
-                            For your security, the link will expire in 24 hours time.
+                            Por tu seguridad, el enlace caducará en 24 horas.
 
                             ---
 
-                            Sent to ${email}
-                            If you did not make this request, you can simply delete this message. This email address will not be used.
+                            Enviado a ${email}
+                            Si no has pedido cambiar tu email, simplemente puedes eliminar este mensaje. Se mantendrá tu email y esta dirección de correo electrónico no se utilizará.
                             `;
                 case 'signin':
                 default:
                     return `
-                        Hey there,
+                        ¡Hola!,
 
-                        Welcome back! Use this link to securely sign in to your ${siteTitle} account:
+                        Bienvenid@ de nuevo! Usa este enlace para iniciar sesión de forma segura y sin contraseña en tu cuenta de ${siteTitle}:
 
                         ${url}
 
-                        For your security, the link will expire in 24 hours time.
+                        Por tu seguridad, este enlace será devorado por un por un agujero negro en 24 horas y ya nunca más funcionará.
 
-                        See you soon!
+                        ¡Seguimos en contacto!
 
                         ---
 
-                        Sent to ${email}
-                        If you did not make this request, you can safely ignore this email.
+                        Enviado a ${email}
+                        Si no has intentado iniciar sesión no te preocupes, sin tu email no pueden entrar, ignora este email y seguirás a salvo.
                         `;
                 }
             },

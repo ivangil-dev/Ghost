@@ -1119,20 +1119,6 @@ a[data-flickr-embed] img {
     }
 }
 
-
-${ templateSettings.showBadge ? `
-.footer-powered {
-    text-align: center;
-    padding-top: 70px;
-    padding-bottom: 40px;
-}
-
-.gh-powered {
-    width: 142px;
-    height: 30px;
-}
-` : ''}
-
 </style>
 </head>
 
@@ -1211,7 +1197,7 @@ ${ templateSettings.showBadge ? `
                                                     <td class="post-meta ${templateSettings.titleAlignment === 'left' ? `post-meta-left` : ``}">
                                                         By ${post.authors} –
                                                         ${post.published_at} –
-                                                        <a href="${post.url}" class="view-online-link">View online →</a>
+                                                        <a href="${post.url}" class="view-online-link">Ver online →</a>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -1245,14 +1231,8 @@ ${ templateSettings.showBadge ? `
                                 <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="padding-top: 40px; padding-bottom: 30px;">
                                     ${iff(!!templateSettings.footerContent, `<tr><td class="footer">${templateSettings.footerContent}</td></tr>`, '')}
                                     <tr>
-                                        <td class="footer">${site.title} &copy; ${date.getFullYear()} – <a href="%recipient.unsubscribe_url%">Unsubscribe</a></td>
+                                        <td class="footer">${site.title} &copy; ${date.getFullYear()} – <a href="%recipient.unsubscribe_url%">Darme de baja</a></td>
                                     </tr>
-
-                                    ${ templateSettings.showBadge ? `
-                                    <tr>
-                                        <td class="footer-powered"><a href="https://ghost.org/"><img src="https://static.ghost.org/v4.0.0/images/powered.png" border="0" width="142" height="30" class="gh-powered" alt="Powered by Ghost"></a></td>
-                                    </tr>
-                                    ` : '' }
                                 </table>
                             </td>
                         </tr>
