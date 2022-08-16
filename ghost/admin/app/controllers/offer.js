@@ -57,6 +57,7 @@ export default class OffersController extends Controller {
 
     @tracked defaultProps = null;
     @tracked isDisplayTitleEdited = false;
+    @tracked isOfferCodeEdited = false;
 
     leaveScreenTransition = null;
     portalPreviewGuid = Date.now().valueOf();
@@ -80,6 +81,14 @@ export default class OffersController extends Controller {
         return {
             ...this.offer
         };
+    }
+
+    get isTrialOffer() {
+        return this.offer?.type === 'trial';
+    }
+
+    get isDiscountOffer() {
+        return this.offer?.type !== 'trial';
     }
 
     get cadence() {
@@ -313,10 +322,23 @@ export default class OffersController extends Controller {
     }
 
     @action
+    setTrialDuration(e) {
+        let amount = e.target.value;
+        if (amount !== '') {
+            amount = parseInt(amount);
+        }
+        this._saveOfferProperty('amount', amount);
+    }
+
+    @action
     setOfferName(e) {
         this._saveOfferProperty('name', e.target.value);
         if (!this.isDisplayTitleEdited && this.offer.isNew) {
             this._saveOfferProperty('displayTitle', e.target.value);
+        }
+
+        if (!this.isOfferCodeEdited && this.offer.isNew) {
+            this._saveOfferProperty('code', slugify(e.target.value));
         }
     }
 
@@ -333,6 +355,7 @@ export default class OffersController extends Controller {
 
     @action
     setOfferCode(e) {
+        this.isOfferCodeEdited = true;
         this._saveOfferProperty('code', e.target.value);
     }
 
@@ -415,6 +438,19 @@ export default class OffersController extends Controller {
                     this._saveOfferProperty('duration', 'once');
                 }
             }
+        }
+    }
+
+    @action
+    changeType(type) {
+        if (type === 'trial') {
+            this._saveOfferProperty('type', 'trial');
+            this._saveOfferProperty('amount', 7);
+            this._saveOfferProperty('duration', 'trial');
+        } else {
+            this._saveOfferProperty('type', 'percent');
+            this._saveOfferProperty('amount', 0);
+            this._saveOfferProperty('duration', 'once');
         }
     }
 

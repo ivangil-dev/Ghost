@@ -56,11 +56,12 @@ export default class FeatureService extends Service {
         nightShift;
 
     // labs flags
+    @feature('auditLog') auditLog;
     @feature('urlCache') urlCache;
     @feature('beforeAfterCard') beforeAfterCard;
-    @feature('comments') comments;
     @feature('newsletterPaywall') newsletterPaywall;
     @feature('freeTrial') freeTrial;
+    @feature('memberAttribution') memberAttribution;
 
     _user = null;
 
