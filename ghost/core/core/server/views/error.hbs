@@ -27,14 +27,14 @@
                     <section class="error-message">
                       <h1 class="error-code">{{statusCode}}</h1>
                       <h2 class="error-description">{{message}}</h2>
-                      <a class="error-link" href="{{@site.url}}">Go to the front page →</a>
+                      <a class="error-link" href="{{@site.url}}">Ir a la portada →</a>
                     </section>
                   </section>
                 </section>
 
                 {{#if errorDetails}}
                     <section class="error-stack">
-                        <h3>Theme errors</h3>
+                        <h3>Errores de tema</h3>
 
                         <ul class="error-stack-list">
                             {{#foreach errorDetails}}
@@ -43,7 +43,7 @@
 
                                     {{#foreach failures}}
                                         <p><span class="error-stack-file">Ref: {{ref}}</span></p>
-                                        <p><span class="error-stack-file">Message: {{message}}</span></p>
+                                        <p><span class="error-stack-file">Mensaje: {{message}}</span></p>
                                     {{/foreach}}
                                 </li>
                             {{/foreach}}
