@@ -1235,9 +1235,9 @@ ${ templateSettings.showBadge ? `
                                             <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                                                 <tr>
                                                     <td class="post-meta ${templateSettings.titleAlignment === 'left' ? `post-meta-left` : ``}">
-                                                        By ${cleanPost.authors} –
+                                                        Por ${cleanPost.authors} –
                                                         ${cleanPost.published_at} –
-                                                        <a href="${cleanPost.url}" class="view-online-link">View online →</a>
+                                                        <a href="${cleanPost.url}" class="view-online-link">Ver en la web →</a>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -1256,7 +1256,7 @@ ${ templateSettings.showBadge ? `
                                     <tr>
                                         <td class="${(templateSettings.bodyFontCategory === 'sans_serif') ? `post-content-sans-serif` : `post-content` }">
                                             <!-- POST CONTENT START -->
-                                            ${cleanPost.html}
+                                            ${cleanPost.excerpt ? cleanPost.excerpt : cleanPost.html}
                                             <!-- POST CONTENT END -->
                                         </td>
                                     </tr>
@@ -1273,7 +1273,7 @@ ${ templateSettings.showBadge ? `
                                 <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="padding-top: 40px; padding-bottom: 30px;">
                                     ${iff(!!templateSettings.footerContent, `<tr><td class="footer">${templateSettings.footerContent}</td></tr>`, '')}
                                     <tr>
-                                        <td class="footer">${cleanSite.title} &copy; ${date.getFullYear()} – <a href="%recipient.unsubscribe_url%">Unsubscribe</a></td>
+                                        <td class="footer">${cleanSite.title} &copy; ${date.getFullYear()} – <a href="%recipient.unsubscribe_url%">Quiero darme de baja</a></td>
                                     </tr>
 
                                     ${ templateSettings.showBadge ? `
