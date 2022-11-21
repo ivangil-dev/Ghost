@@ -3,10 +3,10 @@ const tpl = require('@tryghost/tpl');
 const logging = require('@tryghost/logging');
 
 const messages = {
-    invitedByName: '{invitedByName} has invited you to join {blogName}',
+    invitedByName: '{invitedByName} te ha invitado a unirte a {blogName}',
     errorSendingEmail: {
-        error: 'Error sending email: {message}',
-        help: 'Please check your email settings and resend the invitation.'
+        error: 'Error al enviar correo electrónico: {message}',
+        help: 'Consulta la configuración del correo electrónico y reenvía la invitación.'
     }
 };
 

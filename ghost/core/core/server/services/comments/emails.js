@@ -28,9 +28,9 @@ class CommentsServiceEmails {
             }
 
             const to = author.get('email');
-            const subject = '💬 New comment on your post: ' + post.get('title');
+            const subject = '💬 Nuevo comentario en tu publicación: ' + post.get('title');
 
-            const memberName = member.get('name') || 'Anonymous';
+            const memberName = member.get('name') || 'Anónimo/a';
 
             const templateData = {
                 siteTitle: this.settingsCache.get('title'),
@@ -74,12 +74,12 @@ class CommentsServiceEmails {
         }
 
         const to = parentMember.get('email');
-        const subject = '↪️ New reply to your comment on ' + this.settingsCache.get('title');
+        const subject = '↪️ Nueva respuesta a tu comentario sobre ' + this.settingsCache.get('title');
 
         const post = await this.models.Post.findOne({id: reply.get('post_id')});
         const member = await this.models.Member.findOne({id: reply.get('member_id')});
 
-        const memberName = member.get('name') || 'Anonymous';
+        const memberName = member.get('name') || 'Anónimo/a';
 
         const templateData = {
             siteTitle: this.settingsCache.get('title'),
@@ -120,9 +120,9 @@ class CommentsServiceEmails {
 
         // For now we only send the report to the owner
         const to = owner.get('email');
-        const subject = '🚩 A comment has been reported on your post';
+        const subject = '🚩 Se ha reportado un comentario en tu publicación';
 
-        const memberName = member.get('name') || 'Anonymous';
+        const memberName = member.get('name') || 'Anónimo/a';
 
         const templateData = {
             siteTitle: this.settingsCache.get('title'),
