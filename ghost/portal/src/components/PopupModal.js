@@ -143,7 +143,6 @@ class PopupContent extends React.Component {
             ...Styles.page[page]
         };
         let popupWidthStyle = '';
-        let popupSize = 'regular';
 
         let cookieBannerText = '';
         let pageClass = page;
@@ -172,7 +171,6 @@ class PopupContent extends React.Component {
         if (noOfProducts > 1 && !isInviteOnlySite({site, pageQuery})) {
             if (page === 'signup') {
                 pageClass += ' full-size';
-                popupSize = 'full';
             }
         }
 
@@ -180,7 +178,6 @@ class PopupContent extends React.Component {
         if ((freeProduct && noOfProducts > 2) || (!freeProduct && noOfProducts > 1)) {
             if (page === 'accountPlan') {
                 pageClass += ' full-size';
-                popupSize = 'full';
             }
         }
 
