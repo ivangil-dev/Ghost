@@ -793,13 +793,13 @@ function YearlyDiscount({discount, trialDays}) {
     if (hasFreeTrialTier({site})) {
         return (
             <>
-                <span className="gh-portal-discount-label-trial">{discount}% discount</span>
+                <span className="gh-portal-discount-label-trial">{discount}% de descuento</span>
             </>
         );
     } else {
         return (
             <>
-                <span className="gh-portal-discount-label">{discount}% discount</span>
+                <span className="gh-portal-discount-label">{discount}% de descuento</span>
             </>
         );
     }
@@ -817,10 +817,10 @@ function ProductPriceSwitch({products, selectedInterval, setSelectedInterval}) {
             <div className={'gh-portal-products-pricetoggle' + (selectedInterval === 'month' ? ' left' : '')}>
                 <button className={'gh-portal-btn' + (selectedInterval === 'month' ? ' active' : '')} onClick={(e) => {
                     setSelectedInterval('month');
-                }}>Monthly</button>
+                }}>Mensual</button>
                 <button className={'gh-portal-btn' + (selectedInterval === 'year' ? ' active' : '')} onClick={(e) => {
                     setSelectedInterval('year');
-                }}>Yearly</button>
+                }}>Anual</button>
             </div>
         </div>
     );
