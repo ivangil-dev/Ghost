@@ -20,6 +20,13 @@ export default class AboutModal extends Component {
         return date.getFullYear();
     }
 
+    get mailSoporteT() {
+        return 'soporte@ivangil.es';
+    }
+    get tecnico() {
+        return 'Ivan Gil B.';
+    }
+
     get linkToGitHubReleases() {
         // Don't link to GitHub Releases if the version contains the
         // pre-release identifier

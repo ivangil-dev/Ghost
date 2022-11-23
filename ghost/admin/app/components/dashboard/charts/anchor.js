@@ -10,13 +10,13 @@ import {tracked} from '@glimmer/tracking';
 const DATE_FORMAT = 'D MMM, YYYY';
 
 const DISPLAY_OPTIONS = [{
-    name: 'Total members',
+    name: 'Todas las suscripciones',
     value: 'total'
 }, {
-    name: 'Paid members',
+    name: 'Suscripciones de pago',
     value: 'paid'
 }, {
-    name: 'Free members',
+    name: 'Suscripciones gratuitas',
     value: 'free'
 }];
 
@@ -139,13 +139,13 @@ export default class Anchor extends Component {
     get chartTitle() {
         // paid
         if (this.chartDisplay === 'paid') {
-            return 'Paid members';
+            return 'Suscriptores de pago';
         // free
         } else if (this.chartDisplay === 'free') {
-            return 'Free members';
+            return 'Suscripciones gratuitas';
         }
         // total
-        return 'Total members';
+        return 'Suscriptores totales';
     }
 
     get chartData() {
@@ -218,7 +218,7 @@ export default class Anchor extends Component {
             return '';
         }
 
-        const firstCurrency = this.dashboardStats.mrrStats[0] ? this.dashboardStats.mrrStats[0].currency : 'usd';
+        const firstCurrency = this.dashboardStats.mrrStats[0] ? this.dashboardStats.mrrStats[0].currency : 'EUR';
         return getSymbol(firstCurrency);
     }
 
