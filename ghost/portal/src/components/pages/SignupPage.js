@@ -368,7 +368,7 @@ class SignupPage extends React.Component {
             {
                 type: 'email',
                 value: state.email,
-                placeholder: 'jamie@example.com',
+                placeholder: 'thomasedison@ejemplo.com',
                 label: 'Email',
                 name: 'email',
                 required: true,
@@ -382,8 +382,8 @@ class SignupPage extends React.Component {
             fields.unshift({
                 type: 'text',
                 value: state.name,
-                placeholder: 'Jamie Larson',
-                label: 'Name',
+                placeholder: 'Thomas Edison',
+                label: 'Nombre',
                 name: 'name',
                 required: true,
                 tabindex: 1,
@@ -406,23 +406,23 @@ class SignupPage extends React.Component {
             return null;
         }
 
-        let label = 'Continue';
+        let label = 'Continuar';
         const showOnlyFree = pageQuery === 'free' && hasFreeProductPrice({site});
 
         if (hasOnlyFreePlan({site}) || showOnlyFree) {
-            label = 'Sign up';
+            label = 'Inscribirme';
         } else {
             return null;
         }
 
         let isRunning = false;
         if (action === 'signup:running') {
-            label = 'Sending...';
+            label = 'Enviando...';
             isRunning = true;
         }
         let retry = false;
         if (action === 'signup:failed') {
-            label = 'Retry';
+            label = 'Reintentar';
             retry = true;
         }
 
@@ -459,7 +459,7 @@ class SignupPage extends React.Component {
         const {site} = this.context;
         if (hasFreeTrialTier({site})) {
             return (
-                <p className='gh-portal-free-trial-notification'>After a free trial ends, you will be charged regular price for the tier you’ve chosen. You can always cancel before then.</p>
+                <p className='gh-portal-free-trial-notification'>Después de que finalice tu prueba gratuita, se te cobrará el precio regular por el nivel que has elegido. Siempre puedes cancelar antes.</p>
             );
         }
         return null;
@@ -471,13 +471,13 @@ class SignupPage extends React.Component {
             <div>
                 {this.renderFreeTrialMessage()}
                 <div className='gh-portal-signup-message'>
-                    <div>Already a member?</div>
+                    <div>¿Ya tienes cuenta?</div>
                     <button
                         className='gh-portal-btn gh-portal-btn-link'
                         style={{color: brandColor}}
                         onClick={() => onAction('switchPage', {page: 'signin'})}
                     >
-                        <span>Sign in</span>
+                        <span>Iniciar sesión</span>
                     </button>
                 </div>
             </div>
@@ -505,7 +505,7 @@ class SignupPage extends React.Component {
             return (
                 <section>
                     <div className='gh-portal-section'>
-                        <p className='gh-portal-invite-only-notification'>This site is invite-only, contact the owner for access.</p>
+                        <p className='gh-portal-invite-only-notification'>Este sitio es solo por invitación, comunícate con la administración para obtener acceso.</p>
                         {this.renderLoginMessage()}
                     </div>
                 </section>

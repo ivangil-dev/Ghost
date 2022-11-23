@@ -415,6 +415,7 @@ figure blockquote p {
     word-wrap: none;
     white-space: nowrap;
     color: #15212A;
+    font-weight: bold;
 }
 
 .feature-image {
@@ -1240,7 +1241,7 @@ ${iff(templateSettings.feedbackEnabled, feedbackButtons.getButtonsHeadStyles(tem
                                                     <td class="post-meta ${templateSettings.titleAlignment === 'left' ? `post-meta-left` : ``}">
                                                         Por ${cleanPost.authors} –
                                                         ${cleanPost.published_at} –
-                                                        <a href="${cleanPost.url}" class="view-online-link">Ver en la web →</a>
+                                                        <a href="${cleanPost.url}" class="view-online-link">Ver artículo completo →</a>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -1268,6 +1269,14 @@ ${iff(templateSettings.feedbackEnabled, feedbackButtons.getButtonsHeadStyles(tem
                         </tr>
 
                         <!-- END MAIN CONTENT AREA -->
+
+                        <h3 style="margin-top:0; line-height:1.11em; font-weight:700; margin:1.5em 0 0.5em 0; font-size:26px">❤️ Te gusta nuestro sitio?</h3>
+
+                        <p style="margin:0 0 1.5em 0; line-height:1.6em"><strong style="font-weight:700">Cuéntaselo a un amigo</strong> y anímale a que se suscriba (te doy una pista: <a href="https://omniscientia.es" target="_blank" rel="noopener noreferrer" style="color:#15171A; text-decoration:underline" title="omniscientia.es">es gratis aquí</a>).</p>
+
+                        <p style="margin:0 0 1.5em 0; line-height:1.6em"><strong style="font-weight:700">¿Te gustaría participar?</strong> Dejanos un comentario en cualquier artículo o utiliza los botones de feedback justo aquí abajo.</p>
+
+                        <hr style="display:block; width:100%; margin:3em 0; padding:0; height:1px; border:0; border-top:1px solid #e5eff5">
 
                         ${iff(templateSettings.feedbackEnabled, feedbackButtons.getTemplate(templateSettings.accentColor), '')}
 
