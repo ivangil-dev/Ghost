@@ -1,5 +1,4 @@
 import Service, {inject as service} from '@ember/service';
-import fetch from 'fetch';
 import moment from 'moment-timezone';
 import {action, computed} from '@ember/object';
 import {isEmpty} from '@ember/utils';
