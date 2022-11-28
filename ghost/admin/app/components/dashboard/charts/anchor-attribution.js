@@ -11,16 +11,16 @@ import {tracked} from '@glimmer/tracking';
 const DATE_FORMAT = 'D MMM, YYYY';
 
 const DISPLAY_OPTIONS = [{
-    name: 'MRR',
+    name: 'MRR (Ingresos recurrentes mensuales)',
     value: 'mrr'
 },{
-    name: 'Total members',
+    name: 'Suscriptores totales',
     value: 'total'
 }, {
-    name: 'Paid members',
+    name: 'Suscriptores de pago',
     value: 'paid'
 }, {
-    name: 'Free members',
+    name: 'Suscripciones gratuitas',
     value: 'free'
 }];
 
@@ -131,7 +131,7 @@ export default class Anchor extends Component {
         }
 
         const valueText = ghPriceAmount(this.currentMRR, {cents: false});
-        return `${this.mrrCurrencySymbol}${valueText}`;
+        return `${valueText}${this.mrrCurrencySymbol}`;
     }
 
     get totalMembers() {
@@ -194,16 +194,16 @@ export default class Anchor extends Component {
     get chartTitle() {
         // paid
         if (this.selectedChartDisplay === 'paid') {
-            return 'Paid members';
+            return 'Suscriptores de pago';
         // free
         } else if (this.selectedChartDisplay === 'free') {
-            return 'Free members';
+            return 'Suscripciones gratuitas';
         // MRR
         } else if (this.selectedChartDisplay === 'mrr') {
-            return 'MRR';
+            return 'MRR (Ingresos recurrentes mensuales)';
         }
         // total
-        return 'Total members';
+        return 'Total de suscriptores';
     }
 
     get chartData() {
@@ -280,7 +280,7 @@ export default class Anchor extends Component {
             return '';
         }
 
-        const firstCurrency = this.dashboardStats.mrrStats[0] ? this.dashboardStats.mrrStats[0].currency : 'usd';
+        const firstCurrency = this.dashboardStats.mrrStats[0] ? this.dashboardStats.mrrStats[0].currency : 'eur';
         return getSymbol(firstCurrency);
     }
 
@@ -344,7 +344,7 @@ export default class Anchor extends Component {
                 callbacks: {
                     label: (tooltipItems, data) => {
                         if (this.selectedChartDisplay === 'mrr') {
-                            const value = `${that.mrrCurrencySymbol}${ghPriceAmount(data.datasets[tooltipItems.datasetIndex].data[tooltipItems.index], {cents: false})}`;
+                            const value = `${ghPriceAmount(data.datasets[tooltipItems.datasetIndex].data[tooltipItems.index], {cents: false})}${that.mrrCurrencySymbol}`;
                             document.querySelector('#gh-dashboard-anchor-tooltip .gh-dashboard-tooltip-value .value').innerHTML = value;
                         } else {
                             const value = data.datasets[tooltipItems.datasetIndex].data[tooltipItems.index].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');

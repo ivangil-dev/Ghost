@@ -415,6 +415,7 @@ figure blockquote p {
     word-wrap: none;
     white-space: nowrap;
     color: #15212A;
+    font-weight: bold;
 }
 
 .feature-image {
@@ -1238,9 +1239,9 @@ ${iff(templateSettings.feedbackEnabled, feedbackButtons.getButtonsHeadStyles(tem
                                             <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                                                 <tr>
                                                     <td class="post-meta ${templateSettings.titleAlignment === 'left' ? `post-meta-left` : ``}">
-                                                        By ${cleanPost.authors} –
+                                                        Por ${cleanPost.authors} –
                                                         ${cleanPost.published_at} –
-                                                        <a href="${cleanPost.url}" class="view-online-link">View online →</a>
+                                                        <a href="${cleanPost.url}" class="view-online-link">Ver artículo completo →</a>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -1259,7 +1260,7 @@ ${iff(templateSettings.feedbackEnabled, feedbackButtons.getButtonsHeadStyles(tem
                                     <tr>
                                         <td class="${(templateSettings.bodyFontCategory === 'sans_serif') ? `post-content-sans-serif` : `post-content` }">
                                             <!-- POST CONTENT START -->
-                                            ${cleanPost.html}
+                                            ${cleanPost.excerpt ? cleanPost.excerpt : cleanPost.html}
                                             <!-- POST CONTENT END -->
                                         </td>
                                     </tr>
@@ -1269,6 +1270,14 @@ ${iff(templateSettings.feedbackEnabled, feedbackButtons.getButtonsHeadStyles(tem
 
                         <!-- END MAIN CONTENT AREA -->
 
+                        <h3 style="margin-top:0; line-height:1.11em; font-weight:700; margin:1.5em 0 0.5em 0; font-size:26px">❤️ Te gusta nuestro sitio?</h3>
+
+                        <p style="margin:0 0 1.5em 0; line-height:1.6em"><strong style="font-weight:700">Cuéntaselo a un amigo</strong> y anímale a que se suscriba (te doy una pista: <a href="https://omniscientia.es" target="_blank" rel="noopener noreferrer" style="color:#15171A; text-decoration:underline" title="omniscientia.es">es gratis aquí</a>).</p>
+
+                        <p style="margin:0 0 1.5em 0; line-height:1.6em"><strong style="font-weight:700">¿Te gustaría participar?</strong> Dejanos un comentario en cualquier artículo o utiliza los botones de feedback justo aquí abajo.</p>
+
+                        <hr style="display:block; width:100%; margin:3em 0; padding:0; height:1px; border:0; border-top:1px solid #e5eff5">
+
                         ${iff(templateSettings.feedbackEnabled, feedbackButtons.getTemplate(templateSettings.accentColor), '')}
 
                         <tr>
@@ -1276,7 +1285,7 @@ ${iff(templateSettings.feedbackEnabled, feedbackButtons.getButtonsHeadStyles(tem
                                 <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="padding-top: 40px; padding-bottom: 30px;">
                                     ${iff(!!templateSettings.footerContent, `<tr><td class="footer">${templateSettings.footerContent}</td></tr>`, '')}
                                     <tr>
-                                        <td class="footer">${cleanSite.title} &copy; ${date.getFullYear()} – <a href="%recipient.unsubscribe_url%">Unsubscribe</a></td>
+                                        <td class="footer">${cleanSite.title} &copy; ${date.getFullYear()} – <a href="%recipient.unsubscribe_url%">Quiero darme de baja</a></td>
                                     </tr>
 
                                     ${ templateSettings.showBadge ? `

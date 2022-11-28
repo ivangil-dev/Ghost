@@ -3060,6 +3060,14 @@ p.theme-validation-details {
     max-width: 920px;
     margin-top: 60px;
 }
+.gh-novedades-canvas .gh-about-container {
+    display: flex;
+    grid-template-columns: unset;
+    grid-gap: unset;
+    margin: 0 auto;
+    max-width: 920px;
+    margin-top: 60px;
+}
 
 .gh-about-box {
     position: sticky;

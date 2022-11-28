@@ -25,6 +25,7 @@ export default class Main extends Component.extend(ShortcutsMixin) {
     @service session;
     @service ui;
     @service whatsNew;
+    @service novedades;
     @service membersStats;
     @service settings;
 

@@ -48,18 +48,18 @@ class NewslettersService {
             },
             getText(url, type, email) {
                 return `
-                Hey there,
+                Hola,
 
-                Please confirm your email address with this link:
+                Por favor, confirma tu email con el siguiente enlace:
 
                 ${url}
 
-                For your security, the link will expire in 24 hours time.
+                Para tu seguridad, el enlace caducará en 24 horas.
 
                 ---
 
-                Sent to ${email}
-                If you did not make this request, you can simply delete this message. This email address will not be used.
+                Enviado a ${email}
+                Si no sabes de que va esto, simplemente puedes eliminar este mensaje.Esta dirección de correo electrónico no se utilizará.
                 `;
             },
             getHTML(url, type, email) {
@@ -199,7 +199,7 @@ class NewslettersService {
         }
 
         let updatedNewsletter;
-        
+
         try {
             updatedNewsletter = await this.NewsletterModel.edit(cleanedAttrs, options);
         } catch (error) {
@@ -215,7 +215,7 @@ class NewslettersService {
 
         // Load relations correctly in the response
         updatedNewsletter = await this.NewsletterModel.findOne({id: updatedNewsletter.id}, {...options, require: true});
-        
+
         await this.respondWithEmailVerification(updatedNewsletter, emailsToVerify);
         return updatedNewsletter;
     }

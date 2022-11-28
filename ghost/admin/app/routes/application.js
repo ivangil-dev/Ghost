@@ -37,6 +37,7 @@ export default Route.extend(ShortcutsRoute, {
     settings: service(),
     ui: service(),
     whatsNew: service(),
+    novedades: service(),
     billing: service(),
 
     shortcuts,

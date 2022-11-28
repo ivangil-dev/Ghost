@@ -188,7 +188,7 @@ export default class PaidBreakdown extends Component {
     }
 
     get chartTitle() {
-        return 'Paid subscribers';
+        return 'Suscriptores de pago';
     }
 
     get chartType() {

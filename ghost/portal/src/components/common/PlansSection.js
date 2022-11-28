@@ -289,8 +289,8 @@ function PriceLabel({currencySymbol, price, interval}) {
     return (
         <div className='gh-portal-plan-pricelabel'>
             <div className='gh-portal-plan-pricecontainer'>
-                <span className={currencyClass}>{currencySymbol}</span>
                 <span className='gh-portal-plan-price'>{formatNumber(price)}</span>
+                <span className={currencyClass}>{currencySymbol}</span>
             </div>
         </div>
     );
@@ -307,7 +307,7 @@ function addDiscountToPlans(plans) {
 
     if (filteredPlans.length === 2 && monthlyPlan && yearlyPlan) {
         const discount = calculateDiscount(monthlyPlan.amount, yearlyPlan.amount);
-        yearlyPlan.description = discount > 0 ? `${discount}% discount` : '';
+        yearlyPlan.description = discount > 0 ? `${discount}% de descuento` : '';
         monthlyPlan.description = '';
     }
 }
@@ -377,7 +377,7 @@ function ChangePlanOptions({plans, selectedPlan, onPlanSelect, changePlan}) {
                 <h4 className={planNameClass}>{displayName}</h4>
                 <PriceLabel currencySymbol={currencySymbol} price={price} interval={interval} />
                 <div className={featureClass} style={{border: 'none', paddingTop: '3px'}}>
-                    {(changePlan && selectedPlan === id ? <span className='gh-portal-plan-current'>Current plan</span> : '')}
+                    {(changePlan && selectedPlan === id ? <span className='gh-portal-plan-current'>Plan actual</span> : '')}
                 </div>
             </div>
         );

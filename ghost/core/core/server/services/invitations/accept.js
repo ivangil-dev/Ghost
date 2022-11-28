@@ -2,12 +2,12 @@ const errors = require('@tryghost/errors');
 const tpl = require('@tryghost/tpl');
 const models = require('../../models');
 const security = require('@tryghost/security');
-const messages = {inviteNotFound: 'Invite not found.',
-    inviteExpired: 'Invite is expired.',
+const messages = {inviteNotFound: 'Invitación no encontrada.',
+    inviteExpired: 'Invitación caducada.',
     inviteEmailAlreadyExist: {
-        message: 'Could not create an account, email is already in use.',
-        context: 'Attempting to create an account with existing email address.',
-        help: 'Use different email address to register your account.'
+        message: 'No se pudo crear una cuenta, el correo electrónico ya está en uso.',
+        context: 'Intentar crear una cuenta con la dirección de correo electrónico existente.',
+        help: 'Use una dirección de correo electrónico diferente para registrar su cuenta.'
     }};
 
 async function accept(invitation) {

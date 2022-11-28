@@ -116,7 +116,7 @@ function ErrorPage({error}) {
             <div class="gh-feedback-icon gh-feedback-icon-error">
                 <ThumbErrorIcon />
             </div>
-            <h1 className="gh-portal-main-title">Sorry, that didn’t work.</h1>
+            <h1 className="gh-portal-main-title">Lo siento, esto no funciona.</h1>
             <div>
                 <p className="gh-portal-text-center">{error}</p>
             </div>
@@ -163,7 +163,7 @@ const ConfirmDialog = ({onConfirm, loading, initialScore}) => {
 
     return (
         <div className="gh-portal-confirm-dialog" onMouseDown={stopPropagation}>
-            <h1 className="gh-portal-confirm-title">Give feedback on this post</h1>
+            <h1 className="gh-portal-confirm-title">Dejar impresiones en esta publicación</h1>
 
             <div className="gh-feedback-buttons-group">
                 <button
@@ -172,7 +172,7 @@ const ConfirmDialog = ({onConfirm, loading, initialScore}) => {
                     onClick={() => setScore(1)}
                 >
                     <ThumbUpIcon />
-                    More like this
+                    Quiero más como esto
                 </button>
 
                 <button
@@ -181,7 +181,7 @@ const ConfirmDialog = ({onConfirm, loading, initialScore}) => {
                     onClick={() => setScore(0)}
                 >
                     <ThumbDownIcon />
-                    Less like this
+                    Quiero menos como esto
                 </button>
             </div>
 
@@ -225,15 +225,15 @@ const ConfirmFeedback = ({positive}) => {
             <div className="gh-feedback-icon">
                 {icon}
             </div>
-            <h1 className="gh-portal-main-title">Thanks for the feedback!</h1>
-            <p className="gh-portal-text-center">Your input helps shape what gets published.</p>
+            <h1 className="gh-portal-main-title">Gracias por tu feedback!</h1>
+            <p className="gh-portal-text-center">Tu feedback nos ayuda a dar forma a lo que se publica.</p>
             <ActionButton
                 style={{width: '100%'}}
                 retry={false}
                 onClick = {() => onAction('closePopup')}
                 disabled={false}
                 brandColor={brandColor}
-                label={'Close'}
+                label={'Cerrar'}
                 isRunning={false}
                 tabindex='3'
                 classes={'sticky bottom'}
@@ -260,7 +260,7 @@ export default function FeedbackPage() {
             await sendFeedback({siteUrl: site.url, uuid, postId, score: selectedScore});
             setScore(selectedScore);
         } catch (e) {
-            const text = HumanReadableError.getMessageFromError(e, 'There was a problem submitting your feedback. Please try again a little later.');
+            const text = HumanReadableError.getMessageFromError(e, 'Ha ocurrido un problema al enviar tu feedback. Por favor inténtalo de nuevo un poco más tarde.');
             setError(text);
         }
         setLoading(false);

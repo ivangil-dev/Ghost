@@ -20,6 +20,7 @@ Router.map(function () {
     this.route('reset', {path: '/reset/:token'});
 
     this.route('whatsnew');
+    this.route('novedades');
     this.route('site');
     this.route('dashboard');
     this.route('launch');
