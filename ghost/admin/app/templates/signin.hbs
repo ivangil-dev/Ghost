@@ -1,3 +1,8 @@
+<div class="bola1"></div>
+<div class="bola2"></div>
+<div class="bola3"></div>
+<img class="fondo_signin" src="assets/img/login.png">
+
 <div class="gh-flow">
     <div class="gh-flow-content-wrap">
         <section class="gh-flow-content">
@@ -5,9 +10,9 @@
                 <div class="gh-auth-email">
                     <header>
                         <div class="gh-site-icon" style={{site-icon-style}}></div>
-                        <h1>Update your password.</h1>
+                        <h1>Actualiza tu contraseña.</h1>
                         <p>
-                            For security, you need to create a new password. An email has been sent to you with instructions.
+                            Por tu seguridad, debes crear una nueva contraseña. Se te ha enviado un correo electrónico con instrucciones.
                         </p>
                     </header>
                 </div>
@@ -15,16 +20,16 @@
             <form id="login" method="post" class="gh-signin" novalidate="novalidate" {{on "submit" (perform this.validateAndAuthenticateTask)}}>
                 <header>
                     <div class="gh-site-icon" style={{site-icon-style}}></div>
-                    <h1>Sign in to {{this.config.blogTitle}}.</h1>
+                    <h1>{{this.config.blogTitle}}.</h1>
                 </header>
                 <GhFormGroup @errors={{this.signin.errors}} @hasValidated={{this.hasValidated}} @property="identification">
-                    <label for="identification">Email address</label>
+                    <label for="identification">Correo electrónico</label>
                     <span class="gh-input-icon gh-icon-mail">
                         <input
                             id="identification"
                             type="email"
                             class="gh-input email"
-                            placeholder="jamie@example.com"
+                            placeholder="leonardo@davinci.com"
                             name="identification"
                             autocapitalize="off"
                             autocorrect="off"
@@ -36,7 +41,7 @@
                     </span>
                 </GhFormGroup>
                 <GhFormGroup @errors={{this.signin.errors}} @hasValidated={{this.hasValidated}} @property="password">
-                    <label for="password">Password</label>
+                    <label for="password">Contraseña</label>
                     <span class="gh-input-icon gh-icon-lock forgotten-wrap">
                         <input
                             id="password"
@@ -58,13 +63,13 @@
                             @failureClass=""
                             as |task|
                         >
-                            <span>{{#if task.isRunning}}{{svg-jar "spinner" class="gh-spinner"}}{{else}}Forgot?{{/if}}</span>
+                            <span>{{#if task.isRunning}}{{svg-jar "spinner" class="gh-spinner"}}{{else}}¿Te has olvidado?{{/if}}</span>
                         </GhTaskButton>
                     </span>
                 </GhFormGroup>
 
                 <GhTaskButton
-                    @buttonText="Sign in &rarr;"
+                    @buttonText="Iniciar sesión &rarr;"
                     @task={{this.validateAndAuthenticateTask}}
                     @showSuccess={{false}}
                     @class="login gh-btn gh-btn-login gh-btn-block gh-btn-icon"

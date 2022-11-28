@@ -1,0 +1,255 @@
+<section class="gh-canvas js-settings-content gh-novedades-canvas gh-novedades-canvas" {{scroll-top}}>
+    <GhCanvasHeader class="gh-canvas-header">
+        <h2 class="gh-novedades-heading">{{svg-jar "idea"}} En que estamos trabajando...</h2>
+        <section class="view-actions">
+            {{#if this.upgradeStatus.message}}
+                <button type="button" class="gh-btn gh-btn-with-notification" {{on "click" (fn this.openAbout null)}} data-tooltip="Actualización disponible!">
+                    <span>Sobre Ghost</span>
+                    <span class="gh-btn-notification-dot green"></span>
+                </button>
+            {{else}}
+                <button type="button" class="gh-btn gh-btn-with-notification" {{on "click" (fn this.openAbout null)}}>
+                    <span>Sobre Ghost</span>
+                </button>
+            {{/if}}
+        </section>
+    </GhCanvasHeader>
+    <section class="view-container">
+
+
+
+    <section class="gh-main-section">
+        <h4 class="gh-main-section-header small">Tareas</h4>
+        <div class="apps-grid">
+            <div class="apps-grid-cell">
+                <article class="apps-card-app">
+                    <div class="apps-card-left">
+                        <figure class="apps-card-app-icon id-unsplash" style="background-image:url(assets/img/tareas/1.svg); background-size:36px;"></figure>
+                        <div class="apps-card-meta">
+                            <h3 class="apps-card-app-title">Panel de novedades</h3>
+                            <p class="apps-card-app-desc">Apartado dentro de la administración de Ghost Blog para mostrar novedades, cambios e información relevante.</p>
+                        </div>
+                    </div>
+                    <div class="gh-card-right">
+                        <div class="apps-configured">
+                                <span class="gh-badge">60%</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="apps-grid-cell">
+                <article class="apps-card-app">
+                    <div class="apps-card-left">
+                        <figure class="apps-card-app-icon id-unsplash" style="background-image:url(assets/img/tareas/2.svg); background-size:36px;"></figure>
+                        <div class="apps-card-meta">
+                            <h3 class="apps-card-app-title">Campaña publicitaria</h3>
+                            <p class="apps-card-app-desc">Promoción del proyecto en Google & Youtube.</p>
+                        </div>
+                    </div>
+                    <div class="gh-card-right">
+                        <div class="apps-configured">
+                                <span>Pendiente</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="apps-grid-cell">
+                <article class="apps-card-app">
+                    <div class="apps-card-left">
+                        <figure class="apps-card-app-icon id-unsplash" style="background-image:url(assets/img/tareas/3.svg); background-size:36px;"></figure>
+                        <div class="apps-card-meta">
+                            <h3 class="apps-card-app-title">Revisión artículos</h3>
+                            <p class="apps-card-app-desc">Revisión de todos los artículos (Ortografía, etiquetas, imagenes, etc...)</p>
+                        </div>
+                    </div>
+                    <div class="gh-card-right">
+                        <div class="apps-configured">
+                                <span>Pendiente</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <div class="gh-main-section">
+        <h4 class="gh-main-section-header small bn">Estado de los servicios externos</h4>
+        <div class="gh-expandable">
+            <div class="gh-expandable-block">
+                <div class="gh-expandable-header">
+                    <div>
+                        <h4 class="gh-expandable-title">Notificaciones de Sance</h4>
+                        <p class="gh-expandable-description">
+                            Emails sobre eventos enviados al staff cuando alguien se registra, comenta, etc...
+                        </p>
+                    </div>
+                    <div class="estado ok">
+                        <div class="circulo1"></div>
+                        <div class="circulo2"></div>
+                        <div class="circulo3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="gh-expandable-block">
+                <div class="gh-expandable-header">
+                    <div>
+                        <h4 class="gh-expandable-title">Formulario de contacto</h4>
+                        <p class="gh-expandable-description">
+                            Emails procedentes del formulario de contacto del sitio.
+                        </p>
+                    </div>
+                    <div class="estado ok">
+                        <div class="circulo1"></div>
+                        <div class="circulo2"></div>
+                        <div class="circulo3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="gh-expandable-block">
+                <div class="gh-expandable-header">
+                    <div>
+                        <h4 class="gh-expandable-title">Monitor de actividad de la web</h4>
+                        <p class="gh-expandable-description">
+                            Servicio de alerta cuando el sitio está fuera de servicio.
+                        </p>
+                    </div>
+                    <div class="estado ok">
+                            <div class="circulo1"></div>
+                            <div class="circulo2"></div>
+                            <div class="circulo3"></div>
+                        </div>
+                </div>
+            </div>
+            <div class="gh-expandable-block">
+                <div class="gh-expandable-header">
+                    <div>
+                        <h4 class="gh-expandable-title">Funciones avanzadas para suscriptores</h4>
+                        <p class="gh-expandable-description">
+                            Lista de artículos pendientes, generador de artículos a voz, etc...
+                        </p>
+                    </div>
+                    <div class="estado ok">
+                        <div class="circulo1"></div>
+                        <div class="circulo2"></div>
+                        <div class="circulo3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="gh-expandable-block">
+                <div class="gh-expandable-header">
+                    <div>
+                        <h4 class="gh-expandable-title">API Instagram</h4>
+                        <p class="gh-expandable-description">
+                            Conexión con la base de datos de Instagram
+                        </p>
+                    </div>
+                    <div class="estado ok">
+                            <div class="circulo1"></div>
+                            <div class="circulo2"></div>
+                            <div class="circulo3"></div>
+                        </div>
+                </div>
+            </div>
+            <div class="gh-expandable-block">
+                <div class="gh-expandable-header">
+                    <div>
+                        <h4 class="gh-expandable-title">Función de prueba</h4>
+                        <p class="gh-expandable-description">
+                            Test de función desconocida
+                        </p>
+                    </div>
+                    <div class="estado off">
+                            <div class="circulo1"></div>
+                            <div class="circulo2"></div>
+                            <div class="circulo3"></div>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+                <div class="gh-about-container">
+                    <section class="gh-novedades gh-about-box">
+                        {{#each this.novedades.entries as |entry|}}
+                            <div class="gh-noved-entry" {{scroll-to when=(eq entry.slug this.entry)}}>
+                                <a href="{{entry.url}}">
+                                    <h4>{{moment-format entry.published_at "DD MMMM YYYY"}}</h4>
+                                    <h1>{{entry.title}}</h1>
+                                    {{#if entry.feature_image}}
+                                        <img class="mb5" src={{entry.feature_image}}>
+                                    {{/if}}
+                                </a>
+                                <div class="gh-noved-content">
+                                    {{{entry.html}}}
+                                </div>
+                            </div>
+                        {{/each}}
+                    </section>
+                </div>
+
+
+
+                <section class="gh-dashboard-resource gh-dashboard-community gh-dashboard-novedad">
+                    <LinkTo @route="posts" @query={{hash type=null}} data-test-mobile-nav="posts" class="gh-dashboard-resource-box">
+                        <div class="gh-dashboard-resource-title">
+                            <h4>Omniscientia</h4>
+                        </div>
+                        <div class="gh-dashboard-resource-body">
+                            <div class="gh-dashboard-list">
+                                <div class="gh-dashboard-list-body">
+                                    <p>El conocimiento le pertenece a la humanidad y es la antorcha que ilumina al mundo.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gh-dashboard-resource-footer">
+                            ¡Empezar a escribir! &rarr;
+                        </div>
+                    </LinkTo>
+                </section>
+
+                <div class="gh-main-section gh-offers-help">
+                <h2 class="gh-main-section-header small bn">Repositorios actuales</h2>
+                <div class="gh-main-section-block">
+                    <div class="gh-main-section-content grey">
+                        <a href="https://github.com/ivangil-dev/Ghost/tree/5.23.0-c1" target="_blank" class="gh-offers-help-card" rel="noopener noreferrer">
+                            <div class="gh-offers-help-content">
+                                <div class="thumbnail" style="background-image: url(assets/img/novedades/Ghost-Blog.jpg);"></div>
+                                <div class="text">
+                                    <h3>Ghost Blog</h3>
+                                    <p>Monorepositorio global de proyecto Ghost Blog en su versión 5.23</p>
+                                </div>
+                            </div>
+                            <div class="gh-btn"><span>Ir al repositorio</span></div>
+                        </a>
+
+                        <a href="https://github.com/ivangil-dev/linneo" target="_blank" class="gh-offers-help-card" rel="noopener noreferrer">
+                            <div class="gh-offers-help-content">
+                                <div class="thumbnail" style="background-image: url(assets/img/novedades/Linneo.jpg);"></div>
+                                <div class="text">
+                                    <h3>Linneo</h3>
+                                    <p>Tema de Ghost Blog usado actualmente en la web</p>
+                                </div>
+                            </div>
+                            <div class="gh-btn"><span>Ir al repositorio</span></div>
+                        </a>
+
+                        <a href="https://github.com/ivangil-dev/comments-ui/tree/0.12.3-castellano" target="_blank" class="gh-offers-help-card" rel="noopener noreferrer">
+                            <div class="gh-offers-help-content">
+                                <div class="thumbnail" style="background-image: url(assets/img/novedades/Comments-UI.jpg)"></div>
+                                <div class="text">
+                                    <h3>Comments UI</h3>
+                                    <p>Interfaz y módulo de comentarios del sitio</p>
+                                </div>
+                            </div>
+                            <div class="gh-btn"><span>Ir al repositorio</span></div>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+    </section>
+
+
+</section>

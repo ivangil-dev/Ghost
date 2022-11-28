@@ -19,6 +19,7 @@ export default class SessionService extends ESASessionService {
     @service ui;
     @service upgradeStatus;
     @service whatsNew;
+    @service novedades;
     @service membersUtils;
 
     @inject config;
@@ -62,6 +63,7 @@ export default class SessionService extends ESASessionService {
         }
 
         this.loadServerNotifications();
+        this.novedades.fetchLatest.perform();
         this.whatsNew.fetchLatest.perform();
     }
 
