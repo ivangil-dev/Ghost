@@ -511,6 +511,7 @@ class EmailRenderer {
         const {href: postFeatureImage, width: postFeatureImageWidth} = await this.limitImageWidth(post.get('feature_image'));
 
         const timezone = this.#settingsCache.get('timezone');
+        const excerpt = post.get('excerpt');
         const publishedAt = (post.get('published_at') ? DateTime.fromJSDate(post.get('published_at')) : DateTime.local()).setZone(timezone).toLocaleString({
             year: 'numeric',
             month: 'short',
@@ -565,7 +566,8 @@ class EmailRenderer {
                 feature_image: postFeatureImage,
                 feature_image_width: postFeatureImageWidth,
                 feature_image_alt: post.related('posts_meta')?.get('feature_image_alt'),
-                feature_image_caption: post.related('posts_meta')?.get('feature_image_caption')
+                feature_image_caption: post.related('posts_meta')?.get('feature_image_caption'),
+                excerpt
             },
 
             newsletter: {

@@ -81,7 +81,7 @@
                                                 <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                                                     <tr>
                                                         <td class="{{classes.meta}}">
-                                                            By {{post.authors}} – <span class="post-meta-date">{{post.publishedAt}} – </span><a href="{{post.url}}" class="view-online-link">View online →</a>
+                                                            Por {{post.authors}} – <span class="post-meta-date">{{post.publishedAt}} – </span><a href="{{post.url}}" class="view-online-link">Ver artículo completo →</a>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -112,28 +112,39 @@
                                         <tr>
                                             <td class="{{classes.body}}">
                                                 <!-- POST CONTENT START -->
-                                                {{{html}}}
-                                                <!-- POST CONTENT END -->
-
-                                                {{#if paywall}}
-                                                    {{>paywall}}
+                                                {{#if post.excerpt}}
+                                                    {{excerpt}}
+                                                {{else}}
+                                                    {{{html}}}
+                                                    {{#if paywall}}
+                                                        {{>paywall}}
+                                                    {{/if}}
                                                 {{/if}}
+                                                <!-- POST CONTENT END -->
                                             </td>
                                         </tr>
                                     </table>
                                 </td>
                             </tr>
 
+                            <tr>
+                            <td dir="ltr" width="100%" style="background-color: #ffffff; text-align: center; padding: 40px 4px; border-bottom: 1px solid #e5eff5" align="center">
+                                <h3 style="margin-top:0; line-height:1.11em; font-weight:700; margin:1.5em 0 0.5em 0; font-size:26px">❤️ Te gusta nuestro sitio?</h3>
+                                <p style="margin:0 0 1.5em 0; line-height:1.6em"><strong style="font-weight:700">Cuéntaselo a un amigo</strong> y anímale a que se suscriba (te doy una pista: <a href="{{site.url}}" target="_blank" rel="noopener noreferrer" style="color:#15171A; text-decoration:underline" title="{{site.title}}">es aquí</a>).</p>
+                                <p style="margin:0 0 1.5em 0; line-height:1.6em"><strong style="font-weight:700">¿Te gustaría participar?</strong> Déjanos un comentario en cualquier artículo o utiliza los botones de feedback justo aquí abajo.</p>
+                            </td>
+                        </tr>
+
                             <!-- END MAIN CONTENT AREA -->
 
                             {{#if feedbackButtons }}
                                 <tr>
                                     <td dir="ltr" width="100%" style="background-color: #ffffff; text-align: center; padding: 40px 4px; border-bottom: 1px solid #e5eff5" align="center">
-                                        <h3 style="text-align: center; margin-bottom: 22px; font-size: 17px; letter-spacing: -0.2px; margin-top: 0 !important;">Give feedback on this post</h3>
+                                        <h3 style="text-align: center; margin-bottom: 22px; font-size: 17px; letter-spacing: -0.2px; margin-top: 0 !important;">¿Que te parece esta publicación?</h3>
                                         <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin: auto; width: auto !important;">
                                             <tr>
-                                                {{> feedbackButton feedbackButtons href=feedbackButtons.likeHref buttonText='More like this' className="like-icon" iconUrl="https://static.ghost.org/v5.0.0/images/thumbs-up.png" }}
-                                                {{> feedbackButton feedbackButtons href=feedbackButtons.dislikeHref buttonText='Less like this' className="dislike-icon" iconUrl="https://static.ghost.org/v5.0.0/images/thumbs-down.png" }}
+                                                {{> feedbackButton feedbackButtons href=feedbackButtons.likeHref buttonText='Más como esto' className="like-icon" iconUrl="https://static.ghost.org/v5.0.0/images/thumbs-up.png" }}
+                                                {{> feedbackButton feedbackButtons href=feedbackButtons.dislikeHref buttonText='Menos de esto' className="dislike-icon" iconUrl="https://static.ghost.org/v5.0.0/images/thumbs-down.png" }}
                                             </tr>
                                         </table>
                                     </td>
@@ -147,7 +158,7 @@
                                             <tr><td class="footer">{{{footerContent}}}</td></tr>
                                         {{/if}}
                                         <tr>
-                                            <td class="footer">{{site.title}} &copy; {{year}} – <a href="%%{unsubscribe_url}%%">Unsubscribe</a></td>
+                                            <td class="footer">{{site.title}} &copy; {{year}} – <a href="%%{unsubscribe_url}%%">Quiero darme de baja</a></td>
                                         </tr>
 
                                         {{#if showBadge }}
