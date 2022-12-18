@@ -149,26 +149,26 @@ class PopupContent extends React.Component {
         let cookieBannerText = '';
         let pageClass = page;
         switch (page) {
-            case 'signup':
-                cookieBannerText = 'Las cookies deben estar habilitadas en tu navegador para registrarte.';
-                break;
-            case 'signin':
-                cookieBannerText = 'Las cookies deben estar habilitadas en tu navegador para iniciar sesión.';
-                break;
-            case 'accountHome':
-                pageClass = 'account-home';
-                break;
-            case 'accountProfile':
-                pageClass = 'account-profile';
-                break;
-            case 'accountPlan':
-                pageClass = 'account-plan';
-                break;
-            default:
-                cookieBannerText = 'Las cookies deben estar habilitadas en tu navegador.';
-                pageClass = page;
-                break;
-            }
+        case 'signup':
+            cookieBannerText = 'Las cookies deben estar habilitadas en tu navegador para registrarte.';
+            break;
+        case 'signin':
+            cookieBannerText = 'Las cookies deben estar habilitadas en tu navegador para iniciar sesión.';
+            break;
+        case 'accountHome':
+            pageClass = 'account-home';
+            break;
+        case 'accountProfile':
+            pageClass = 'account-profile';
+            break;
+        case 'accountPlan':
+            pageClass = 'account-plan';
+            break;
+        default:
+            cookieBannerText = 'Las cookies deben estar habilitadas en tu navegador.';
+            pageClass = page;
+            break;
+        }
 
         if (noOfProducts > 1 && !isInviteOnlySite({site, pageQuery})) {
             if (page === 'signup') {
