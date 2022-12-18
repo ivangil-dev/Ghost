@@ -26,7 +26,7 @@ export default function EmailSuppressedPage() {
                     lastPage: 'accountHome'
                 });
                 onAction('showPopupNotification', {
-                    message: 'You have been successfully resubscribed'
+                    message: 'Te has vuelto a inscribir con éxito'
                 });
             } else {
                 onAction('back');
@@ -52,9 +52,9 @@ export default function EmailSuppressedPage() {
             <EmailDeliveryFailedIcon className="gh-email-suppressed-page-icon" />
 
             <div className="gh-email-suppressed-page-text">
-                <h3 className="gh-portal-main-title gh-email-suppressed-page-title">Emails disabled</h3>
+                <h3 className="gh-portal-main-title gh-email-suppressed-page-title">Correos electrónicos desactivados</h3>
                 <p>
-                    You're not receiving emails because you either marked a recent message as spam, or because messages could not be delivered to your provided email address. 
+                    No estás recibiendo correos electrónicos porque has marcado un mensaje reciente como spam o porque los mensajes no se pueden entregar en tu dirección de correo electrónico proporcionada.
                 </p>
             </div>
 
@@ -64,7 +64,7 @@ export default function EmailSuppressedPage() {
                 onClick={handleSubmit}
                 disabled={isRunning}
                 brandColor={brandColor}
-                label="Re-enable emails"
+                label="Re-activar emails"
                 isRunning={isRunning}
             />
         </div>

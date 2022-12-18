@@ -412,7 +412,7 @@ export default class App extends React.Component {
         const offersRegex = /^offers\/(\w+?)\/?$/;
         const linkRegex = /^\/portal\/?(?:\/(\w+(?:\/\w+)*))?\/?$/;
         const feedbackRegex = /^\/feedback\/(\w+?)\/(\w+?)\/?$/;
-        
+
         if (path && feedbackRegex.test(path) && hashQuery.get('uuid')) {
             const [, postId, scoreString] = path.match(feedbackRegex);
             const score = parseInt(scoreString);

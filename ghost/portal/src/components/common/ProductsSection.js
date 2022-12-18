@@ -554,7 +554,7 @@ function ProductCardTrialDays({trialDays, discount, selectedInterval}) {
     if (hasFreeTrialTier({site})) {
         if (trialDays) {
             return (
-                <span className="gh-portal-discount-label">{trialDays} days free</span>
+                <span className="gh-portal-discount-label">{trialDays} días gratuitos</span>
             );
         } else {
             return null;
@@ -563,7 +563,7 @@ function ProductCardTrialDays({trialDays, discount, selectedInterval}) {
 
     if (selectedInterval === 'year') {
         return (
-            <span className="gh-portal-discount-label">{discount}% discount</span>
+            <span className="gh-portal-discount-label">{discount}% de descuento</span>
         );
     }
 
@@ -593,7 +593,7 @@ function ProductCardPrice({product}) {
                         <div className="gh-portal-product-price">
                             <span className={'currency-sign' + (currencySymbol.length > 1 ? ' long' : '')}>{currencySymbol}</span>
                             <span className="amount">{formatNumber(getStripeAmount(activePrice.amount))}</span>
-                            <span className="billing-period">/{activePrice.interval}</span>
+                            <span className="billing-period">/{(activePrice.interval === 'year' ? 'año' : 'mes')}</span>
                         </div>
                         <ProductCardTrialDays trialDays={trialDays} discount={yearlyDiscount} selectedInterval={selectedInterval} />
                     </div>
@@ -611,7 +611,7 @@ function ProductCardPrice({product}) {
                 <div className="gh-portal-product-price">
                     <span className={'currency-sign' + (currencySymbol.length > 1 ? ' long' : '')}>{currencySymbol}</span>
                     <span className="amount">{formatNumber(getStripeAmount(activePrice.amount))}</span>
-                    <span className="billing-period">/{activePrice.interval}</span>
+                    <span className="billing-period">/{(activePrice.interval === 'year' ? 'año' : 'mes')}</span>
                 </div>
                 {(selectedInterval === 'year' ? <YearlyDiscount discount={yearlyDiscount} /> : '')}
             </div>
@@ -635,11 +635,11 @@ function FreeProductCard({products, handleChooseSignup}) {
     }
 
     // @TODO: doublecheck this!
-    let currencySymbol = '$';
+    let currencySymbol = '€';
     if (products && products[1]) {
         currencySymbol = getCurrencySymbol(products[1].monthlyPrice.currency);
     } else {
-        currencySymbol = '$';
+        currencySymbol = '€';
     }
 
     const hasOnlyFree = hasOnlyFreeProduct({site});
@@ -653,7 +653,7 @@ function FreeProductCard({products, handleChooseSignup}) {
     }
 
     if (!freeProductDescription && !freeBenefits.length) {
-        freeProductDescription = 'Free preview';
+        freeProductDescription = 'Vista previa gratuita';
     }
 
     return (
@@ -689,7 +689,7 @@ function FreeProductCard({products, handleChooseSignup}) {
                                 onClick={(e) => {
                                     handleChooseSignup(e, 'free');
                                 }}>
-                                {((selectedProduct === 'free' && disabled) ? <LoaderIcon className='gh-portal-loadingicon' /> : 'Choose')}
+                                {((selectedProduct === 'free' && disabled) ? <LoaderIcon className='gh-portal-loadingicon' /> : 'Elegir')}
                             </button>
                         </div>
                         : '')}
@@ -710,7 +710,7 @@ function ProductCardButton({selectedProduct, product, disabled, noOfProducts, tr
         return ('Start ' + trialDays + '-day free trial');
     }
 
-    return (noOfProducts > 1 ? 'Choose' : 'Continue');
+    return (noOfProducts > 1 ? 'Elegir' : 'Continuar');
 }
 
 function ProductCard({product, products, selectedInterval, handleChooseSignup}) {
@@ -731,7 +731,7 @@ function ProductCard({product, products, selectedInterval, handleChooseSignup}) 
 
     let productDescription = product.description;
     if ((!product.benefits || !product.benefits.length) && !productDescription) {
-        productDescription = 'Full access';
+        productDescription = 'Acceso completo';
     }
 
     return (
@@ -795,13 +795,13 @@ function YearlyDiscount({discount, trialDays}) {
     if (hasFreeTrialTier({site})) {
         return (
             <>
-                <span className="gh-portal-discount-label-trial">{discount}% discount</span>
+                <span className="gh-portal-discount-label-trial">{discount}% de descuento</span>
             </>
         );
     } else {
         return (
             <>
-                <span className="gh-portal-discount-label">{discount}% discount</span>
+                <span className="gh-portal-discount-label">{discount}% de descuento</span>
             </>
         );
     }
@@ -824,7 +824,7 @@ function ProductPriceSwitch({products, selectedInterval, setSelectedInterval}) {
                         setSelectedInterval('month');
                     }}
                 >
-                    Monthly
+                    Mensual
                 </button>
                 <button
                     data-test-button='switch-yearly'
@@ -833,7 +833,7 @@ function ProductPriceSwitch({products, selectedInterval, setSelectedInterval}) {
                         setSelectedInterval('year');
                     }}
                 >
-                    Yearly
+                    Anual
                 </button>
             </div>
         </div>
@@ -1032,7 +1032,7 @@ function ChangeProductCard({product, onPlanSelect}) {
                 </div>
                 {(currentPlan ?
                     <div className='gh-portal-btn-product'>
-                        <span className='gh-portal-current-plan'><span>Current plan</span></span>
+                        <span className='gh-portal-current-plan'><span>Plan actual</span></span>
                     </div>
                     :
                     <div className='gh-portal-btn-product'>
@@ -1042,7 +1042,7 @@ function ChangeProductCard({product, onPlanSelect}) {
                             onClick={() => {
                                 onPlanSelect(null, selectedPrice?.id);
                             }}
-                        >Choose</button>
+                        >Elegir</button>
                     </div>)}
             </div>
         </div>

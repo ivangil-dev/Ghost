@@ -19,12 +19,12 @@ function EmailNewsletterAction() {
     return (
         <section>
             <div className='gh-portal-list-detail email-newsletter'>
-                <h3>Email newsletter</h3>
+                <h3>Boletín de email</h3>
                 <p>{label} {hasMemberGotEmailSuppression({member}) && subscribed && <button
                     className='gh-portal-btn-text gh-email-faq-page-button'
                     onClick={() => onAction('switchPage', {page: 'emailReceivingFAQ', lastPage: 'accountHome'})}
                 >
-                    Not receiving emails?
+                    ¿No recibes correos electrónicos?
                 </button>}</p>
             </div>
             <div>

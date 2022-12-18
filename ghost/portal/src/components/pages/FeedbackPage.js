@@ -116,7 +116,7 @@ function ErrorPage({error}) {
             <div class="gh-feedback-icon gh-feedback-icon-error">
                 <ThumbErrorIcon />
             </div>
-            <h1 className="gh-portal-main-title">Sorry, that didn’t work.</h1>
+            <h1 className="gh-portal-main-title">Lo siento, esto no ha funcionado.</h1>
             <div>
                 <p className="gh-portal-text-center">{error}</p>
             </div>
@@ -126,7 +126,7 @@ function ErrorPage({error}) {
                 onClick = {() => onAction('closePopup')}
                 disabled={false}
                 brandColor='#000000'
-                label={'Close'}
+                label='Cerrar'
                 isRunning={false}
                 tabindex='3'
                 classes={'sticky bottom'}
@@ -163,7 +163,7 @@ const ConfirmDialog = ({onConfirm, loading, initialScore}) => {
 
     return (
         <div className="gh-portal-confirm-dialog" onMouseDown={stopPropagation}>
-            <h1 className="gh-portal-confirm-title">Give feedback on this post</h1>
+            <h1 className="gh-portal-confirm-title">Deja tu feedback sobre esta publicación</h1>
 
             <div className="gh-feedback-buttons-group">
                 <button
@@ -172,7 +172,7 @@ const ConfirmDialog = ({onConfirm, loading, initialScore}) => {
                     onClick={() => setScore(1)}
                 >
                     <ThumbUpIcon />
-                    More like this
+                    Más como esto
                 </button>
 
                 <button
@@ -181,7 +181,7 @@ const ConfirmDialog = ({onConfirm, loading, initialScore}) => {
                     onClick={() => setScore(0)}
                 >
                     <ThumbDownIcon />
-                    Less like this
+                    Menos de esto
                 </button>
             </div>
 
@@ -191,7 +191,7 @@ const ConfirmDialog = ({onConfirm, loading, initialScore}) => {
                 onClick={submit}
                 disabled={false}
                 brandColor={brandColor}
-                label="Submit feedback"
+                label="Enviar feedback"
                 isRunning={loading}
                 tabindex="3"
             />
@@ -225,15 +225,15 @@ const ConfirmFeedback = ({positive}) => {
             <div className="gh-feedback-icon">
                 {icon}
             </div>
-            <h1 className="gh-portal-main-title">Thanks for the feedback!</h1>
-            <p className="gh-portal-text-center">Your input helps shape what gets published.</p>
+            <h1 className="gh-portal-main-title">Gracias por tu opinión!</h1>
+            <p className="gh-portal-text-center">Tus interacciones nos ayudan a dar forma a lo que publicamos.</p>
             <ActionButton
                 style={{width: '100%'}}
                 retry={false}
                 onClick = {() => onAction('closePopup')}
                 disabled={false}
                 brandColor={brandColor}
-                label={'Close'}
+                label='Cerrar'
                 isRunning={false}
                 tabindex='3'
                 classes={'sticky bottom'}
@@ -260,7 +260,7 @@ export default function FeedbackPage() {
             await sendFeedback({siteUrl: site.url, uuid, postId, score: selectedScore});
             setScore(selectedScore);
         } catch (e) {
-            const text = HumanReadableError.getMessageFromError(e, 'There was a problem submitting your feedback. Please try again a little later.');
+            const text = HumanReadableError.getMessageFromError(e, 'Hemos tenido problemas para enviar tu feedback. Por favor inténtalo de nuevo un poco más tarde.');
             setError(text);
         }
         setLoading(false);

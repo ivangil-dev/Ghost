@@ -101,9 +101,9 @@ export default function UnsubscribePage() {
                 <div class="gh-feedback-icon gh-feedback-icon-error">
                     <WarningIcon />
                 </div>
-                <h1 className="gh-portal-main-title">That didn't go to plan</h1>
+                <h1 className="gh-portal-main-title">Algo no ha ido según lo planeado</h1>
                 <div>
-                    <p className="gh-portal-text-center">We couldn't unsubscribe you as the email address was not found. Please contact the site owner.</p>
+                    <p className="gh-portal-text-center">No hemos podido cancelar tu suscripción porque no encontramos tu email en nuestras bases de datos. Contacta con la administración del sitio.</p>
                 </div>
                 <ActionButton
                     style={{width: '100%'}}
@@ -111,7 +111,7 @@ export default function UnsubscribePage() {
                     onClick = {() => onAction('closePopup')}
                     disabled={false}
                     brandColor='#000000'
-                    label={'Close'}
+                    label='Cerrar'
                     isRunning={false}
                     tabindex='3'
                     classes={'sticky bottom'}
@@ -126,17 +126,17 @@ export default function UnsubscribePage() {
             <div className='gh-portal-content gh-portal-unsubscribe with-footer'>
                 <CloseButton />
                 <AccountHeader />
-                <h1 className="gh-portal-main-title">Successfully unsubscribed</h1>
+                <h1 className="gh-portal-main-title">Baja tramitada con éxito</h1>
                 <div>
-                    <p className='gh-portal-text-center'><strong>{member?.email}</strong> will no longer receive this newsletter.</p>
-                    <p className='gh-portal-text-center'>Didn't mean to do this? Manage your preferences
+                    <p className='gh-portal-text-center'><strong>{member?.email}</strong> ya no recibirás este boletín.</p>
+                    <p className='gh-portal-text-center'>¿No querías hacer esto? Cambia tus ajustes
                         <button
                             className="gh-portal-btn-link gh-portal-btn-branded gh-portal-btn-inline"
                             onClick={() => {
                                 setShowPrefs(true);
                             }}
                         >
-                        here
+                        aquí
                         </button>.
                     </p>
                 </div>
@@ -149,7 +149,7 @@ export default function UnsubscribePage() {
             const hideClassName = hasInteracted ? 'gh-portal-hide' : '';
             return (
                 <>
-                    <p className={`gh-portal-text-center gh-portal-header-message ${hideClassName}`}><strong>{member?.email}</strong> will no longer receive emails when someone replies to your comments.</p>
+                    <p className={`gh-portal-text-center gh-portal-header-message ${hideClassName}`}><strong>{member?.email}</strong> ya no recibirás correos electrónicos cuando alguien responda a tus comentarios.</p>
                 </>
             );
         }
@@ -159,7 +159,7 @@ export default function UnsubscribePage() {
         const hideClassName = hasInteracted ? 'gh-portal-hide' : '';
         return (
             <>
-                <p className={`gh-portal-text-center gh-portal-header-message ${hideClassName}`}><strong>{member?.email}</strong> will no longer receive <strong>{unsubscribedNewsletter?.name}</strong> newsletter.</p>
+                <p className={`gh-portal-text-center gh-portal-header-message ${hideClassName}`}><strong>{member?.email}</strong> ya no recibirás el boletín <strong>{unsubscribedNewsletter?.name}</strong>.</p>
             </>
         );
     };
@@ -182,7 +182,7 @@ export default function UnsubscribePage() {
                 setSubscribedNewsletters([]);
                 onAction('showPopupNotification', {
                     action: 'updated:success',
-                    message: `Email preference updated.`
+                    message: `Preferencias de email actualizadas.`
                 });
                 const updatedMember = await api.member.updateNewsletters({uuid: pageData.uuid, newsletters: [], enableCommentNotifications: false});
                 setMember(updatedMember);

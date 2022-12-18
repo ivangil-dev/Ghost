@@ -107,8 +107,8 @@ export function getOfferData({
 }
 
 export function getMemberData({
-    name = 'Jamie Larson',
-    email = 'jamie@example.com',
+    name = 'Thomas Edison',
+    email = 'thomasedison@ejemplo.com',
     firstname = 'Jamie',
     subscriptions = [],
     paid = false,
@@ -279,7 +279,7 @@ export function getSubscriptionData({
         customer: {
             id: `cus_${objectId()}`,
             name: 'Jamie',
-            email: 'jamie@example.com'
+            email: 'thomasedison@ejemplo.com'
         },
         plan: {
             id: `price_${objectId()}`,

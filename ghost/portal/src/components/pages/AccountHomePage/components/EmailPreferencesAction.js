@@ -17,10 +17,10 @@ function EmailPreferencesAction() {
                         ? (
                             <p className="gh-portal-email-notice">
                                 <EmailDeliveryFailedIcon className="gh-portal-email-notice-icon" />
-                                <span>You're <span className="gh-mobile-shortener">currently </span>not receiving emails</span>
+                                <span>Tú <span className="gh-mobile-shortener">actualmente </span>no recibes emails</span>
                             </p>
                         )
-                        : <p>Update your preferences</p>
+                        : <p>Actualiza tus preferencias</p>
                 }
             </div>
             <button className='gh-portal-btn gh-portal-btn-list' onClick={(e) => {
@@ -29,7 +29,7 @@ function EmailPreferencesAction() {
                     lastPage: 'accountHome'
                 });
             }} data-test-button='manage-newsletters'>
-                Manage
+                Gestionar
             </button>
         </section>
     );

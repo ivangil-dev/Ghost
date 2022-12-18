@@ -21,7 +21,7 @@ const SubscribeButton = () => {
     return (
         <ActionButton
             isRunning={isRunning}
-            label="View plans"
+            label="Ver planes"
             onClick={() => openPlanPage()}
             brandColor={brandColor}
             style={{width: '100%'}}

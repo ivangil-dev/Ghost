@@ -130,8 +130,8 @@ export const offer = getOfferData({
 
 export const member = {
     free: getMemberData({
-        name: 'Jamie Larson',
-        email: 'jamie@example.com',
+        name: 'Thomas Edison',
+        email: 'thomasedison@ejemplo.com',
         firstname: 'Jamie',
         subscriptions: [],
         paid: false,

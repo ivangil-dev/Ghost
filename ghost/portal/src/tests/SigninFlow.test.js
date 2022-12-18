@@ -135,13 +135,13 @@ describe('Signin', () => {
             expect(nameInput).not.toBeInTheDocument();
             expect(submitButton).toBeInTheDocument();
 
-            fireEvent.change(emailInput, {target: {value: 'jamie@example.com'}});
+            fireEvent.change(emailInput, {target: {value: 'thomasedison@ejemplo.com'}});
 
-            expect(emailInput).toHaveValue('jamie@example.com');
+            expect(emailInput).toHaveValue('thomasedison@ejemplo.com');
 
             fireEvent.click(submitButton);
             expect(ghostApi.member.sendMagicLink).toHaveBeenLastCalledWith({
-                email: 'jamie@example.com',
+                email: 'thomasedison@ejemplo.com',
                 emailType: 'signin'
             });
 
@@ -161,13 +161,13 @@ describe('Signin', () => {
             expect(nameInput).not.toBeInTheDocument();
             expect(submitButton).toBeInTheDocument();
 
-            fireEvent.change(emailInput, {target: {value: 'jamie@example.com'}});
+            fireEvent.change(emailInput, {target: {value: 'thomasedison@ejemplo.com'}});
 
-            expect(emailInput).toHaveValue('jamie@example.com');
+            expect(emailInput).toHaveValue('thomasedison@ejemplo.com');
 
             fireEvent.click(submitButton);
             expect(ghostApi.member.sendMagicLink).toHaveBeenLastCalledWith({
-                email: 'jamie@example.com',
+                email: 'thomasedison@ejemplo.com',
                 emailType: 'signin'
             });
 
@@ -187,13 +187,13 @@ describe('Signin', () => {
             expect(nameInput).not.toBeInTheDocument();
             expect(submitButton).toBeInTheDocument();
 
-            fireEvent.change(emailInput, {target: {value: 'jamie@example.com'}});
+            fireEvent.change(emailInput, {target: {value: 'thomasedison@ejemplo.com'}});
 
-            expect(emailInput).toHaveValue('jamie@example.com');
+            expect(emailInput).toHaveValue('thomasedison@ejemplo.com');
 
             fireEvent.click(submitButton);
             expect(ghostApi.member.sendMagicLink).toHaveBeenLastCalledWith({
-                email: 'jamie@example.com',
+                email: 'thomasedison@ejemplo.com',
                 emailType: 'signin'
             });
 
@@ -227,13 +227,13 @@ describe('Signin', () => {
             expect(nameInput).not.toBeInTheDocument();
             expect(submitButton).toBeInTheDocument();
 
-            fireEvent.change(emailInput, {target: {value: 'jamie@example.com'}});
+            fireEvent.change(emailInput, {target: {value: 'thomasedison@ejemplo.com'}});
 
-            expect(emailInput).toHaveValue('jamie@example.com');
+            expect(emailInput).toHaveValue('thomasedison@ejemplo.com');
 
             fireEvent.click(submitButton);
             expect(ghostApi.member.sendMagicLink).toHaveBeenLastCalledWith({
-                email: 'jamie@example.com',
+                email: 'thomasedison@ejemplo.com',
                 emailType: 'signin'
             });
 
@@ -253,13 +253,13 @@ describe('Signin', () => {
             expect(nameInput).not.toBeInTheDocument();
             expect(submitButton).toBeInTheDocument();
 
-            fireEvent.change(emailInput, {target: {value: 'jamie@example.com'}});
+            fireEvent.change(emailInput, {target: {value: 'thomasedison@ejemplo.com'}});
 
-            expect(emailInput).toHaveValue('jamie@example.com');
+            expect(emailInput).toHaveValue('thomasedison@ejemplo.com');
 
             fireEvent.click(submitButton);
             expect(ghostApi.member.sendMagicLink).toHaveBeenLastCalledWith({
-                email: 'jamie@example.com',
+                email: 'thomasedison@ejemplo.com',
                 emailType: 'signin'
             });
 
@@ -279,13 +279,13 @@ describe('Signin', () => {
             expect(nameInput).not.toBeInTheDocument();
             expect(submitButton).toBeInTheDocument();
 
-            fireEvent.change(emailInput, {target: {value: 'jamie@example.com'}});
+            fireEvent.change(emailInput, {target: {value: 'thomasedison@ejemplo.com'}});
 
-            expect(emailInput).toHaveValue('jamie@example.com');
+            expect(emailInput).toHaveValue('thomasedison@ejemplo.com');
 
             fireEvent.click(submitButton);
             expect(ghostApi.member.sendMagicLink).toHaveBeenLastCalledWith({
-                email: 'jamie@example.com',
+                email: 'thomasedison@ejemplo.com',
                 emailType: 'signin'
             });
 

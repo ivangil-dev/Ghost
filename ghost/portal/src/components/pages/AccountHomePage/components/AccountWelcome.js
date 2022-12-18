@@ -24,7 +24,7 @@ const AccountWelcome = () => {
             const expiryAt = getDateString(expiryDate);
             return (
                 <div className='gh-portal-section'>
-                    <p className='gh-portal-text-center gh-portal-free-ctatext'>Your subscription will expire on {expiryAt}</p>
+                    <p className='gh-portal-text-center gh-portal-free-ctatext'>Tu suscripción caducará en {expiryAt}</p>
                 </div>
             );
         }
@@ -36,20 +36,20 @@ const AccountWelcome = () => {
             const trialEnd = getDateString(subscription.trial_end_at);
             return (
                 <div className='gh-portal-section'>
-                    <p className='gh-portal-text-center gh-portal-free-ctatext'>Your subscription will start on {trialEnd}</p>
+                    <p className='gh-portal-text-center gh-portal-free-ctatext'>Tu suscripción comenzará en {trialEnd}</p>
                 </div>
             );
         }
         return (
             <div className='gh-portal-section'>
-                <p className='gh-portal-text-center gh-portal-free-ctatext'>Your subscription will renew on {getDateString(currentPeriodEnd)}</p>
+                <p className='gh-portal-text-center gh-portal-free-ctatext'>Tu suscripción se renovará en {getDateString(currentPeriodEnd)}</p>
             </div>
         );
     }
 
     return (
         <div className='gh-portal-section'>
-            <p className='gh-portal-text-center gh-portal-free-ctatext'>You currently have a free membership, upgrade to a paid subscription for full access.</p>
+            <p className='gh-portal-text-center gh-portal-free-ctatext'>Actualmente tienes una suscripción gratuita, actualiza una suscripción de pago para conseguir el acceso completo.</p>
             <SubscribeButton />
         </div>
     );

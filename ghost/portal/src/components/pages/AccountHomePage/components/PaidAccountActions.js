@@ -37,9 +37,9 @@ const PaidAccountActions = () => {
         const compExpiry = getCompExpiry({member});
         if (isComplimentary) {
             if (compExpiry) {
-                label = `Complimentary - Expires ${compExpiry}`;
+                label = `Plan complementario - Finaliza el ${compExpiry}`;
             } else {
-                label = label ? `Complimentary (${label})` : `Complimentary`;
+                label = label ? `Plan complementario (${label})` : `Plan complementario`;
             }
         }
         let oldPriceClassName = '';
@@ -93,7 +93,7 @@ const PaidAccountActions = () => {
                 className='gh-portal-btn gh-portal-btn-list' onClick={e => openUpdatePlan(e)}
                 data-test-button='change-plan'
             >
-                Change
+                Cambiar
             </button>
         );
     };
@@ -114,7 +114,7 @@ const PaidAccountActions = () => {
         const {action} = useContext(AppContext);
         const label = action === 'editBilling:running' ? (
             <LoaderIcon className='gh-portal-billing-button-loader' />
-        ) : 'Update';
+        ) : 'Actualizar';
         if (isComplimentary) {
             return null;
         }
@@ -122,7 +122,7 @@ const PaidAccountActions = () => {
         return (
             <section>
                 <div className='gh-portal-list-detail'>
-                    <h3>Billing info</h3>
+                    <h3>Información de facturación</h3>
                     <CardLabel defaultCardLast4={defaultCardLast4} />
                 </div>
                 <button
@@ -175,7 +175,7 @@ function FreeTrialLabel({subscription, priceLabel}) {
         return (
             <p className="gh-portal-account-discountcontainer">
                 <div>
-                    <span>Free Trial – Ends {trialEnd}</span>
+                    <span>Prueba gratuita - Finaliza el {trialEnd}</span>
                     {/* <span>{getSubFreeTrialDaysLeft({sub: subscription})} days left</span> */}
                 </div>
             </p>
@@ -199,7 +199,7 @@ function getOfferLabel({offer, price, subscriptionStartDate}) {
         const discountDuration = offer.duration;
         let durationLabel = '';
         if (discountDuration === 'forever') {
-            durationLabel = `Forever`;
+            durationLabel = `Para siempre`;
         } else if (discountDuration === 'repeating') {
             const durationInMonths = offer.duration_in_months || 0;
             let offerStartDate = new Date(subscriptionStartDate);
@@ -208,7 +208,7 @@ function getOfferLabel({offer, price, subscriptionStartDate}) {
             if (isInThePast(offerEndDate)) {
                 return '';
             }
-            durationLabel = `Ends ${getDateString(offerEndDate)}`;
+            durationLabel = `Acaba el ${getDateString(offerEndDate)}`;
         }
         offerLabel = `${getUpdatedOfferPrice({offer, price, useFormatted: true})}/${price.interval}${durationLabel ? ` — ${durationLabel}` : ``}`;
     }

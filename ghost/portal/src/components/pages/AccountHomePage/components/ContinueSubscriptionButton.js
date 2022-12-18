@@ -26,7 +26,7 @@ const ContinueSubscriptionButton = () => {
         }
         const currentPeriodEnd = subscription.current_period_end;
         return (
-            <p className='gh-portal-text-center gh-portal-free-ctatext'>Your subscription will expire on {getDateString(currentPeriodEnd)}</p>
+            <p className='gh-portal-text-center gh-portal-free-ctatext'>Tu suscripción caducará en {getDateString(currentPeriodEnd)}</p>
         );
     };
 

@@ -419,9 +419,9 @@ export function getFreeProductBenefits({site}) {
 
 export function getFreeTierTitle({site}) {
     if (hasOnlyFreeProduct({site})) {
-        return 'Free membership';
+        return 'Suscripción gratuita';
     } else {
-        return 'Free';
+        return 'Gratis';
     }
 }
 
@@ -609,8 +609,8 @@ export function getFreePriceCurrency({site}) {
     const stripePrices = getAvailablePrices({site});
 
     let freePriceCurrencyDetail = {
-        currency: 'usd',
-        currency_symbol: '$'
+        currency: 'EUR',
+        currency_symbol: '€'
     };
     if (stripePrices?.length > 0) {
         freePriceCurrencyDetail.currency = stripePrices[0].currency;

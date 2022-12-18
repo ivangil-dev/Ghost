@@ -48,7 +48,7 @@ function getMockData() {
             querySelector: (elem) => {
                 if (elem === 'input[data-members-email]') {
                     return {
-                        value: 'jamie@example.com'
+                        value: 'thomasedison@ejemplo.com'
                     };
                 }
                 if (elem === 'input[data-members-name]') {
@@ -143,7 +143,7 @@ describe('Member Data attributes:', () => {
 
             expect(window.fetch).toHaveBeenCalledTimes(1);
             const expectedBody = JSON.stringify({
-                email: 'jamie@example.com',
+                email: 'thomasedison@ejemplo.com',
                 emailType: 'signup',
                 labels: ['Gold'],
                 name: 'Jamie Larsen',

@@ -27,12 +27,12 @@ export default class MagicLinkPage extends React.Component {
     static contextType = AppContext;
 
     renderFormHeader() {
-        let popupTitle = `Now check your email!`;
-        let popupDescription = `A login link has been sent to your inbox. If it doesn't arrive in 3 minutes, be sure to check your spam folder.`;
+        let popupTitle = `Ahora comprueba tu email!`;
+        let popupDescription = `Se ha enviado un enlace de inicio de sesión a tu bandeja de entrada. Si no llega en 3 minutos, asegúrate de verificar tu carpeta de spam.`;
 
         if (this.context.lastPage === 'signup') {
-            popupTitle = `Now check your email!`;
-            popupDescription = `To complete signup, click the confirmation link in your inbox. If it doesn't arrive within 3 minutes, check your spam folder!`;
+            popupTitle = `Ahora comprueba tu email!`;
+            popupDescription = `Para completar el registro, haz clic en el enlace de confirmación en tu bandeja de entrada.S i no llega en 3 minutos, ¡revisa tu carpeta de spam!`;
         }
 
         return (
@@ -53,7 +53,7 @@ export default class MagicLinkPage extends React.Component {
                     style={{color: '#1d1d1d', fontWeight: 'bold', cursor: 'pointer'}}
                     onClick={() => this.context.onAction('switchPage', {page: 'signin'})}
                 >
-                    Back to Log in
+                    Volver al inicio de sesión
                 </div>
             </>
         );

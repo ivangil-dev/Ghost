@@ -16,7 +16,7 @@ function AccountHeader() {
             <BackButton brandColor={brandColor} hidden={!lastPage} onClick={(e) => {
                 onAction('back');
             }} />
-            <h3 className='gh-portal-main-title'>Email preferences</h3>
+            <h3 className='gh-portal-main-title'>Preferencias de email</h3>
         </header>
     );
 }
@@ -98,8 +98,8 @@ function CommentsSection({updateCommentNotifications, isCommentsEnabled, enableC
     return (
         <section className='gh-portal-list-toggle-wrapper' data-test-toggle-wrapper>
             <div className='gh-portal-list-detail'>
-                <h3>Comments</h3>
-                <p>Get notified when someone replies to your comment</p>
+                <h3>Comentarios</h3>
+                <p>Recibir una notificación cuando alguien responde a tu comentario</p>
             </div>
             <div style={{display: 'flex', alignItems: 'center'}}>
                 <SuccessIcon show={showUpdated} checked={isChecked} />
@@ -135,7 +135,7 @@ function NewsletterPrefs({subscribedNewsletters, setSubscribedNewsletters}) {
 function ShowPaidMemberMessage({site, isPaid}) {
     if (isPaid) {
         return (
-            <p style={{textAlign: 'center', marginTop: '12px', marginBottom: '0', color: 'var(--grey6)'}}>Unsubscribing from emails will not cancel your paid subscription to {site?.title}</p>
+            <p style={{textAlign: 'center', marginTop: '12px', marginBottom: '0', color: 'var(--grey6)'}}>Darte de baja de los correos electrónicos no cancelará tu suscripción de pago a {site?.title}</p>
         );
     }
     return null;
@@ -192,7 +192,7 @@ export default function NewsletterManagement({
                         disabled={isDisabled}
                         brandColor={brandColor}
                         isPrimary={false}
-                        label='Unsubscribe from all emails'
+                        label='Darme de baja de todos los emails'
                         isDestructive={true}
                         style={{width: '100%'}}
                         dataTestId="unsubscribe-from-all-emails"
@@ -201,12 +201,12 @@ export default function NewsletterManagement({
                 </div>
                 {hasMemberGotEmailSuppression({member}) && !isDisabled &&
                     <div className="gh-portal-footer-secondary">
-                        <span className="gh-portal-footer-secondary-light">Not receiving emails?</span>
+                        <span className="gh-portal-footer-secondary-light">¿No quieres recibir correos electrónicos?</span>
                         <button
                             className="gh-portal-btn-text gh-email-faq-page-button"
                             onClick={() => onAction('switchPage', {page: 'emailReceivingFAQ'})}
                         >
-                            Learn more &rarr;
+                            Leer más &rarr;
                         </button>
                     </div>
                 }

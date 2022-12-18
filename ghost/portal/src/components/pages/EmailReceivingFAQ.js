@@ -24,33 +24,33 @@ export default function EmailReceivingPage() {
             </header>
 
             <div class="gh-longform">
-                <h3>Help! I'm not receiving subscription emails</h3>
+                <h3>¡Ayuda! No recibo correos electrónicos de mi suscripción</h3>
 
-                <p>If you're not receiving the email newsletter you've subscribed to, here are few things to check.</p>
+                <p>Si no estás recibiendo el boletín de correo electrónico al que te has suscrito, aquí hay algunas cosas para verificar.</p>
 
-                <h4>Verify your email address is correct</h4>
+                <h4>Verifica que tu dirección de correo electrónico sea correcta</h4>
 
-                <p>The email address we have for you is <strong>{member.email}</strong> &mdash; if that's not correct, you can update it in your <button className="gh-portal-btn-text" onClick={() => onAction('switchPage', {lastPage: 'emailReceivingFAQ', page: 'accountProfile'})}>account settings area</button>.</p>
+                <p>La dirección de correo electrónico que tenemos tuya es <strong>{member.email}</strong> &mdash; si eso no es correcto, puedes actualizarla en tu <button className="gh-portal-btn-text" onClick={() => onAction('switchPage', {lastPage: 'emailReceivingFAQ', page: 'accountProfile'})}>área de configuración de la cuenta</button>.</p>
 
-                <h4>Check spam & promotions folders</h4>
+                <h4>Comprueba las carpetas de spam y promociones</h4>
 
-                <p>Make sure emails aren't accidentally ending up in the Spam or Promotions folders of your inbox. If they are, click on "Mark as not spam" and/or "Move to inbox".</p>
+                <p>Asegúrate de que los correos electrónicos no terminen accidentalmente en las carpetas de spam o promociones de tu bandeja de entrada. Si eso pasa, haz clic en "Marcar como correo deseado"/"Este correo no es spam" y/o "mover a la bandeja de entrada".</p>
 
-                <h4>Create a new contact</h4>
+                <h4>Crea un nuevo contacto</h4>
 
-                <p>In your email client add <strong>{defaultNewsletterSenderEmail}</strong> to your contacts list. This signals to your mail provider that emails sent from this address should be trusted.</p>
+                <p>En tu correo electrónico, agrega el cliente <strong>{defaultNewsletterSenderEmail}</strong> a tu lista de contactos. Esto indica a tu proveedor de correo que se debe confiar en los correos electrónicos enviados desde esta dirección.</p>
 
-                <h4>Send an email and say hi!</h4>
+                <h4>Envía un correo electrónico y saluda!</h4>
 
-                <p>Send an email to <strong>{defaultNewsletterSenderEmail}</strong> and say hello. This can also help signal to your mail provider that emails to-and-from this address should be trusted.</p>
+                <p>Envia un correo electrónico a <strong>{defaultNewsletterSenderEmail}</strong> y saluda. Esto también puede ayudar a señalar a tu proveedor de correo que se debe confiar en los correos electrónicos de esta dirección.</p>
 
-                <h4>Check with your mail provider</h4>
+                <h4>Consulte con tu proveedor de correo</h4>
 
-                <p>If you have a corporate or government email account, reach out to your IT department and ask them to allow emails to be received from <strong>{defaultNewsletterSenderEmail}</strong></p>
+                <p>Si tienes una cuenta de correo electrónico corporativa o gubernamental, comunícate con el departamento de TI y pídeles que permitan recibir correos electrónicos de <strong>{defaultNewsletterSenderEmail}</strong></p>
 
-                <h4>Get in touch for help</h4>
+                <h4>Ponte en contacto para obtener ayuda</h4>
 
-                <p>If you've completed all these checks and you're still not receiving emails, you can reach out to get support by contacting <a href={supportAddress} onClick={() => {
+                <p>Si has completado todos estos pasos y aún no recibes nuestros correos electrónicos, puedes comunicarse con el soporte contactando en <a href={supportAddress} onClick={() => {
                     supportAddress && window.open(supportAddress);
                 }}>{supportAddressEmail}</a>.</p>
             </div>

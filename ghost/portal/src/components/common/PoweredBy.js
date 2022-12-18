@@ -8,7 +8,7 @@ export default class PoweredBy extends React.Component {
                 window.open('https://ghost.org', '_blank');
             }}>
                 <GhostLogo />
-                Powered by Ghost
+                Potenciado por Ghost
             </a>
         );
     }
