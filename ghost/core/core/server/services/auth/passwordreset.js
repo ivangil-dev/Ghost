@@ -8,23 +8,23 @@ const urlUtils = require('../../../shared/url-utils');
 const mail = require('../mail');
 
 const messages = {
-    userNotFound: 'User not found.',
-    tokenLocked: 'Token locked',
-    resetPassword: 'Reset Password',
+    userNotFound: 'Usuario no encontrado.',
+    tokenLocked: 'Token bloqueado',
+    resetPassword: 'Restablecer la contraseña',
     expired: {
-        message: 'Cannot reset password.',
-        context: 'Password reset link expired.',
-        help: 'Request a new password reset via the login form.'
+        message: 'No se puede restablecer la contraseña.',
+        context: 'El enlace de reinicio de contraseña expiró.',
+        help: 'Solicita un nuevo restablecimiento de contraseña a través del formulario de inicio de sesión.'
     },
     invalidToken: {
-        message: 'Cannot reset password.',
-        context: 'Password reset link has already been used.',
-        help: 'Request a new password reset via the login form.'
+        message: 'No se puede restablecer la contraseña.',
+        context: 'El enlace de reinicio de contraseña ya se ha utilizado.',
+        help: 'Solicita un nuevo restablecimiento de contraseña a través del formulario de inicio de sesión.'
     },
     corruptedToken: {
-        message: 'Cannot reset password.',
-        context: 'Invalid password reset link.',
-        help: 'Check if password reset link has been fully copied or request new password reset via the login form.'
+        message: 'No se puede restablecer la contraseña.',
+        context: 'Enlace de restablecimiento de contraseña no válido.',
+        help: 'Comprueba si el enlace de reinicio de contraseña se ha copiado completamente o solicita un nuevo reinicio de contraseña a través del formulario de inicio de sesión.'
     }
 };
 

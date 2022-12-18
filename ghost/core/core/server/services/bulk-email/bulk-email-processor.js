@@ -13,7 +13,7 @@ const configService = require('../../../shared/config');
 const settingsCache = require('../../../shared/settings-cache');
 
 const messages = {
-    error: 'The email service received an error from mailgun and was unable to send.'
+    error: 'El servicio de correo electrónico recibió un error de Mailgun y no pudo enviar.'
 };
 
 const mailgunClient = new MailgunClient({config: configService, settings: settingsCache});

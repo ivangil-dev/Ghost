@@ -1,8 +1,8 @@
 module.exports = function (data) {
     // Be careful when you indent the email, because whitespaces are visible in emails!
-    return `Hey there,
+    return `Hola,
 
-${data.reporter} has reported the comment below on ${data.postTitle}. This comment will remain visible until you choose to remove it, which can be done directly on the post.
+${data.reporter} ha reportado un comentario en ${data.postTitle}. Este comentario permanecerá visible hasta que elijas eliminarlo, lo que se puede hacer directamente en la publicación.
 
 ${data.memberName} (${data.memberEmail}):
 ${data.commentText}
@@ -11,6 +11,6 @@ ${data.postUrl}#ghost-comments
 
 ---
 
-Sent to ${data.toEmail} from ${data.siteDomain}.
-You can manage your notification preferences at ${data.staffUrl}.`;
+Enviado a ${data.toEmail} de ${data.siteDomain}.
+Puedes administrar tus preferencias de notificación en ${data.staffUrl}.`;
 };

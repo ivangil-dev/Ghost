@@ -1271,7 +1271,7 @@ ${iff(templateSettings.feedbackEnabled, feedbackButtons.getButtonsHeadStyles(tem
                                     <tr>
                                         <td class="${(templateSettings.bodyFontCategory === 'sans_serif') ? `post-content-sans-serif` : `post-content` }">
                                             <!-- POST CONTENT START -->
-                                            ${cleanPost.html}
+                                            ${ cleanPost.excerpt ? cleanPost.excerpt : cleanPost.html }
                                             <!-- POST CONTENT END -->
                                         </td>
                                     </tr>

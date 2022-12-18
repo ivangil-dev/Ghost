@@ -27,14 +27,14 @@ const generateLinks = (postId, uuid, html) => {
 const getTemplate = (accentColor) => {
     const likeButtonHtml = getButtonHtml(
         templateStrings.like,
-        'More like this',
+        'Más como esto',
         accentColor,
         'like-icon',
         'https://static.ghost.org/v5.0.0/images/thumbs-up.png'
     );
     const dislikeButtonHtml = getButtonHtml(
         templateStrings.dislike,
-        'Less like this',
+        'Menos de esto',
         accentColor,
         'dislike-icon',
         'https://static.ghost.org/v5.0.0/images/thumbs-down.png'
@@ -43,7 +43,7 @@ const getTemplate = (accentColor) => {
     return (`
         <tr>
             <td dir="ltr" width="100%" style="background-color: #ffffff; text-align: center; padding: 40px 4px; border-bottom: 1px solid #e5eff5" align="center">
-                <h3 style="text-align: center; margin-bottom: 22px; font-size: 17px; letter-spacing: -0.2px; margin-top: 0 !important;">Give feedback on this post</h3>
+                <h3 style="text-align: center; margin-bottom: 22px; font-size: 17px; letter-spacing: -0.2px; margin-top: 0 !important;">¿Que te parece esta publicación?</h3>
                 <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin: auto; width: auto !important;">
                     <tr>
                         ${likeButtonHtml}

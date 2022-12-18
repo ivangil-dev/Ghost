@@ -2,7 +2,7 @@ const {NotFoundError, InternalServerError} = require('@tryghost/errors');
 const tpl = require('@tryghost/tpl');
 
 const messages = {
-    notFound: '{resource} not found.'
+    notFound: '{resource} no encontrado.'
 };
 
 class IntegrationsService {
