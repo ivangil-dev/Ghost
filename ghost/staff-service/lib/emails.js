@@ -23,7 +23,7 @@ class StaffServiceEmails {
             const to = user.email;
             const memberData = this.getMemberData(member);
 
-            const subject = `🥳 Free member signup: ${memberData.name}`;
+            const subject = `🥳 Nuevo suscriptor: ${memberData.name}`;
 
             const templateData = {
                 memberData,
@@ -54,7 +54,7 @@ class StaffServiceEmails {
             const to = user.email;
             const memberData = this.getMemberData(member);
 
-            const subject = `💸 Paid subscription started: ${memberData.name}`;
+            const subject = `💸 Ha empezado una suscripción de pago: ${memberData.name}`;
 
             const amount = this.getAmount(subscription?.amount);
             const formattedAmount = this.getFormattedAmount({currency: subscription?.currency, amount});
@@ -101,7 +101,7 @@ class StaffServiceEmails {
         for (const user of users) {
             const to = user.email;
             const memberData = this.getMemberData(member);
-            const subject = `⚠️ Cancellation: ${memberData.name}`;
+            const subject = `⚠️ Cancelación: ${memberData.name}`;
 
             const amount = this.getAmount(subscription?.amount);
             const formattedAmount = this.getFormattedAmount({currency: subscription?.currency, amount});
@@ -210,21 +210,21 @@ class StaffServiceEmails {
             let offDuration = '';
 
             if (offer.duration === 'once') {
-                offDuration = ', first payment';
+                offDuration = ', primer pago';
             } else if (offer.duration === 'repeating') {
-                offDuration = `, first ${offer.durationInMonths} months`;
+                offDuration = `, primeros ${offer.durationInMonths} meses`;
             } else if (offer.duration === 'forever') {
-                offDuration = `, forever`;
+                offDuration = `, para siempre`;
             } else if (offer.duration === 'trial') {
                 offDuration = '';
             }
             if (offer.type === 'percent') {
-                offAmount = `${offer.amount}% off`;
+                offAmount = `${offer.amount}% de descuento`;
             } else if (offer.type === 'fixed') {
                 const amount = this.getAmount(offer.amount);
-                offAmount = `${this.getFormattedAmount({currency: offer.currency, amount})} off`;
+                offAmount = `${this.getFormattedAmount({currency: offer.currency, amount})} de descuento`;
             } else if (offer.type === 'trial') {
-                offAmount = `${offer.amount} days free`;
+                offAmount = `${offer.amount} días gratis`;
             }
 
             return {
@@ -247,11 +247,11 @@ class StaffServiceEmails {
 
     get membersAddress() {
         // TODO: get from address of default newsletter?
-        return `noreply@${this.defaultEmailDomain}`;
+        return `hola@${this.defaultEmailDomain}`;
     }
 
     get fromEmailAddress() {
-        return `ghost@${this.defaultEmailDomain}`;
+        return `nocontestar@${this.defaultEmailDomain}`;
     }
 
     extractInitials(name = '') {

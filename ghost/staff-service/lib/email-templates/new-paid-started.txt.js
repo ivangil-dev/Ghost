@@ -1,13 +1,13 @@
 module.exports = function (data) {
     // Be careful when you indent the email, because whitespaces are visible in emails!
     return `
-Congratulations!
+¡Felicidades!
 
-You have a new paid member: "${data.memberData.name}"
+Tienes un nuevo suscriptor de pago: "${data.memberData.name}"
 
 ---
 
-Sent to ${data.toEmail} from ${data.siteDomain}.
-If you would no longer like to receive these notifications you can adjust your settings at ${data.staffUrl}.
+Enviado a ${data.toEmail} desde ${data.siteDomain}.
+Si ya no quieres recibir estas notificaciones, puedes ajustar tu configuración en ${data.staffUrl}.
     `;
 };

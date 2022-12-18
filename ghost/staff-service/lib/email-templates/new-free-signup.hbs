@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>🥳 Free member signup: {{memberData.name}}</title>
+    <title>🥳 Nuevo suscriptor: {{memberData.name}}</title>
     {{> styles}}
   </head>
   <body style="background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.5em; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
@@ -16,7 +16,7 @@
             <!-- START CENTERED CONTAINER -->
             {{#> preview}}
               {{#*inline "content"}}
-                Congratulations! You have a new free member.
+                ¡Felicidades! Tienes un nuevo suscriptor gratuito.
               {{/inline}}
             {{/preview}}
 
@@ -28,8 +28,8 @@
                   <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
                     <tr>
                       <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; vertical-align: top;">
-                        <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 20px; color: #15212A; font-weight: bold; line-height: 25px; margin: 0; margin-bottom: 15px;">Congratulations!</p>
-                          <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; color: #3A464C; font-weight: normal; margin: 0; line-height: 25px; margin-bottom: 32px;">You have a <span style="font-weight: bold; color: #15212A;">new free member</span>.</p>
+                        <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 20px; color: #15212A; font-weight: bold; line-height: 25px; margin: 0; margin-bottom: 15px;">¡Felicidades!</p>
+                          <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; color: #3A464C; font-weight: normal; margin: 0; line-height: 25px; margin-bottom: 32px;">Tienes un <span style="font-weight: bold; color: #15212A;">nuevo suscriptor gratuito.</span>.</p>
 
                         <table width="100" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; table-layout: fixed; width: 100%; min-width: 100%; box-sizing: border-box; background: #F9F9FA; border-radius: 7px;">
                         <tbody>
@@ -47,7 +47,7 @@
                                                 {{#if memberData.showEmail}}
                                                   <p class="text-link" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 13px; padding-right: 8px; padding: 0; margin: 0; color: #394047; font-weight: 400;">{{memberData.email}}</p>
                                                 {{/if}}
-                                                <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 13px; padding-right: 8px; padding: 0; margin: 0; color: #95A1AD;">Created on {{memberData.createdAt}}{{#if memberData.location}} &#8226; {{memberData.location}} {{/if}}
+                                                <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 13px; padding-right: 8px; padding: 0; margin: 0; color: #95A1AD;">Creado el {{memberData.createdAt}}{{#if memberData.location}} &#8226; {{memberData.location}} {{/if}}
                                                 </p>
                                             </td>
                                         </tr>
@@ -64,7 +64,7 @@
                                 <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: auto;">
                                   <tbody>
                                     <tr>
-                                      <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; vertical-align: top; background-color: {{accentColor}}; border-radius: 5px; text-align: center;"> <a href="{{memberData.adminUrl}}" target="_blank" style="display: inline-block; color: #ffffff; background-color: {{accentColor}}; border: solid 1px {{accentColor}}; border-radius: 5px; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 16px; font-weight: normal; margin: 0; padding: 9px 22px 10px; border-color: {{accentColor}};">View member</a></td>
+                                      <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; vertical-align: top; background-color: {{accentColor}}; border-radius: 5px; text-align: center;"> <a href="{{memberData.adminUrl}}" target="_blank" style="display: inline-block; color: #ffffff; background-color: {{accentColor}}; border: solid 1px {{accentColor}}; border-radius: 5px; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 16px; font-weight: normal; margin: 0; padding: 9px 22px 10px; border-color: {{accentColor}};">Ver suscriptor</a></td>
                                     </tr>
                                   </tbody>
                                 </table>
@@ -73,7 +73,7 @@
                           </tbody>
                         </table>
                         <hr/>
-                        <p style="word-break: break-all; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 15px; color: #3A464C; font-weight: normal; margin: 0; line-height: 25px; margin-bottom: 5px;">You can also copy & paste this URL into your browser:</p>
+                        <p style="word-break: break-all; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 15px; color: #3A464C; font-weight: normal; margin: 0; line-height: 25px; margin-bottom: 5px;">También puedes copiar y pegar esta URL en tu navegador:</p>
                         <p class="text-link" style="word-break: break-all; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 15px; line-height: 25px; margin-top:0; color: #3A464C;">{{memberData.adminUrl}}</p>
                       </td>
                     </tr>
@@ -86,7 +86,7 @@
                     </tr>
                     <tr>
                       <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; vertical-align: top; padding-top: 2px">
-                          <p class="small" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; line-height: 18px; font-size: 11px; color: #738A94; font-weight: normal; margin: 0; margin-bottom: 2px;">Don’t want to receive these emails? Manage your preferences <a class="small" href="{{staffUrl}}" style="text-decoration: underline; color: #738A94; font-size: 11px;">here</a>.</p>
+                          <p class="small" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; line-height: 18px; font-size: 11px; color: #738A94; font-weight: normal; margin: 0; margin-bottom: 2px;">¿No quieres recibir estos correos electrónicos? Administra tus preferencias <a class="small" href="{{staffUrl}}" style="text-decoration: underline; color: #738A94; font-size: 11px;">aquí</a>.</p>
                       </td>
                     </tr>
 

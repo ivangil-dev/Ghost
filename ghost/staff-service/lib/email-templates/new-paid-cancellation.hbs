@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>⚠️ Cancellation: {{memberData.name}}</title>
+    <title>⚠️ Cancelación: {{memberData.name}}</title>
     {{> styles}}
   </head>
   <body style="background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.5em; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
@@ -17,9 +17,9 @@
             {{#> preview}}
               {{#*inline "content"}}
                 {{#if subscriptionData.cancellationReason}}
-                  Reason: {{subscriptionData.cancellationReason}}
+                  Motivo: {{subscriptionData.cancellationReason}}
                 {{else}}
-                  A paid member has just canceled their subscription.
+                  Un suscriptor de pago acaba de cancelar su suscripción.
                 {{/if}}
               {{/inline}}
             {{/preview}}
@@ -32,8 +32,8 @@
                   <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
                     <tr>
                       <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; vertical-align: top;">
-                        <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 20px; color: #15212A; font-weight: bold; line-height: 25px; margin: 0; margin-bottom: 15px;">Hey there,</p>
-                          <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; color: #3A464C; font-weight: normal; margin: 0; line-height: 25px; margin-bottom: 32px;">A paid member has just <span style="font-weight: bold; color: #15212A;">canceled their subscription</span>.</p>
+                        <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 20px; color: #15212A; font-weight: bold; line-height: 25px; margin: 0; margin-bottom: 15px;">Hola,</p>
+                          <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; color: #3A464C; font-weight: normal; margin: 0; line-height: 25px; margin-bottom: 32px;">Un suscriptor de pago acaba de <span style="font-weight: bold; color: #15212A;">cancelar su suscripción</span>.</p>
 
                         <table width="100" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; table-layout: fixed; width: 100%; min-width: 100%; box-sizing: border-box; background: #F9F9FA; border-radius: 7px;">
                         <tbody>
@@ -51,7 +51,7 @@
                                                 {{#if memberData.showEmail}}
                                                   <p class="text-link" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 13px; padding-right: 8px; padding: 0; margin: 0; color: #394047; font-weight: 400;">{{memberData.email}}</p>
                                                 {{/if}}
-                                                <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 13px; padding-right: 8px; padding: 0; margin: 0; color: #95A1AD;">Canceled on {{subscriptionData.canceledAt}} </p>
+                                                <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 13px; padding-right: 8px; padding: 0; margin: 0; color: #95A1AD;">Cancelado el {{subscriptionData.canceledAt}} </p>
                                             </td>
                                         </tr>
                                     </table>
@@ -60,20 +60,20 @@
                             <tr>
                                 <td style="vertical-align: top; padding-top: 0; padding-right: 16px; padding-bottom: 16px; padding-left: 16px;">
                                     <hr style="border-bottom: 2px solid #F4F4F5; margin-top: 0; margin-bottom: 16px;" />
-                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 13px; padding-right: 8px; padding: 0; margin: 0; color: #95A1AD;">Tier</p>
+                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 13px; padding-right: 8px; padding: 0; margin: 0; color: #95A1AD;">Tipo</p>
                                     <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; padding-right: 8px; padding: 0; margin: 0; color: #15171A; font-weight: 600;">{{tierData.name}}<span style="font-weight: normal; color:#3A464C;"> - {{tierData.details}}</span></p>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="vertical-align: top; padding-top: 0; padding-right: 16px; padding-bottom: 16px; padding-left: 16px;">
-                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 13px; padding-right: 8px; padding: 0; margin: 0; color: #95A1AD;">Subscription will expire on</p>
+                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 13px; padding-right: 8px; padding: 0; margin: 0; color: #95A1AD;">Suscripción caduca en</p>
                                     <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; padding-right: 8px; padding: 0; margin: 0; color: #15171A; font-weight: 600;">{{subscriptionData.expiryAt}}</p>
                                 </td>
                             </tr>
                             {{#if subscriptionData.cancellationReason}}
                             <tr>
                                 <td style="vertical-align: top; padding-top: 0; padding-right: 16px; padding-bottom: 16px; padding-left: 16px;">
-                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 13px; padding-right: 8px; padding: 0; margin: 0; color: #95A1AD;">Cancellation reason</p>
+                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 13px; padding-right: 8px; padding: 0; margin: 0; color: #95A1AD;">Motivo de cancelación</p>
                                     <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; padding-right: 8px; padding: 0; margin: 0; color: #15171A; font-weight: 400;">{{subscriptionData.cancellationReason}}</p>
                                 </td>
                             </tr>
@@ -88,7 +88,7 @@
                                 <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: auto;">
                                   <tbody>
                                     <tr>
-                                      <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; vertical-align: top; background-color: {{accentColor}}; border-radius: 5px; text-align: center;"> <a href="{{memberData.adminUrl}}" target="_blank" style="display: inline-block; color: #ffffff; background-color: {{accentColor}}; border: solid 1px {{accentColor}}; border-radius: 5px; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 16px; font-weight: normal; margin: 0; padding: 9px 22px 10px; border-color: {{accentColor}};">View member</a> </td>
+                                      <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; vertical-align: top; background-color: {{accentColor}}; border-radius: 5px; text-align: center;"> <a href="{{memberData.adminUrl}}" target="_blank" style="display: inline-block; color: #ffffff; background-color: {{accentColor}}; border: solid 1px {{accentColor}}; border-radius: 5px; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 16px; font-weight: normal; margin: 0; padding: 9px 22px 10px; border-color: {{accentColor}};">Ver suscriptor</a> </td>
                                     </tr>
                                   </tbody>
                                 </table>
@@ -97,7 +97,7 @@
                           </tbody>
                         </table>
                         <hr/>
-                        <p style="word-break: break-all; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 15px; color: #3A464C; font-weight: normal; margin: 0; line-height: 25px; margin-bottom: 5px;">You can also copy & paste this URL into your browser:</p>
+                        <p style="word-break: break-all; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 15px; color: #3A464C; font-weight: normal; margin: 0; line-height: 25px; margin-bottom: 5px;">También puedes copiar y pegar esta URL en tu navegador:</p>
                         <p class="text-link" style="word-break: break-all; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 15px; line-height: 25px; margin-top:0; color: #3A464C;">{{memberData.adminUrl}}</p>
                       </td>
                     </tr>
@@ -105,12 +105,12 @@
                     <!-- START FOOTER -->
                     <tr>
                       <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; vertical-align: top; padding-top: 80px;">
-                        <p class="small" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; line-height: 18px; font-size: 11px; color: #738A94; font-weight: normal; margin: 0; margin-bottom: 2px;">This message was sent from <a class="small" href="{{siteUrl}}" style="text-decoration: underline; color: #738A94; font-size: 11px;">{{siteDomain}}</a> to <a class="small" href="mailto:{{toEmail}}" style="text-decoration: underline; color: #738A94; font-size: 11px;">{{toEmail}}</a></p>
+                        <p class="small" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; line-height: 18px; font-size: 11px; color: #738A94; font-weight: normal; margin: 0; margin-bottom: 2px;">Este mensaje se ha enviado desde <a class="small" href="{{siteUrl}}" style="text-decoration: underline; color: #738A94; font-size: 11px;">{{siteDomain}}</a> hacia <a class="small" href="mailto:{{toEmail}}" style="text-decoration: underline; color: #738A94; font-size: 11px;">{{toEmail}}</a></p>
                       </td>
                     </tr>
                     <tr>
                       <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; vertical-align: top; padding-top: 2px">
-                          <p class="small" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; line-height: 18px; font-size: 11px; color: #738A94; font-weight: normal; margin: 0; margin-bottom: 2px;">Don’t want to receive these emails? Manage your preferences <a class="small" href="{{staffUrl}}" style="text-decoration: underline; color: #738A94; font-size: 11px;">here</a>.</p>
+                          <p class="small" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; line-height: 18px; font-size: 11px; color: #738A94; font-weight: normal; margin: 0; margin-bottom: 2px;">¿No quieres recibir estos correos electrónicos? Administra tus preferencias <a class="small" href="{{staffUrl}}" style="text-decoration: underline; color: #738A94; font-size: 11px;">aquí</a>.</p>
                       </td>
                     </tr>
 
