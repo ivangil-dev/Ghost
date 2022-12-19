@@ -27,6 +27,7 @@
                     <li><strong>Entorno:</strong> <span class="ttc">{{this.config.environment}}</span></li>
                     <li class="gh-env-list-database-type"><strong>Base de datos:</strong> {{this.config.database}}</li>
                     <li><strong>Sistema Email:</strong> {{#if this.config.mail}}{{this.config.mail}}{{else}}Nativo{{/if}}</li>
+                    <li><strong>Programador asignado:</strong> {{this.tecnico}} </li>
                     {{/if}}
                     {{#if (enable-developer-experiments)}}
                     <li><strong>Experimentos para desarrolladores:</strong> <span class="gh-badge">Activados</span></li>
@@ -49,10 +50,10 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://forum.ghost.org/" target="_blank" rel="noopener noreferrer">
+                        <a href="mailto:{{this.mailSoporteT}}" target="_blank" rel="noopener noreferrer">
                             <span>
                                 {{svg-jar "help" class="stroke-middarkgrey hover-stroke"}}
-                                Obtén ayuda con Ghost
+                                Soporte técnico
                             </span>
                         </a>
                     </li>
