@@ -1,7 +1,7 @@
 <div class="gh-accent-color" ...attributes>
     <div class="gh-setting-content">
-        <label class="gh-setting-title" for="accent-color">Accent color</label>
-        <div class="gh-setting-desc">Primary color used in your publication theme</div>
+        <label class="gh-setting-title" for="accent-color">Color acentuado/primario</label>
+        <div class="gh-setting-desc">Color principal que se utilizará en tu sitio</div>
         <div class="w-100 flex flex-column flex-row-ns">
             <GhErrorMessage @errors={{this.settings.errors}} @property="accentColor" class="w-100 red" />
         </div>
@@ -40,7 +40,7 @@
                         class="color-picker"
                         value="{{this.accentColorPickerValue}}"
                         {{on "input" (perform this.debounceUpdateAccentColor)}}
-                        aria-label="Accent color picker"
+                        aria-label="Selector de color primario"
                     >
                 </div>
             </div>

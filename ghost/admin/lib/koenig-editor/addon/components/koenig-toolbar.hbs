@@ -2,7 +2,7 @@
     <li class="ma0 lh-solid">
         <button
             type="button"
-            title="Bold"
+            title="Negrita"
             class="dib dim-lite link h9 w9 nudge-top--1"
             {{on "click" (fn this._toggleMarkup "strong")}}
         >
@@ -12,7 +12,7 @@
     <li class="ma0 lh-solid">
         <button
             type="button"
-            title="Italic"
+            title="Cursiva"
             class="dib dim-lite link h9 w9 nudge-top--1"
             {{on "click" (fn this._toggleMarkup "em")}}
         >
@@ -23,7 +23,7 @@
         <li class="ma0 lh-solid">
             <button
                 type="button"
-                title="Heading 2"
+                title="Cabecera 2"
                 class="dib dim-lite link h9 w9 nudge-top--1"
                 {{on "click" (fn this._toggleHeaderSection "h2")}}
             >
@@ -33,7 +33,7 @@
         <li class="ma0 lh-solid">
             <button
                 type="button"
-                title="Heading 3"
+                title="Cabecera 3"
                 class="dib dim-lite link h9 w9 nudge-top--1"
                 {{on "click" (fn this._toggleHeaderSection "h3")}}
                 data-test-button="toolbar-h3"
@@ -49,7 +49,7 @@
         <li class="ma0 lh-solid">
             <button
                 type="button"
-                title="Quote"
+                title="Cita"
                 class="dib dim-lite link h9 w9 nudge-top--1"
                 {{on "click" this.toggleQuoteSection}}
             >
@@ -66,7 +66,7 @@
     <li class="ma0 lh-solid">
         <button
             type="button"
-            title="Link"
+            title="Enlace"
             class="dib dim-lite link h9 w9 nudge-top--1"
             {{on "click" this._editLink}}
         >
@@ -80,7 +80,7 @@
             <li class="ma0 lh-solid">
                 <button
                     type="button"
-                    title="Create snippet"
+                    title="Crear fragmento/atajo"
                     class="dib dim-lite link h9 w9 nudge-top--1"
                     {{on "click" @addSnippet}}
                 >

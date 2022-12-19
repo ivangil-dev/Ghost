@@ -26,10 +26,10 @@ export default class ThemeManagementService extends Service {
 
     availablePreviewTypes = [{
         name: 'homepage',
-        label: 'Homepage'
+        label: 'Portada'
     }, {
         name: 'post',
-        label: 'Post'
+        label: 'Artículo'
     }];
 
     get latestPublishedPost() {

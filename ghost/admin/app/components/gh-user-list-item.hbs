@@ -3,11 +3,11 @@
     <article class="apps-card-app">
         <div class="apps-card-left">
             <span class="user-list-item-figure" style={{background-image-style this.user.profileImageUrl}}>
-                <span class="hidden">Photo of {{this.user.name}}</span>
+                <span class="hidden">Imagen de {{this.user.name}}</span>
             </span>
             <div class="apps-card-meta">
                 <h3 class="apps-card-app-title">{{this.user.name}}</h3>
-                <p class="apps-card-app-desc">Last seen: {{this.component.lastLoginUTC}}</p>
+                <p class="apps-card-app-desc">Última actividad: {{this.component.lastLoginUTC}}</p>
             </div>
         </div>
         <div class="apps-card-right">
@@ -16,7 +16,7 @@
             {{/if}}
             <div class="apps-configured">
                 {{#if this.user.isSuspended}}
-                    <span class="gh-badge suspended">Suspended</span>
+                    <span class="gh-badge suspended">Desactivado</span>
                 {{else}}
                     {{#unless this.session.user.isAuthorOrContributor}}
                         {{#each this.user.roles as |role|}}
