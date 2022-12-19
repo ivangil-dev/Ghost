@@ -11,16 +11,16 @@ import {tracked} from '@glimmer/tracking';
 const DATE_FORMAT = 'D MMM, YYYY';
 
 const DISPLAY_OPTIONS = [{
-    name: 'MRR',
+    name: 'MRR (Ingresos recurrentes mensuales)',
     value: 'mrr'
 },{
-    name: 'Total members',
+    name: 'Suscriptores totales',
     value: 'total'
 }, {
-    name: 'Paid members',
+    name: 'Suscriptores de pago',
     value: 'paid'
 }, {
-    name: 'Free members',
+    name: 'Suscriptores',
     value: 'free'
 }];
 
@@ -194,16 +194,16 @@ export default class Anchor extends Component {
     get chartTitle() {
         // paid
         if (this.selectedChartDisplay === 'paid') {
-            return 'Paid members';
+            return 'Suscriptores de pago';
         // free
         } else if (this.selectedChartDisplay === 'free') {
-            return 'Free members';
+            return 'Suscriptores';
         // MRR
         } else if (this.selectedChartDisplay === 'mrr') {
-            return 'MRR';
+            return 'MRR (Ingresos recurrentes mensuales)';
         }
         // total
-        return 'Total members';
+        return 'Suscriptores totales';
     }
 
     get chartData() {

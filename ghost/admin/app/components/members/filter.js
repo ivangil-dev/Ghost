@@ -78,7 +78,7 @@ class Filter {
         } else if (options.properties.valueType === 'array') {
             defaultValue = [];
         } else if (options.properties.valueType === 'date') {
-            defaultValue = moment(moment.tz(this.timezone).format('YYYY-MM-DD')).toDate();
+            defaultValue = moment(moment.tz(this.timezone).format('DD-MM-YYYY')).toDate();
         }
 
         this.relation = options.relation ?? defaultRelation;
@@ -90,7 +90,7 @@ class Filter {
 
         if (this.properties.valueType === 'date' && typeof this.value === 'string') {
             // Convert string to Date
-            this.value = moment(moment.tz(moment.utc(options.value), this.timezone).format('YYYY-MM-DD')).toDate();
+            this.value = moment(moment.tz(moment.utc(options.value), this.timezone).format('DD-MM-YYYY')).toDate();
         }
 
         // Validate value
@@ -243,7 +243,7 @@ export default class MembersFilter extends Component {
     }
 
     generateNqlFilter(filters) {
-        const nqlDateFormat = 'YYYY-MM-DD HH:mm:ss';
+        const nqlDateFormat = 'DD-MM-YYYY HH:mm:ss';
 
         let query = '';
         filters.forEach((filter) => {
@@ -263,7 +263,7 @@ export default class MembersFilter extends Component {
             } else if (filterProperty.valueType === 'date') {
                 let filterValue;
 
-                let tzMoment = moment.tz(moment(filter.value).format('YYYY-MM-DD'), this.settings.timezone);
+                let tzMoment = moment.tz(moment(filter.value).format('DD-MM-YYYY'), this.settings.timezone);
 
                 if (relationStr === '>') {
                     tzMoment = tzMoment.set({hour: 23, minute: 59, second: 59});

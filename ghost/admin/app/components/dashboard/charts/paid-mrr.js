@@ -57,7 +57,7 @@ export default class PaidMrr extends Component {
     }
 
     get chartTitle() {
-        return 'MRR';
+        return 'MRR (Ingresos recurrentes mensuales)';
     }
 
     get chartType() {

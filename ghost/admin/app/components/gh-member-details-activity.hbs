@@ -18,7 +18,7 @@
                         {{or @member.name @member.email}}
                         {{#unless (or @member.name @member.email)}}
                             {{#if @member.isNew}}
-                            <span class="midgrey">New member</span>
+                            <span class="midgrey">Nuevo suscriptor</span>
                             {{/if}}
                         {{/unless}}
                     </h3>
@@ -28,7 +28,7 @@
                         {{/if}}
                     </p>
                     <p>
-                        <LinkTo class="gh-member-details-activity-link" @route="member" @model={{@member}}>See all details →</LinkTo>
+                        <LinkTo class="gh-member-details-activity-link" @route="member" @model={{@member}}>Ver todos los detalles →</LinkTo>
                     </p>
                 </div>
             </div>

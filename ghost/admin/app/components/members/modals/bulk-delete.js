@@ -46,7 +46,7 @@ export default class BulkDeleteMembersModal extends Component {
                     const blobUrl = window.URL.createObjectURL(blob);
                     const a = document.createElement('a');
                     a.href = blobUrl;
-                    a.download = `members.${moment().format('YYYY-MM-DD')}.csv`;
+                    a.download = `members.${moment().format('DD-MM-YYYY')}.csv`;
                     document.body.appendChild(a);
 
                     if (config.environment !== 'test') {

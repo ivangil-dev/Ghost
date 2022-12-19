@@ -6,44 +6,44 @@ import {inject as service} from '@ember/service';
 import {tracked} from '@glimmer/tracking';
 
 const TYPES = [{
-    name: 'All posts',
+    name: 'Todos los artículos',
     value: null
 }, {
-    name: 'Draft posts',
+    name: 'Borradores',
     value: 'draft'
 }, {
-    name: 'Published posts',
+    name: 'Publicados',
     value: 'published'
 }, {
-    name: 'Scheduled posts',
+    name: 'Programados',
     value: 'scheduled'
 }, {
-    name: 'Featured posts',
+    name: 'Destacados',
     value: 'featured'
 }];
 
 const VISIBILITIES = [{
-    name: 'All access',
+    name: 'Para todos',
     value: null
 }, {
-    name: 'Public',
+    name: 'Público',
     value: 'public'
 }, {
-    name: 'Members-only',
+    name: 'Suscriptores',
     value: 'members'
 }, {
-    name: 'Paid members-only',
+    name: 'Suscriptores de pago',
     value: 'paid'
 }];
 
 const ORDERS = [{
-    name: 'Newest first',
+    name: 'Nuevos primero',
     value: null
 }, {
-    name: 'Oldest first',
+    name: 'Viejos primero',
     value: 'published_at asc'
 }, {
-    name: 'Recently updated',
+    name: 'Recientemente actualizado',
     value: 'updated_at desc'
 }];
 
@@ -108,7 +108,7 @@ export default class PostsController extends Controller {
             .sort((tagA, tagB) => tagA.name.localeCompare(tagB.name, undefined, {ignorePunctuation: true}));
 
         const options = tags.toArray();
-        options.unshift({name: 'All tags', slug: null});
+        options.unshift({name: 'Todas las etiquetas', slug: null});
 
         return options;
     }
@@ -124,7 +124,7 @@ export default class PostsController extends Controller {
         const authors = this._availableAuthors;
         const options = authors.toArray();
 
-        options.unshift({name: 'All authors', slug: null});
+        options.unshift({name: 'Todos los autores', slug: null});
 
         return options;
     }

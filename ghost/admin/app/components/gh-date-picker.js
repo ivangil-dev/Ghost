@@ -23,7 +23,7 @@ export default class GhDatePicker extends Component {
     @tracked error = null;
 
     get dateFormat() {
-        return 'YYYY-MM-DD';
+        return 'DD-MM-YYYY';
     }
 
     get minDate() {

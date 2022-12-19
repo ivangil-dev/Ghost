@@ -12,7 +12,7 @@
                 <button type="button" {{on "click" (perform this.copyPreviewUrl)}} class="gh-post-preview-url">
                     <span class="green-d1">
                         {{#if this.copyPreviewUrl.isRunning}}
-                            {{svg-jar "check-circle" class="check v-mid mr1 ml2"}} Copied
+                            {{svg-jar "check-circle" class="check v-mid mr1 ml2"}} Copiado
                         {{else}}
                             {{svg-jar "copy" class="w4 ml3 v-mid fill-darkgrey"}}
                         {{/if}}
@@ -25,6 +25,6 @@
         </div>
     </div>
     <div class="gh-browserpreview-iframecontainer">
-        <iframe class="gh-pe-iframe" src={{@post.previewUrl}} title="Desktop browser post preview"></iframe>
+        <iframe class="gh-pe-iframe" src={{@post.previewUrl}} title="Vista previa del artículo en el navegador"></iframe>
     </div>
 </div>

@@ -85,7 +85,7 @@ export default Component.extend({
     description: computed('text', 'altText', function () {
         let altText = this.altText;
 
-        return this.text || (altText ? `Upload image of "${altText}"` : 'Upload an image');
+        return this.text || (altText ? `Cargar imagen de "${altText}"` : 'Cargar imagen');
     }),
 
     progressStyle: computed('uploadPercentage', function () {
@@ -248,9 +248,9 @@ export default Component.extend({
             let validExtensions = this.extensions.join(', .').toUpperCase();
             validExtensions = `.${validExtensions}`;
 
-            message = `The image type you uploaded is not supported. Please use ${validExtensions}`;
+            message = `El tipo de imagen que estás intentando subir no es compatible. Por favor usa ${validExtensions}`;
         } else if (isRequestEntityTooLargeError(error)) {
-            message = 'The image you uploaded was larger than the maximum file size your server allows.';
+            message = 'La imagen que has subido es mayor que el tamaño máximo de archivo que permite el servidor.';
         } else if (!isBlank(error.payload?.errors?.[0]?.message)) {
             message = error.payload.errors[0].message;
         } else {

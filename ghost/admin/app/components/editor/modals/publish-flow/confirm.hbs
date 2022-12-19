@@ -1,36 +1,36 @@
 <div class="gh-publish-title" data-test-publish-flow="confirm">
-    <div class="green">Ready, set, publish.</div>
-    <div>Share it with the world.</div>
+    <div class="green">Preparados, listos, a publicar.</div>
+    <div>Compártelo con el mundo.</div>
 </div>
 <p class="gh-publish-confirmation" data-test-text="confirm-details">
     {{#if @publishOptions.isScheduled}}
         {{#let (moment-site-tz @publishOptions.scheduledAtUTC) as |scheduledAt|}}
-            On
+            En
             <strong>
                 {{moment-format scheduledAt "D MMM YYYY"}}
-                at
+                a
                 {{moment-format scheduledAt "HH:mm"}}
             </strong>
-            your
+            tu
         {{/let}}
     {{else}}
-        Your
+        Tu
     {{/if}}
 
-    {{@publishOptions.post.displayName}}
+    artículo
 
     {{#if this.willPublish}}
-        will be published on your site{{#if this.willEmail}}, and delivered to{{else}}.{{/if}}
+        se publicará en el blog{{#if this.willEmail}} y será entregado a{{else}}.{{/if}}
     {{/if}}
 
     {{#if this.willEmail}}
         {{#unless this.willPublish}}
-            will be delivered to
+            será entregado a
         {{/unless}}
 
         {{#let (members-count-fetcher query=(hash filter=@publishOptions.fullRecipientFilter)) as |countFetcher|}}
             <strong>
-                {{if (eq @recipientType "all") "all"}}
+                {{if (eq @recipientType "all") "todos"}}
 
                 {{format-number countFetcher.count}}
 
@@ -39,15 +39,15 @@
             </strong>
 
             {{#if @publishOptions.onlyDefaultNewsletter}}
-                <strong>{{gh-pluralize countFetcher.count "subscriber" without-count=true}}</strong>{{#if this.willPublish}}.{{else}},{{/if}}
+                <strong>{{gh-pluralize countFetcher.count "suscriptor" without-count=true}}</strong>{{#if this.willPublish}}.{{else}},{{/if}}
             {{else}}
-                <strong>{{gh-pluralize countFetcher.count "subscriber" without-count=true}}</strong>
-                of <strong>{{@publishOptions.newsletter.name}}</strong>{{#if this.willPublish}}.{{else}},{{/if}}
+                <strong>{{gh-pluralize countFetcher.count "suscriptor" without-count=true}}</strong>
+                de <strong>{{@publishOptions.newsletter.name}}</strong>{{#if this.willPublish}}.{{else}},{{/if}}
             {{/if}}
         {{/let}}
 
         {{#unless this.willPublish}}
-            and will <strong>not</strong> be published on your site.
+            y <strong>no</strong> se publicará en el sitio.
         {{/unless}}
     {{/if}}
 </p>
@@ -70,5 +70,5 @@
         @failureClass="gh-btn-red gh-btn-icon"
         data-test-button="confirm-publish"
     />
-    <button type="button" class="gh-btn gh-btn-link gh-btn-large gh-publish-cta-secondary" {{on "click" @cancel}} data-test-button="back-to-options">Back to settings</button>
+    <button type="button" class="gh-btn gh-btn-link gh-btn-large gh-publish-cta-secondary" {{on "click" @cancel}} data-test-button="back-to-options">Volver a la configuración</button>
 </div>

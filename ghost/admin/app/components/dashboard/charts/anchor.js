@@ -10,13 +10,13 @@ import {tracked} from '@glimmer/tracking';
 const DATE_FORMAT = 'D MMM, YYYY';
 
 const DISPLAY_OPTIONS = [{
-    name: 'Total members',
+    name: 'Suscriptores totales',
     value: 'total'
 }, {
-    name: 'Paid members',
+    name: 'Suscriptores de pago',
     value: 'paid'
 }, {
-    name: 'Free members',
+    name: 'Suscriptores',
     value: 'free'
 }];
 
@@ -139,13 +139,13 @@ export default class Anchor extends Component {
     get chartTitle() {
         // paid
         if (this.chartDisplay === 'paid') {
-            return 'Paid members';
+            return 'Suscriptores de pago';
         // free
         } else if (this.chartDisplay === 'free') {
-            return 'Free members';
+            return 'Suscriptores';
         }
         // total
-        return 'Total members';
+        return 'Suscriptores totales';
     }
 
     get chartData() {

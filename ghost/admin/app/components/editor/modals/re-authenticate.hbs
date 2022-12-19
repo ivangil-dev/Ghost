@@ -1,8 +1,8 @@
 <div class="modal-content" data-test-modal="re-authenticate">
     <header class="modal-header">
-        <h1>Please re-authenticate</h1>
+        <h1>Por favor, vuelve a autentificarte</h1>
     </header>
-    <button type="button" class="close" title="Close" {{on "click" @close}}>{{svg-jar "close"}}<span class="hidden">Close</span></button>
+    <button type="button" class="close" title="Cerrar" {{on "click" @close}}>{{svg-jar "close"}}<span class="hidden">Cerrar</span></button>
 
     <div class="modal-body {{if this.authenticationError 'error'}}">
         <form id="login" class="login-form" method="post" novalidate="novalidate" {{on "submit" (perform this.reauthenticateTask)}}>
@@ -10,19 +10,19 @@
                 <input
                     type="password"
                     class="gh-input password"
-                    placeholder="Password"
+                    placeholder="Contraseña"
                     name="password"
                     value={{this.signup.password}}
-                    aria-label="Your password"
+                    aria-label="Tu contraseña"
                     {{on "input" this.setPassword}}
                 />
-            </div>
+            </GhValidationStatusContainer>
 
             <div>
                 <GhTaskButton
                     @type="submit"
-                    @buttonText="Log in"
-                    @runningText="Authenticating"
+                    @buttonText="Iniciar sesión"
+                    @runningText="Autentificando"
                     @showSuccess={{false}}
                     @task={{this.reauthenticateTask}}
                     @class="gh-btn gh-btn-black gh-btn-icon"

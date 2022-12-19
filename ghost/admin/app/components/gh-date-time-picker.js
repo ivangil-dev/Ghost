@@ -7,7 +7,7 @@ import {or, reads} from '@ember/object/computed';
 import {inject as service} from '@ember/service';
 import {tagName} from '@ember-decorators/component';
 
-const DATE_FORMAT = 'YYYY-MM-DD';
+const DATE_FORMAT = 'DD-MM-YYYY';
 
 @classic
 @tagName('')
@@ -50,7 +50,7 @@ export default class GhDateTimePicker extends Component {
             return this._date?.format(DATE_FORMAT);
         }
     }
-    
+
     @computed('_date')
     get localDateValue() {
         // Convert the selected date to a new date in the local timezone, purely to please PowerDatepicker
@@ -163,7 +163,7 @@ export default class GhDateTimePicker extends Component {
         }
     }
 
-    /** 
+    /**
      * This method is called by `PowerDatepicker` when a user selected a date. It is constructed like
      * The difference here is that the Date object that is passed contains the date, but only when viewed in the local timezone.
      * This timezone can differ between the timezone of the blog. We need to convert the date to a new date in the blog's timezone on the same day that was selected.
@@ -213,7 +213,7 @@ export default class GhDateTimePicker extends Component {
     onDateBlur(event) {
         // make sure we're not doing anything just because the calendar dropdown
         // is opened and clicked
-        if (event.target.value === this._date.format('YYYY-MM-DD')) {
+        if (event.target.value === this._date.format('DD-MM-YYYY')) {
             this._resetScratchDate();
             return;
         }
@@ -275,7 +275,7 @@ export default class GhDateTimePicker extends Component {
 
     _setDate(dateStr) {
         if (!dateStr.match(/^\d\d\d\d-\d\d-\d\d$/)) {
-            this._setScratchDateError('Invalid date format, must be YYYY-MM-DD');
+            this._setScratchDateError('Invalid date format, must be DD-MM-YYYY');
             return false;
         }
 

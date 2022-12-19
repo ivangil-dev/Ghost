@@ -14,12 +14,12 @@ export default class CustomThemeSettingsServices extends Service {
 
     KNOWN_GROUPS = [{
         key: 'homepage',
-        name: 'Homepage',
+        name: 'Portada',
         icon: 'house',
         previewType: 'homepage'
     }, {
         key: 'post',
-        name: 'Post',
+        name: 'Artículo',
         icon: 'post',
         previewType: 'post'
     }];
