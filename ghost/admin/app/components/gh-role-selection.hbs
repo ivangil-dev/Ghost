@@ -8,8 +8,8 @@
         <div class="gh-radio {{if (eq @selected.name "Contributor") "active"}}" {{on "click" (fn this.setRole "Contributor")}} data-test-option="Contributor">
             <div class="gh-radio-button"></div>
             <div class="gh-radio-content">
-                <div class="gh-radio-label">Contributor</div>
-                <div class="gh-radio-desc">Can create and edit their own posts, but cannot publish. An Editor needs to approve and publish for them.</div>
+                <div class="gh-radio-label">Colaborador</div>
+                <div class="gh-radio-desc">Puede crear y editar sus propias publicaciones, pero no puede publicar. Un editor o redactor necesita aprobar y publicar el contenido.</div>
             </div>
             <div>
                 {{!-- Inner container collapses height to the SVG so popover can align correctly --}}
@@ -19,12 +19,12 @@
                         <table>
                             <tbody>
                                 <tr>
-                                    <td class="left">Settings</td>
-                                    <td>View and edit own profile</td>
+                                    <td class="left">Opciones</td>
+                                    <td>Ver y editar su propio perfil</td>
                                 </tr>
                                 <tr>
-                                    <td class="left">Posts</td>
-                                    <td>Create and edit own draft posts</td>
+                                    <td class="left">Artículos</td>
+                                    <td>Crear y editar artículos como borradores</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -36,8 +36,8 @@
         <div class="gh-radio {{if (eq @selected.name "Author") "active"}}" {{on "click" (fn this.setRole "Author")}} data-test-option="Author">
             <div class="gh-radio-button"></div>
             <div class="gh-radio-content">
-                <div class="gh-radio-label">Author</div>
-                <div class="gh-radio-desc">A trusted user who can create, edit and publish their own posts, but can’t modify others.</div>
+                <div class="gh-radio-label">Autor</div>
+                <div class="gh-radio-desc">Un usuario de confianza que puede crear, editar y publicar sus propias publicaciones, pero no puede modificar otras.</div>
             </div>
             <div>
                 {{!-- Inner container collapses height to the SVG so popover can align correctly --}}
@@ -47,20 +47,20 @@
                         <table>
                             <tbody>
                                 <tr>
-                                    <td class="left">Settings</td>
-                                    <td>View and edit own profile</td>
+                                    <td class="left">Opciones</td>
+                                    <td>Ver y editar su propio perfil</td>
                                 </tr>
                                 <tr>
-                                    <td class="left">Users</td>
-                                    <td>Browse users</td>
+                                    <td class="left">Usuarios</td>
+                                    <td>Revisar suscriptores</td>
                                 </tr>
                                 <tr>
-                                    <td class="left">Posts</td>
-                                    <td>View, edit and publish own posts, generate slugs</td>
+                                    <td class="left">Artículos</td>
+                                    <td>Ver, editar y publicar artículos propios, generar abreviaturas</td>
                                 </tr>
                                 <tr>
-                                    <td class="left">Tags</td>
-                                    <td>Add tags</td>
+                                    <td class="left">Etiquetas</td>
+                                    <td>Añadir etiquetas</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -72,8 +72,8 @@
         <div class="gh-radio {{if (eq @selected.name "Editor") "active"}}" {{on "click" (fn this.setRole "Editor")}} data-test-option="Editor">
             <div class="gh-radio-button"></div>
             <div class="gh-radio-content">
-                <div class="gh-radio-label">Editor</div>
-                <div class="gh-radio-desc">Can invite and manage other Authors and Contributors, as well as edit and publish any posts on the site.</div>
+                <div class="gh-radio-label">Editor / Redactor</div>
+                <div class="gh-radio-desc">Puede invitar y administrar a otros autores y colaboradores, así como editar y publicar cualquier artículo en el sitio.</div>
             </div>
             <div>
                 {{!-- Inner container collapses height to the SVG so popover can align correctly --}}
@@ -83,20 +83,20 @@
                         <table>
                             <tbody>
                                 <tr>
-                                    <td class="left">Settings</td>
-                                    <td>View and edit own profile</td>
+                                    <td class="left">Opciones</td>
+                                    <td>Ver y editar su propio perfil</td>
                                 </tr>
                                 <tr>
-                                    <td class="left">Users</td>
-                                    <td>Browse users, manage authors and contributors (invite, revoke, delete)</td>
+                                    <td class="left">Usuarios</td>
+                                    <td>Explorar y revisar a los suscriptores, administrar autores y colaboradores (invitar, revocar, eliminar)</td>
                                 </tr>
                                 <tr>
-                                    <td class="left">Posts</td>
-                                    <td>Create, publish, edit and delete all posts, generate slugs</td>
+                                    <td class="left">Artículos</td>
+                                    <td>Crear, publicar, editar y eliminar todos los artículos y generar abreviaturas</td>
                                 </tr>
                                 <tr>
-                                    <td class="left">Tags</td>
-                                    <td>Edit, add and delete tags</td>
+                                    <td class="left">Etiquetas</td>
+                                    <td>Editar, agregar y eliminar etiquetas</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -108,8 +108,8 @@
         <div class="gh-radio {{if (eq @selected.name "Administrator") "active"}}" {{on "click" (fn this.setRole "Administrator")}} data-test-option="Administrator">
             <div class="gh-radio-button"></div>
             <div class="gh-radio-content">
-                <div class="gh-radio-label">Administrator</div>
-                <div class="gh-radio-desc">Trusted staff user who should be able to manage all content and users, as well as site settings and options.</div>
+                <div class="gh-radio-label">Administrador</div>
+                <div class="gh-radio-desc">Usuario de personal de confianza que puede administrar todos los contenidos y usuarios, así como la configuración y opciones del sitio.</div>
             </div>
             <div>
                 {{!-- Inner container collapses height to the SVG so popover can align correctly --}}
@@ -119,28 +119,28 @@
                         <table>
                             <tbody>
                                 <tr>
-                                    <td class="left">Settings</td>
-                                    <td>Access all except Stripe settings</td>
+                                    <td class="left">Opciones</td>
+                                    <td>Acceso completo a todo excepto la configuración de Stripe (Pagos)</td>
                                 </tr>
                                 <tr>
-                                    <td class="left">Users</td>
-                                    <td>Manage all users (invite, revoke, delete)</td>
+                                    <td class="left">Usuarios</td>
+                                    <td>Administrar a todos los suscriptores y usuarios (invitar, revocar, eliminar)</td>
                                 </tr>
                                 <tr>
-                                    <td class="left">Posts</td>
-                                    <td>Create, publish, edit and delete all posts, generate slugs</td>
+                                    <td class="left">Artículos</td>
+                                    <td>Crear, publicar, editar y eliminar todos los artículos y además generar abreviaturas</td>
                                 </tr>
                                 <tr>
-                                    <td class="left">Tags</td>
-                                    <td>Edit, add and delete tags</td>
+                                    <td class="left">Etiquetas</td>
+                                    <td>Editar, añadir y eliminar etiquetas</td>
                                 </tr>
                                 <tr>
-                                    <td class="left">Database</td>
-                                    <td>Import, export and delete all content</td>
+                                    <td class="left">Base de datos</td>
+                                    <td>Importar, exportar y eliminar todo contenido</td>
                                 </tr>
                                 <tr>
                                     <td class="left">Email</td>
-                                    <td>Send newsletters and test emails</td>
+                                    <td>Enviar boletines de email y correos electrónicos de prueba</td>
                                 </tr>
                             </tbody>
                         </table>

@@ -8,19 +8,19 @@
                 <div class="gh-canvas-breadcrumb" data-test-breadcrumb>
                     {{#unless this.session.user.isEditor}}
                         <LinkTo @route="settings">
-                            Settings
+                            Opciones
                         </LinkTo>
                         {{svg-jar "arrow-right-small"}}
                     {{/unless}}
                     <LinkTo @route="settings.staff" data-test-staff-link={{true}}>
-                        Staff
+                        Staff / Equipo
                     </LinkTo>
-                    {{svg-jar "arrow-right-small"}} Profile
+                    {{svg-jar "arrow-right-small"}} Perfil
                 </div>
                 <h2 class="gh-canvas-title" data-test-screen-title>
                     {{this.user.name}}
                     {{#if this.user.isSuspended}}
-                        <span class="gh-badge suspended" data-test-suspended-badge>Suspended</span>
+                        <span class="gh-badge suspended" data-test-suspended-badge>Cuenta desactivada</span>
                     {{/if}}
                 </h2>
             </div>
@@ -29,37 +29,37 @@
         <section class="view-actions">
             {{#if (or this.userActionsAreVisible this.session.user.isAdmin)}}
                 <span class="dropdown">
-                    <GhDropdownButton @dropdownName="user-actions-menu" @classNames="gh-btn gh-btn-white gh-btn-icon icon-only user-actions-cog" @title="User Actions" data-test-user-actions>
+                    <GhDropdownButton @dropdownName="user-actions-menu" @classNames="gh-btn gh-btn-white gh-btn-icon icon-only user-actions-cog" @title="Acciones de usuario" data-test-user-actions>
                         <span>
                             {{svg-jar "settings"}}
-                            <span class="hidden">User Settings</span>
+                            <span class="hidden">Ajustes de usuario</span>
                         </span>
                     </GhDropdownButton>
                     <GhDropdown @name="user-actions-menu" @tagName="ul" @classNames="user-actions-menu dropdown-menu dropdown-align-right">
                         {{#if this.canMakeOwner}}
                             <li>
                                 <button type="button" {{on "click" this.transferOwnership}}>
-                                    Make owner
+                                    Convertir en propietario
                                 </button>
                             </li>
                         {{/if}}
                         {{#if this.deleteUserActionIsVisible}}
                             <li>
                                 <button class="delete" data-test-delete-button type="button" {{on "click" this.deleteUser}}>
-                                    Delete user
+                                    Borrar usuario
                                 </button>
                             </li>
                             {{#if this.user.isActive}}
                                 <li>
                                     <button class="suspend" data-test-suspend-button type="button" {{on "click" this.suspendUser}}>
-                                        Suspend user
+                                        Desactivar usuario
                                     </button>
                                 </li>
                             {{/if}}
                             {{#if this.user.isSuspended}}
                                 <li>
                                     <button class="unsuspend" data-test-unsuspend-button type="button" {{on "click" this.unsuspendUser}}>
-                                        Un-suspend user
+                                        Activar usuario
                                     </button>
                                 </li>
                             {{/if}}
@@ -67,7 +67,7 @@
 
                         <li>
                             <LinkTo @route="settings.history" @query={{hash user=this.user.id}}>
-                                <span>View user activity</span>
+                                <span>Ver actividad del usuario</span>
                             </LinkTo>
                         </li>
                     </GhDropdown>
@@ -79,7 +79,7 @@
     </GhCanvasHeader>
 
     {{#if this.user.isLocked}}
-        <p class="gh-box gh-box-alert">{{svg-jar "info"}}This user account is locked. To sign in, ask this user to perform a password reset on their account.</p>
+        <p class="gh-box gh-box-alert">{{svg-jar "info"}}Esta cuenta de usuario está bloqueada. Para iniciar sesión, pide a este usuario que haga un restablecimiento de contraseña en su cuenta.</p>
     {{/if}}
 
     {{!-- <div class="bg-"> --}}
@@ -88,19 +88,19 @@
             <form id="user-settings-form" class="user-profile" novalidate="novalidate" autocomplete="off" {{on "submit" (perform this.saveTask)}}>
 
                 <figure class="user-cover" style={{background-image-style this.user.coverImageUrl}}>
-                    <button type="button" class="gh-btn gh-btn-default user-cover-edit" {{on "click" this.changeCoverImage}}><span>Change cover</span></button>
+                    <button type="button" class="gh-btn gh-btn-default user-cover-edit" {{on "click" this.changeCoverImage}}><span>Cambiar imagen de portada</span></button>
                 </figure>
 
                 <figure class="user-image bg-whitegrey">
-                    <div id="user-image" class="img" style={{background-image-style this.user.profileImageUrl}}><span class="hidden">{{this.user.name}}"s picture</span></div>
-                    <button type="button" class="edit-user-image" {{on "click" this.changeProfileImage}}>Edit picture</button>
+                    <div id="user-image" class="img" style={{background-image-style this.user.profileImageUrl}}><span class="hidden">Imagen de {{this.user.name}}</span></div>
+                    <button type="button" class="edit-user-image" {{on "click" this.changeProfileImage}}>Editar imagen</button>
                 </figure>
 
                 <div class="pa5">
                     <fieldset class="user-details-bottom">
 
                         <GhFormGroup @errors={{this.user.errors}} @hasValidated={{this.user.hasValidated}} @property="name" class="first-form-group">
-                            <label for="user-name">Full name</label>
+                            <label for="user-name">Nombre completo</label>
                             <input
                                 type="text"
                                 id="user-name"
@@ -114,12 +114,12 @@
                             {{#if this.user.errors.name}}
                                 <GhErrorMessage @errors={{this.user.errors}} @property="name" data-test-error="user-name" />
                             {{else}}
-                                <p>Use your real name so people can recognize you</p>
+                                <p>Usa tu nombre real para que la gente pueda reconocerte</p>
                             {{/if}}
                         </GhFormGroup>
 
                         <GhFormGroup @errors={{this.user.errors}} @hasValidated={{this.user.hasValidated}} @property="slug">
-                            <label for="user-slug">Slug</label>
+                            <label for="user-slug">Abreviatura</label>
                             <input
                                 type="text"
                                 id="user-slug"
@@ -156,19 +156,19 @@
                             {{else}}
                                 <span>{{this.user.email}}</span>
                             {{/if}}
-                            <p>Used for notifications</p>
+                            <p>Se usa para notificaciones</p>
                         </GhFormGroup>
 
                         {{#if this.rolesDropdownIsVisible}}
                             <div class="form-group">
-                                <label for="user-role">Role</label>
+                                <label for="user-role">Rol</label>
                                 <button type="button" class="gh-input tl" {{on "click" this.selectRole}}>{{this.user.role.name}}{{svg-jar "arrow-down-small"}}</button>
-                                <p>What permissions should this user have?</p>
+                                <p>¿Qué permisos debería tener este usuario?</p>
                             </div>
                         {{/if}}
 
                         <GhFormGroup @errors={{this.user.errors}} @hasValidated={{this.user.hasValidated}} @property="location">
-                            <label for="user-location">Location</label>
+                            <label for="user-location">Ubicación</label>
                             <input
                                 type="text"
                                 id="user-location"
@@ -179,11 +179,11 @@
                                 data-test-location-input
                             />
                             <GhErrorMessage @errors={{this.user.errors}} @property="location" data-test-error="user-location" />
-                            <p>Where in the world do you live?</p>
+                            <p>¿En qué parte del mundo vive?</p>
                         </GhFormGroup>
 
                         <GhFormGroup @errors={{this.user.errors}} @hasValidated={{this.user.hasValidated}} @property="website">
-                            <label for="user-website">Website</label>
+                            <label for="user-website">Sitio web</label>
                             <input
                                 type="url"
                                 id="user-website"
@@ -197,11 +197,11 @@
                                 data-test-website-input
                             />
                             <GhErrorMessage @errors={{this.user.errors}} @property="website" data-test-error="user-website" />
-                            <p>Have a website or blog other than this one? Link it!</p>
+                            <p>¿Tienes un sitio web o un blog que no sea este?¡Enlázalo!</p>
                         </GhFormGroup>
 
                         <GhFormGroup @errors={{this.user.errors}} @hasValidated={{this.user.hasValidated}} @property="facebook">
-                            <label for="user-facebook">Facebook profile</label>
+                            <label for="user-facebook">Perfil de Facebook</label>
                             <GhFacebookUrlInput
                                 id="user-facebook"
                                 @scratchValue={{this.scratchValues.facebook}}
@@ -210,11 +210,11 @@
                                 @modelProperty="facebook"
                             />
                             <GhErrorMessage @errors={{this.user.errors}} @property="facebook" data-test-error="user-facebook" />
-                            <p>URL of your personal Facebook Profile</p>
+                            <p>URL de tu perfil personal de Facebook</p>
                         </GhFormGroup>
 
                         <GhFormGroup @errors={{this.user.errors}} @hasValidated={{this.user.hasValidated}} @property="twitter">
-                            <label for="user-twitter">Twitter profile</label>
+                            <label for="user-twitter">Perfil de Twitter</label>
                             <GhTwitterUrlInput
                                 id="user-twitter"
                                 @scratchValue={{this.scratchValues.twitter}}
@@ -223,7 +223,7 @@
                                 @modelProperty="twitter"
                             />
                             <GhErrorMessage @errors={{this.user.errors}} @property="twitter" data-test-error="user-twitter" />
-                            <p>URL of your personal Twitter profile</p>
+                            <p>URL de tu perfil personal de Twitter</p>
                         </GhFormGroup>
 
                         <GhFormGroup @errors={{this.user.errors}} @hasValidated={{this.user.hasValidated}} @property="bio" class="bio-container">
@@ -237,18 +237,18 @@
                             >{{this.user.bio}}</textarea>
                             <GhErrorMessage @errors={{this.user.errors}} @property="bio" data-test-error="user-bio" />
                             <p>
-                                Recommended: <strong>200</strong> characters.
-                                You've used {{gh-count-down-characters this.user.bio 200}}
+                                Recomendado: <strong>200</strong> caracteres.
+                                Llevas utilizados {{gh-count-down-characters this.user.bio 200}}
                             </p>
                         </GhFormGroup>
                         {{#if this.membersUtils.isMembersEnabled}}
                         <div class="user-settings-subgroup">
-                            <h4 class="user-settings-heading">Email notifications</h4>
+                            <h4 class="user-settings-heading">Notificaciones por email</h4>
                             <GhFormGroup @errors={{this.user.errors}} @hasValidated={{this.user.hasValidated}} @property="email">
                                 <div class="user-setting-toggle">
                                     <div>
-                                        <label for="user-email">Comments</label>
-                                        <p>Every time a member comments on one of your posts</p>
+                                        <label for="user-email">Comentarios</label>
+                                        <p>Cada vez que un suscriptor comenta uno de tus artículos</p>
                                     </div>
                                     <div class="for-switch small">
                                         <label class="switch" for="comment-notifications">
@@ -268,8 +268,8 @@
                                 {{#if this.canToggleMemberAlerts}}
                                     <div class="user-setting-toggle">
                                         <div>
-                                            <label for="user-email">New signups</label>
-                                            <p>Every time a new free member signs up</p>
+                                            <label for="user-email">Nuevos registros</label>
+                                            <p>Cada vez que se registra una nueva suscripción gratuita</p>
                                         </div>
                                         <div class="for-switch small">
                                             <label class="switch" for="free-signup-notifications" data-test-label="free-signup-notifications">
@@ -288,8 +288,8 @@
                                     {{#if this.membersUtils.paidMembersEnabled}}
                                     <div class="user-setting-toggle">
                                         <div>
-                                            <label for="user-email">New paid members</label>
-                                            <p>Every time a member starts a new paid subscription</p>
+                                            <label for="user-email">Nuevos suscriptores de pago</label>
+                                            <p>Cada vez que alguien empieza una suscripción de pago</p>
                                         </div>
                                         <div class="for-switch small">
                                             <label class="switch" for="paid-started-notifications" data-test-label="paid-started-notifications">
@@ -307,8 +307,8 @@
                                     </div>
                                     <div class="user-setting-toggle">
                                         <div>
-                                            <label for="user-email">Paid member cancellations</label>
-                                            <p>Every time a member cancels their paid subscription</p>
+                                            <label for="user-email">Cancelaciones de pagos</label>
+                                            <p>Cada vez que alguien cancela su suscripción de pago</p>
                                         </div>
                                         <div class="for-switch small">
                                             <label class="switch" for="paid-canceled-notifications" data-test-label="paid-canceled-notifications">
@@ -342,7 +342,7 @@
                         <fieldset class="user-details-form">
                             {{#if this.isOwnProfile}}
                                 <GhFormGroup @errors={{this.user.errors}} @hasValidated={{this.user.hasValidated}} @property="password">
-                                    <label for="user-password-old">Old password</label>
+                                    <label for="user-password-old">Antigua contraseña</label>
                                     <input
                                         type="password"
                                         id="user-password-old"
@@ -358,7 +358,7 @@
                             {{/if}}
 
                             <GhFormGroup @errors={{this.user.errors}} @hasValidated={{this.user.hasValidated}} @property="newPassword">
-                                <label for="user-password-new">New password</label>
+                                <label for="user-password-new">Nueva contraseña</label>
                                 <input
                                     type="password"
                                     id="user-password-new"
@@ -373,7 +373,7 @@
                             </GhFormGroup>
 
                             <GhFormGroup @errors={{this.user.errors}} @hasValidated={{this.user.hasValidated}} @property="ne2Password">
-                                <label for="user-new-password-verification">Verify password</label>
+                                <label for="user-new-password-verification">Comprobar/verificar contraseña</label>
                                 <input
                                     type="password"
                                     id="user-new-password-verification"
@@ -387,7 +387,7 @@
                             </GhFormGroup>
 
                             <div class="form-group">
-                                <GhTaskButton @buttonText="Change Password" @idleClass="gh-btn-red" @class="gh-btn gh-btn-icon button-change-password" @task={{this.saveNewPasswordTask}} data-test-save-pw-button="true" />
+                                <GhTaskButton @buttonText="Cambiar contraseña" @idleClass="gh-btn-red" @class="gh-btn gh-btn-icon button-change-password" @task={{this.saveNewPasswordTask}} data-test-save-pw-button="true" />
                             </div>
                         </fieldset>
                     </div>
@@ -399,7 +399,7 @@
                     <div class="pa5">
                         <fieldset class="user-details-form">
                             <GhFormGroup>
-                                <label for="personal-token">Staff access token</label>
+                                <label for="personal-token">Token de acceso como staff</label>
                                 <div class="relative flex items-center {{unless this.copyContentKeyTask.isRunning "hide-child-instant"}}">
                                     <input
                                         type="text"
@@ -410,23 +410,23 @@
                                         {{select-on-click}}
                                     />
                                     <div class="app-api-personal-token-buttons child">
-                                        <button type="button" class="app-button-regenerate" {{on "click" this.regenerateStaffToken}} data-tooltip="Regenerate">
+                                        <button type="button" class="app-button-regenerate" {{on "click" this.regenerateStaffToken}} data-tooltip="Generar uno nuevo">
                                             {{svg-jar "reload" class="w4 h4 stroke-midgrey"}}
                                         </button>
                                         <button type="button" class="app-button-copy" {{on "click" (perform this.copyContentKeyTask)}}>
                                             {{#if this.copyContentKeyTask.isRunning}}
-                                                {{svg-jar "check-circle" class="w3 v-mid mr2 stroke-white"}} Copied
+                                                {{svg-jar "check-circle" class="w3 v-mid mr2 stroke-white"}} Copiado
                                             {{else}}
-                                                Copy
+                                                Copiar
                                             {{/if}}
                                         </button>
                                     </div>
                                 </div>
                                 <p>
-                                    Give apps personal access without sharing your email/password.
+                                    Da acceso a tu cuenta y tus privilegios a las aplicaciones sin compartir tu correo electrónico/contraseña.
                                 </p>
                                 {{#if this.personalTokenRegenerated}}
-                                    <p class="green">Staff access token was successfully regenerated </p>
+                                    <p class="green">El token de acceso como Staff se ha vuelto a generar con éxito </p>
                                 {{/if}}
                             </GhFormGroup>
                         </fieldset>

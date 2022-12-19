@@ -104,7 +104,7 @@ export default class CustomThemeSettingsServices extends Service {
         if (siteWideSettings.length) {
             groups.push({
                 key: 'site-wide',
-                name: 'Site-wide',
+                name: 'En todo el sitio',
                 icon: 'view-site',
                 settings: siteWideSettings
             });

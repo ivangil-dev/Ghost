@@ -6,8 +6,8 @@
         as |uploader|
     >
     <div class="gh-setting-content">
-        <label class="gh-setting-title" for="publication-icon">Publication icon</label>
-        <div class="gh-setting-desc">A square, social icon, at least 60x60px</div>
+        <label class="gh-setting-title" for="publication-icon">Icono</label>
+        <div class="gh-setting-desc">Un icono social cuadrado, al menos 60x60px</div>
         {{#each uploader.errors as |error|}}
             <div class="gh-setting-error" data-test-error="icon">{{or error.context error.message}}</div>
         {{/each}}
@@ -31,7 +31,7 @@
             </div>
         {{else}}
             <button id="publication-icon" type="button" class="gh-btn gh-btn-white self-center" {{on "click" uploader.triggerFileDialog}} data-test-image-upload-btn="icon">
-                <span>Upload icon</span>
+                <span>Subir icono</span>
             </button>
         {{/if}}
         <div class="dn">

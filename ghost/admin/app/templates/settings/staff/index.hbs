@@ -4,13 +4,13 @@
             {{#unless this.session.user.isEditor}}
                 <div class="gh-canvas-breadcrumb">
                     <LinkTo @route="settings" data-test-breadcrumb>
-                        Settings
+                        Opciones
                     </LinkTo>
-                    {{svg-jar "arrow-right-small"}} Staff
+                    {{svg-jar "arrow-right-small"}} Staff / Equipo
                 </div>
             {{/unless}}
             <h2 class="gh-canvas-title" data-test-screen-title>
-                Staff
+                Staff / Equipo
             </h2>
         </div>
 
@@ -27,7 +27,7 @@
                         >
                             <span>
                                 {{svg-jar "settings"}}
-                                <span class="hidden">Actions</span>
+                                <span class="hidden">Acciones</span>
                             </span>
                         </GhDropdownButton>
                         <GhDropdown
@@ -37,13 +37,13 @@
                         >
                             <li>
                                 <button type="button" {{on "click" this.toggleResetAllPasswordsModal}}>
-                                    <span>Reset all passwords</span>
+                                    <span>Restablecer todas las contraseñas</span>
                                 </button>
                             </li>
                         </GhDropdown>
                     </span>
                 {{/if}}
-                <button class="gh-btn gh-btn-primary" data-test-button="invite-staff-user" type="button" {{on "click" this.toggleInviteUserModal}}><span>Invite people</span></button>
+                <button class="gh-btn gh-btn-primary" data-test-button="invite-staff-user" type="button" {{on "click" this.toggleInviteUserModal}}><span>Invitar gente</span></button>
             </section>
         {{/unless}}
     </GhCanvasHeader>
@@ -117,7 +117,7 @@
     {{/unless}}
 
     <section class="gh-main-section gh-active-users {{unless this.invites "apps-first-header"}}" data-test-active-users>
-        <h4 class="gh-main-section-header small">Active users</h4>
+        <h4 class="gh-main-section-header small">Usuarios activos</h4>
         <div class="apps-grid">
             {{!-- For authors/contributors, only show their own user --}}
             {{#if this.currentUser.isAuthorOrContributor}}
@@ -143,7 +143,7 @@
     {{!-- Don't show if we have no suspended users or logged in as an author --}}
     {{#if (and this.suspendedUsers (not this.currentUser.isAuthorOrContributor))}}
     <section class="apps-grid-container gh-active-users" data-test-suspended-users>
-        <span class="apps-grid-title">Suspended users</span>
+        <span class="apps-grid-title">Usuarios desactivados</span>
         <div class="apps-grid">
             {{#each this.suspendedUsers key="id" as |user|}}
                 <GhUserActive @user={{user}} as |component|>

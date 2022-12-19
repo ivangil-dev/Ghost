@@ -1,114 +1,114 @@
 <section class="gh-canvas">
     <GhCanvasHeader class="gh-canvas-header">
         <h2 class="gh-canvas-title" data-test-screen-title>
-            Settings
+            Opciones
         </h2>
         <section class="view-actions">
             {{#if this.upgradeStatus.message}}
-                <button type="button" class="gh-btn gh-btn-with-notification" {{on "click" (fn this.openAbout null)}} data-tooltip="Update available!">
-                    <span>About Ghost</span>
+                <button type="button" class="gh-btn gh-btn-with-notification" {{on "click" (fn this.openAbout null)}} data-tooltip="Actualización disponible!">
+                    <span>Acerca de Ghost</span>
                     <span class="gh-btn-notification-dot green"></span>
                 </button>
             {{else}}
                 <button type="button" class="gh-btn gh-btn-with-notification" {{on "click" (fn this.openAbout null)}}>
-                    <span>About Ghost</span>
+                    <span>Acerca de Ghost</span>
                 </button>
             {{/if}}
         </section>
     </GhCanvasHeader>
 
     <section class="view-container">
-        <div class="gh-setting-header gh-first-header">Website</div>
+        <div class="gh-setting-header gh-first-header">Sitio web</div>
         <div class="gh-settings-main-grid">
             <LinkTo class="gh-setting-group" @route="settings.general" data-test-nav="general">
                 <span class="yellow">{{svg-jar "settings"}}</span>
                 <div>
-                    <h4>General</h4>
-                    <p>Basic publication details and site metadata</p>
+                    <h4>Generales</h4>
+                    <p>Detalles básicos de publicación y metadatos del sitio</p>
                 </div>
             </LinkTo>
             <LinkTo class="gh-setting-group" @route="settings.design" data-test-nav="design">
                 <span class="blue">{{svg-jar "paint-palette"}}</span>
                 <div>
-                    <h4>Design</h4>
-                    <p>Customize your site and manage themes</p>
+                    <h4>Diseño</h4>
+                    <p>Personaliza el sitio y administra los temas</p>
                 </div>
             </LinkTo>
             <LinkTo class="gh-setting-group" @route="settings.navigation" data-test-nav="navigation">
                 <span class="pink">{{svg-jar "compass"}}</span>
                 <div>
-                    <h4>Navigation</h4>
-                    <p>Set up primary and secondary menus</p>
+                    <h4>Navegación</h4>
+                    <p>Edita el menú principal y el secundario</p>
                 </div>
             </LinkTo>
 
             <LinkTo class="gh-setting-group" @route="settings.staff" data-test-nav="staff">
                 <span class="green">{{svg-jar "staff"}}</span>
                 <div>
-                    <h4>Staff</h4>
-                    <p>Manage authors, editor and collaborators</p>
+                    <h4>Staff / Equipo</h4>
+                    <p>Gestiona autores, editores, colaboradores y administradores</p>
                 </div>
             </LinkTo>
         </div>
 
-        <div class="gh-setting-header">Members</div>
+        <div class="gh-setting-header">Suscriptores</div>
         <div class="gh-settings-main-grid">
             <LinkTo class="gh-setting-group" @route="settings.membership" data-test-nav="members-membership">
                 <span class="blue">{{svg-jar "members"}}</span>
                 <div>
-                    <h4>Membership</h4>
-                    <p>Access, subscription, and pricing options</p>
+                    <h4>Suscripciones</h4>
+                    <p>Acceso, suscripción y ajustes de precio</p>
                 </div>
             </LinkTo>
             <LinkTo class="gh-setting-group" @route="settings.newsletters" data-test-nav="members-email">
                 <span class="yellow">{{svg-jar "email-stroke"}}</span>
                 <div>
-                    <h4>Email newsletter</h4>
-                    <p>Customize emails and set email addresses</p>
+                    <h4>Boletín de email</h4>
+                    <p>Personalizar correos electrónicos y establecer direcciones de correo electrónico</p>
                 </div>
             </LinkTo>
             {{#if (feature 'sourceAttribution')}}
             <LinkTo class="gh-setting-group" @route="settings.analytics" data-test-nav="members-analytics">
                 <span class="green">{{svg-jar "chart"}}</span>
                 <div>
-                    <h4>Analytics</h4>
-                    <p>Decide what data you collect</p>
+                    <h4>Analíticas</h4>
+                    <p>Decide la información que se recoge</p>
                 </div>
             </LinkTo>
             {{/if}}
         </div>
 
-        <div class="gh-setting-header">Advanced</div>
+        <div class="gh-setting-header">Avanzado</div>
         <div class="gh-settings-main-grid">
             <LinkTo class="gh-setting-group" @route="settings.integrations" data-test-nav="integrations">
                 <span class="yellow">{{svg-jar "module"}}</span>
                 <div>
-                    <h4>Integrations</h4>
-                    <p>Make Ghost work with apps and tools</p>
+                    <h4>Integraciones</h4>
+                    <p>Haz que Ghost trabaje con otras aplicaciones y herramientas</p>
                 </div>
             </LinkTo>
 
             <LinkTo class="gh-setting-group" @route="settings.code-injection" data-test-nav="code-injection">
                 <span class="green">{{svg-jar "brackets"}}</span>
                 <div>
-                    <h4>Code injection</h4>
-                    <p>Add code to your publication</p>
+                    <h4>Inyectar código</h4>
+                    <p>Añade código a tu sitio</p>
                 </div>
             </LinkTo>
 
             <LinkTo class="gh-setting-group" @route="settings.labs" data-test-nav="labs">
                 <span class="blue">{{svg-jar "labs"}}</span>
                 <div>
-                    <h4>Labs</h4>
-                    <p>Testing ground for new features</p>
+                    <h4>Laboratorio</h4>
+                    <p>Terreno de pruebas para nuevas características</p>
                 </div>
             </LinkTo>
 
             <LinkTo class="gh-setting-group" @route="settings.history" data-test-nav="history">
                 <span class="pink">{{svg-jar "calendar-stroke"}}</span>
                 <div>
-                    <h4>History</h4>
-                    <p>View system event log</p>
+                    <h4>Historial</h4>
+                    <p>Ver registro de eventos del sistema</p>
                 </div>
             </LinkTo>
         </div>
