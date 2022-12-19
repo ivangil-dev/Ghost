@@ -7,7 +7,7 @@ const setup = (overrides) => {
         <MagicLinkPage />
     );
     const inboxText = utils.getByText(/Now check your email!/i);
-    const closeBtn = utils.queryByRole('button', {name: 'Close'});
+    const closeBtn = utils.queryByRole('button', {name: 'Cerrar'});
     return {
         inboxText,
         closeBtn,

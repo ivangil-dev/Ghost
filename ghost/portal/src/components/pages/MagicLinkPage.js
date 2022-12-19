@@ -32,7 +32,7 @@ export default class MagicLinkPage extends React.Component {
 
         if (this.context.lastPage === 'signup') {
             popupTitle = `Ahora comprueba tu email!`;
-            popupDescription = `Para completar el registro, haz clic en el enlace de confirmación en tu bandeja de entrada.S i no llega en 3 minutos, ¡revisa tu carpeta de spam!`;
+            popupDescription = `Para completar el registro, haz clic en el enlace de confirmación en tu bandeja de entrada. Si no llega en 3 minutos, ¡revisa tu carpeta de spam!`;
         }
 
         return (
@@ -64,7 +64,7 @@ export default class MagicLinkPage extends React.Component {
     }
 
     renderCloseButton() {
-        const label = 'Close';
+        const label = 'Cerrar';
         return (
             <ActionButton
                 style={{width: '100%'}}

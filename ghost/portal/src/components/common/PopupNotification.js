@@ -106,7 +106,7 @@ const CloseButton = ({hide = false, onClose}) => {
         return null;
     }
     return (
-        <CloseIcon className='closeicon' alt='Close' onClick={onClose} />
+        <CloseIcon className='closeicon' alt='Cerrar' onClick={onClose} />
     );
 };
 

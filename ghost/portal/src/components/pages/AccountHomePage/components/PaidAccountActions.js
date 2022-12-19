@@ -30,8 +30,8 @@ const PaidAccountActions = () => {
         } = subscription || {};
         let label = '';
         if (price) {
-            const {amount = 0, currency, interval} = price;
-            label = `${Intl.NumberFormat('en', {currency, style: 'currency'}).format(amount / 100)}/${interval}`;
+            const {amount = 0, interval} = price;
+            label = `${Intl.NumberFormat('es-ES', {currency: 'EUR' , style: 'currency'}).format(amount / 100)}/${(interval === 'year' ? 'año' : 'mes')}`;
         }
         let offerLabelStr = getOfferLabel({price, offer, subscriptionStartDate: startDate});
         const compExpiry = getCompExpiry({member});
