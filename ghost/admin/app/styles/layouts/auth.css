@@ -28,7 +28,7 @@
     letter-spacing: -.025em;
     line-height: 1.15em;
     font-weight: 700;
-    color: var(--black);
+    color: var(--white);
     max-width: 620px;
     width: 100%;
     text-align: center;
@@ -80,6 +80,7 @@
 }
 
 .gh-signin label {
+    color: white;
     font-size: 1.3rem;
     font-weight: 600 !important;
 }
@@ -148,3 +149,56 @@
 .gh-auth-email p {
     color: var(--midgrey);
 }
+
+/* Custom login omniscientia.es */
+/* ----------------------------------------------------------- */
+.unauthenticated-route .gh-flow {
+    background: linear-gradient(315deg,#7606f7,#000000)
+}
+.fondo_signin {
+    position: absolute;
+}
+.bola1, .bola2, .bola3 {
+    display: block;
+    filter: blur(205px);
+    margin: -30px -20px;
+    border-radius: 50%;
+    animation: scale-up-center 7s cubic-bezier(0.39, 0.575, 0.565, 1) infinite both;
+    position: absolute;
+}
+.bola1 {
+    left: 20px;
+    background-color: #7700ff;
+    width: 110vw;
+    height: 80vh;
+}
+.bola2 {
+    left: -18px;
+    animation-delay: 2s;
+    background-color: #ac64ff;
+    width: 40vw;
+    height: 80vh;
+}
+.bola3 {
+    width: 40vw;
+    height: 80vh;
+    left: 130px;
+    bottom: -25px;
+    animation-delay: 4s;
+    background-color: #b3dcff;
+}
+
+@keyframes scale-up-center {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
