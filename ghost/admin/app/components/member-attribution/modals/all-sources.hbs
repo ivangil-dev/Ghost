@@ -1,16 +1,16 @@
 <div class="modal-content gh-all-sources">
     <header class="modal-header" data-test-modal="all-source-attributions">
-        <h1>All sources</h1>
+        <h1>Todas las fuentes</h1>
     </header>
-    <button class="close" type="button" title="Close" {{on "click" @close}}>{{svg-jar "close"}}<span class="hidden">Close</span></button>
+    <button class="close" type="button" title="Cerrar" {{on "click" @close}}>{{svg-jar "close"}}<span class="hidden">Cerrar</span></button>
 
     <div class="modal-body pa">
         <div>
             <div class="gh-dashboard-list-header">
-                <div class="gh-dashboard-list-title">Sources</div>
-                <div class="gh-dashboard-list-title">Free signups</div>
+                <div class="gh-dashboard-list-title">Fuentes</div>
+                <div class="gh-dashboard-list-title">Suscripciones gratuitas</div>
                     {{#if this.membersUtils.paidMembersEnabled}}
-                        <div class="gh-dashboard-list-title"><span class="hide-when-small">Paid </span>Conversions</div>
+                        <div class="gh-dashboard-list-title"><span class="hide-when-small">Conversiones a </span>Pago</div>
                     {{/if}}
             </div>
             <div class="gh-dashboard-list-body">
@@ -43,7 +43,7 @@
                         </div>
                     {{else}}
                         <div class="gh-dashboard-list-empty">
-                            <p>No sources.</p>
+                            <p>No hay fuentes.</p>
                         </div>
                     {{/each}}
                 </div>
@@ -53,7 +53,7 @@
     </div>
     {{!-- {{#if @data.unavailableSource}}
     <div class="modal-footer">
-        <p class="gh-dashboard-attribution-footnote"><sup>*</sup>{{if (eq @data.sortColumn "paid") "Paid subscriptions" "Members"}} created during this time period that do not have attribution data associated with them.</p>
+        <p class="gh-dashboard-attribution-footnote"><sup>*</sup>{{if (eq @data.sortColumn "paid") "Suscriptores de pago" "Suscriptores"}} creados durante este período de tiempo que no tienen datos de atribución asociados con ellos.</p>
     </div>
     {{/if}} --}}
 </div>

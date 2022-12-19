@@ -1,16 +1,16 @@
 <section class="gh-dashboard-section gh-dashboard-attribution">
     <article class="gh-dashboard-box" {{did-insert this.loadData}}>
         {{#if (is-empty this.sources)}}
-            <h3 class="gh-dashboard-metric-label">Top sources</h3>
+            <h3 class="gh-dashboard-metric-label">Top fuentes de entrada</h3>
             <div class="attribution-list-empty">
                 {{svg-jar "members-outline"}}
-                <h4>No new members in the past {{this.chartPeriod}} days</h4>
-                <p>Once someone signs up, you’ll be able to see where they came from here.</p>
+                <h4>No hay nuevos miembros hace {{this.chartPeriod}} días</h4>
+                <p>Una vez que alguien se suscriba, podrás ver de dónde vienen de aquí.</p>
             </div>
         {{else}}
         <div class="gh-dashboard-attribution-grid">
             <div>
-                <h3 class="gh-dashboard-metric-label">Top sources</h3>
+                <h3 class="gh-dashboard-metric-label">Top fuentes de entrada</h3>
                 <MemberAttribution::SourceAttributionTable
                     @sources={{this.sources}}
                     @sortColumn={{this.selectedSortColumn}}
@@ -24,7 +24,7 @@
                         @sources={{this.chartSources}}
                         @sortColumn={{this.selectedSortColumn}}
                     />
-                    <span class="gh-dashboard-attribution-chart-label">{{if (eq this.selectedSortColumn "signups") "Free" "Paid"}}</span>
+                    <span class="gh-dashboard-attribution-chart-label">{{if (eq this.selectedSortColumn "signups") "Gratis" "De pago"}}</span>
                 </div>
                 <div id="gh-dashboard-attribution-tooltip" class="gh-dashboard-tooltip">
                     <div class="gh-dashboard-tooltip-value">

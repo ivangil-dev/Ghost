@@ -4,10 +4,10 @@ import {inject as service} from '@ember/service';
 import {tracked} from '@glimmer/tracking';
 
 const DISPLAY_OPTIONS = [{
-    name: 'Free signups',
+    name: 'Suscripciones gratuitas',
     value: 'signups'
 }, {
-    name: 'Paid conversions',
+    name: 'Conversión a pago',
     value: 'paid'
 }];
 

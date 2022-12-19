@@ -7,7 +7,7 @@ import {getSymbol} from 'ghost-admin/utils/currency';
 import {inject as service} from '@ember/service';
 import {tracked} from '@glimmer/tracking';
 
-const DATE_FORMAT = 'D MMM, YYYY';
+const DATE_FORMAT = 'DD MM, YYYY';
 
 const DISPLAY_OPTIONS = [{
     name: 'Suscriptores totales',
@@ -218,7 +218,7 @@ export default class Anchor extends Component {
             return '';
         }
 
-        const firstCurrency = this.dashboardStats.mrrStats[0] ? this.dashboardStats.mrrStats[0].currency : 'usd';
+        const firstCurrency = this.dashboardStats.mrrStats[0] ? this.dashboardStats.mrrStats[0].currency : 'EUR';
         return getSymbol(firstCurrency);
     }
 

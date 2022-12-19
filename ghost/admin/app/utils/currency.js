@@ -124,7 +124,7 @@ export function getSymbol(currency) {
     if (!currency) {
         return '';
     }
-    return Intl.NumberFormat('en', {currency, style: 'currency'}).format(0).replace(/[\d\s.]/g, '');
+    return Intl.NumberFormat('es-ES', {currency, style: 'currency'}).format(0).replace(/[\d\s.]/g, '');
 }
 
 // We currently only support decimal currencies

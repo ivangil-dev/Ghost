@@ -5,7 +5,7 @@ import moment from 'moment-timezone';
 import {action} from '@ember/object';
 import {inject as service} from '@ember/service';
 
-const DATE_FORMAT = 'D MMM, YYYY';
+const DATE_FORMAT = 'DD MM, YYYY';
 
 // Custom ChartJS rounded rectangle
 Chart.elements.RoundedRectangle = Chart.elements.Rectangle.extend({
@@ -188,7 +188,7 @@ export default class PaidBreakdown extends Component {
     }
 
     get chartTitle() {
-        return 'Paid subscribers';
+        return 'Suscriptores de pago';
     }
 
     get chartType() {

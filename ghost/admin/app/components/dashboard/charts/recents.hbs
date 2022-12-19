@@ -3,24 +3,24 @@
         <div class="gh-dashboard-tabs">
             <button type="button" class="gh-dashboard-tab {{if this.postsTabSelected 'is-selected'}}" {{on "click" this.changeTabToPosts}}>
                 <Dashboard::Parts::Metric
-                    @label="Recent posts" />
+                    @label="Artículos recientes" />
             </button>
             {{#if this.areMembersEnabled}}
                 <button type="button" class="gh-dashboard-tab {{if this.activityTabSelected 'is-selected'}}" {{on "click" this.changeTabToActivity}}>
                     <Dashboard::Parts::Metric
-                        @label="Member activity" />
+                        @label="Actividad de suscriptores" />
                 </button>
             {{/if}}
         </div>
         {{#if this.postsTabSelected}}
             <div class="gh-dashboard-recents-posts gh-dashboard-list {{unless this.areNewslettersEnabled 'is-single'}}">
                 <div class="gh-dashboard-list-header">
-                    <div class="gh-dashboard-list-title">Title</div>
+                    <div class="gh-dashboard-list-title">Título</div>
                     {{#if this.areNewslettersEnabled}}
-                        <div class="gh-dashboard-list-title">Sent</div>
-                        <div class="gh-dashboard-list-title">Open rate</div>
+                        <div class="gh-dashboard-list-title">Enviado</div>
+                        <div class="gh-dashboard-list-title">Tasa de apertura</div>
                     {{else}}
-                        <div class="gh-dashboard-list-title">Published</div>
+                        <div class="gh-dashboard-list-title">Publicado</div>
                     {{/if}}
                 </div>
                 <div class="gh-dashboard-list-body">
@@ -57,26 +57,26 @@
                         </LinkTo>
                     {{else}}
                         <div class="gh-dashboard-list-empty">
-                            <p>No published posts yet.</p>
+                            <p>No hay artículos publicados todavía.</p>
                         </div>
                     {{/each}}
                 </div>
                 <div class="gh-dashboard-list-footer">
-                    <LinkTo @route="posts" @query={{reset-query-params "posts"}}>See all posts &rarr;</LinkTo>
+                    <LinkTo @route="posts" @query={{reset-query-params "posts"}}>Ver todos los artículos &rarr;</LinkTo>
                 </div>
             </div>
         {{else}}
             <div class="gh-dashboard-recents-activity gh-dashboard-list" data-test-dashboard-member-activity>
                 <div class="gh-dashboard-list-header">
-                    <div class="gh-dashboard-list-title">Member</div>
-                    <div class="gh-dashboard-list-title">Event</div>
-                    <div class="gh-dashboard-list-title">Time</div>
+                    <div class="gh-dashboard-list-title">Suscriptor</div>
+                    <div class="gh-dashboard-list-title">Evento</div>
+                    <div class="gh-dashboard-list-title">Fecha</div>
                 </div>
                 <div class="gh-dashboard-list-body">
                     {{#let (members-event-fetcher filter=(members-event-filter excludeEmailEvents=true excludedEvents=this.excludedEventTypes) pageSize=5) as |eventsFetcher|}}
                         {{#if eventsFetcher.isError}}
                             <div class="gh-dashboard-list-error">
-                                <p>There was an error loading events</p>
+                                <p>Ha ocurrido un error al cargar los eventos</p>
                                 {{#if eventsFetcher.errorMessage}}
                                     <code>{{eventsFetcher.errorMessage}}</code>
                                 {{/if}}
@@ -122,14 +122,14 @@
                                 {{/each}}
                             {{else}}
                                 <div class="gh-dashboard-list-empty" data-test-no-member-activities>
-                                    <p>No activity yet.</p>
+                                    <p>Aún no hay actividad.</p>
                                 </div>
                             {{/if}}
                         {{/if}}
                     {{/let}}
                 </div>
                 <div class="gh-dashboard-list-footer">
-                    <LinkTo @route="members-activity" @query={{reset-query-params "members-activity"}}>See all member activity &rarr;</LinkTo>
+                    <LinkTo @route="members-activity" @query={{reset-query-params "members-activity"}}>Ver toda la actividad de los suscriptores &rarr;</LinkTo>
                 </div>
             </div>
         {{/if}}

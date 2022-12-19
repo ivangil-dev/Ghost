@@ -8,7 +8,7 @@ import {ghPriceAmount} from '../../../helpers/gh-price-amount';
 import {inject as service} from '@ember/service';
 import {tracked} from '@glimmer/tracking';
 
-const DATE_FORMAT = 'D MMM, YYYY';
+const DATE_FORMAT = 'DD MM, YYYY';
 
 const DISPLAY_OPTIONS = [{
     name: 'MRR (Ingresos recurrentes mensuales)',
@@ -123,7 +123,7 @@ export default class Anchor extends Component {
     get currentMRRFormatted() {
         // fake empty data
         if (this.isTotalMembersZero) {
-            return '$123';
+            return '123€';
         }
 
         if (this.dashboardStats.mrrStats === null) {
@@ -131,7 +131,7 @@ export default class Anchor extends Component {
         }
 
         const valueText = ghPriceAmount(this.currentMRR, {cents: false});
-        return `${this.mrrCurrencySymbol}${valueText}`;
+        return `${valueText}${this.mrrCurrencySymbol}`;
     }
 
     get totalMembers() {
@@ -280,7 +280,7 @@ export default class Anchor extends Component {
             return '';
         }
 
-        const firstCurrency = this.dashboardStats.mrrStats[0] ? this.dashboardStats.mrrStats[0].currency : 'usd';
+        const firstCurrency = this.dashboardStats.mrrStats[0] ? this.dashboardStats.mrrStats[0].currency : 'EUR';
         return getSymbol(firstCurrency);
     }
 
@@ -344,7 +344,7 @@ export default class Anchor extends Component {
                 callbacks: {
                     label: (tooltipItems, data) => {
                         if (this.selectedChartDisplay === 'mrr') {
-                            const value = `${that.mrrCurrencySymbol}${ghPriceAmount(data.datasets[tooltipItems.datasetIndex].data[tooltipItems.index], {cents: false})}`;
+                            const value = `${ghPriceAmount(data.datasets[tooltipItems.datasetIndex].data[tooltipItems.index], {cents: false})} ${that.mrrCurrencySymbol}`;
                             document.querySelector('#gh-dashboard-anchor-tooltip .gh-dashboard-tooltip-value .value').innerHTML = value;
                         } else {
                             const value = data.datasets[tooltipItems.datasetIndex].data[tooltipItems.index].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
