@@ -40,7 +40,7 @@
                     {{#if this.isDraggedOver}}
                         <div class="absolute absolute--fill flex items-center bg-black-60 pe-none">
                             <span class="db center sans-serif fw7 f7 white">
-                                Drop to replace image
+                                Coloca para reemplazar la imagen
                             </span>
                         </div>
                     {{/if}}
@@ -56,14 +56,14 @@
 
                         {{#if this.isDraggedOver}}
                             <span class="db center sans-serif fw7 f7 middarkgrey">
-                                Drop it like it's hot 🔥
+                                Déjalo caer como si estuviera ardiendo 🔥
                             </span>
                         {{else if uploader.isUploading}}
                             {{uploader.progressBar}}
                         {{else if (not this.previewSrc this.payload.src)}}
                             <button class="flex flex-column items-center center sans-serif fw4 f7 middarkgrey pa16 pt14 pb14 kg-image-button" onclick={{action "triggerFileDialog"}} type="button">
                                 {{svg-jar this.placeholder class="kg-placeholder-image"}}
-                                <span class="mt2 midgrey">Click to select an image</span>
+                                <span class="mt2 midgrey">Haz clic para seleccionar una imagen</span>
                             </button>
                         {{/if}}
                     </div>
@@ -80,17 +80,17 @@
                 <card.AltInput
                     @alt={{this.payload.alt}}
                     @update={{this.updateAlt}}
-                    @placeholder="Type alt text for image (optional)" />
+                    @placeholder="Escribe el texto alternativo (ALT) para la imagen (opcional)" />
             {{else}}
                 <card.CaptionInput
                     @caption={{this.payload.caption}}
                     @update={{this.updateCaption}}
-                    @placeholder="Type caption for image (optional)" />
+                    @placeholder="Escribe el título para la imagen (opcional)" />
             {{/if}}
 
             {{#if this.isSelected}}
                 <button
-                    title="Toggle between editing alt text and caption"
+                    title="Alterna entre editar texto alternativo (ALT) y título"
                     class="absolute right-0 bottom-0 ma2 pl1 pr1 ba br3 f8 sans-serif fw4 lh-title tracked-2 {{if this.isEditingAlt "bg-green b--green white" "bg-white b--midlightgrey midlightgrey"}}" type="button" {{on "click" this.toggleAltEditing passive=true}}
                 >
                     Alt
