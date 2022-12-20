@@ -97,17 +97,17 @@ export default class PublishOptions {
     get publishTypeOptions() {
         return [{
             value: 'publish+send', // internal
-            label: 'Publish and email', // shown in expanded options
-            display: 'Publish and email', // shown in option title
+            label: 'Email y Artículo', // shown in expanded options
+            display: 'Publicar en el sitio y enviar por email', // shown in option title
             disabled: this.emailDisabled
         }, {
             value: 'publish',
-            label: 'Publish only',
-            display: 'Publish'
+            label: 'Sólo artículo',
+            display: 'Sólo publicar en la web'
         }, {
             value: 'send',
-            label: 'Email only',
-            display: 'Email',
+            label: 'Sólo por email',
+            display: 'Sólo enviar por Email',
             disabled: this.emailDisabled
         }];
     }

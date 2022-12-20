@@ -18,7 +18,7 @@ export default class GhKoenigEditorReactComponent extends Component {
     @tracked titleIsFocused = false;
 
     get title() {
-        return this.args.title === '(Untitled)' ? '' : this.args.title;
+        return this.args.title === '(Sin título)' ? '' : this.args.title;
     }
 
     get accentColor() {

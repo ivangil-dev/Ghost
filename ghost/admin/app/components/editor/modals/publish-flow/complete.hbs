@@ -3,7 +3,7 @@
         {{#if post.isScheduled}}
             <span class="green">¡Todo listo!</span>
 
-            Tu {{if post.emailOnly "email" post.displayName}} será
+            Tu {{if post.emailOnly "email" "artículo"}} será
 
             {{#if post.emailOnly}}
                 enviado
@@ -17,9 +17,9 @@
                 {{#if (is-moment-today scheduledAt)}}
                     hoy
                 {{else}}
-                    en {{moment-format scheduledAt "MMMM Do"}}
+                    el {{moment-format scheduledAt "D MMMM"}}
                 {{/if}}
-                a {{moment-format scheduledAt "HH:mm"}}.
+                a las {{moment-format scheduledAt "HH:mm"}}.
             {{/let}}
         {{else}}
             <span class="green">Toma. Ya está ahí fuera.</span>

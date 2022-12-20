@@ -24,7 +24,7 @@ import {isHostLimitError, isServerUnreachableError, isVersionMismatchError} from
 import {isInvalidError} from 'ember-ajax/errors';
 import {inject as service} from '@ember/service';
 
-const DEFAULT_TITLE = '(Untitled)';
+const DEFAULT_TITLE = '(Sin título)';
 
 // time in ms to save after last content edit
 const AUTOSAVE_TIMEOUT = 3000;
@@ -685,7 +685,7 @@ export default class EditorController extends Controller {
         this.set('hasDirtyAttributes', true);
 
         // generate a slug if a post is new and doesn't have a title yet or
-        // if the title is still '(Untitled)'
+        // if the title is still '(Sin título)'
         if ((post.get('isNew') && !currentTitle) || currentTitle === DEFAULT_TITLE) {
             yield this.generateSlugTask.perform();
         }
@@ -701,7 +701,7 @@ export default class EditorController extends Controller {
     *generateSlugTask() {
         let title = this.get('post.titleScratch');
 
-        // Only set an "untitled" slug once per post
+        // Only set an "Sin título" slug once per post
         if (title === DEFAULT_TITLE && this.get('post.slug')) {
             return;
         }
