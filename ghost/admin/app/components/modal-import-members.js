@@ -176,7 +176,7 @@ export default ModalComponent.extend({
         let errorCsv = unparse(errorsWithFormattedMessages);
         let errorCsvBlob = new Blob([errorCsv], {type: 'text/csv'});
         let errorCsvUrl = URL.createObjectURL(errorCsvBlob);
-        let errorCsvName = importResponse.meta.import_label ? `${importResponse.meta.import_label.name} - Errors.csv` : `Import ${moment().format('DD-MM-YYYY HH:mm')} - Errors.csv`;
+        let errorCsvName = importResponse.meta.import_label ? `${importResponse.meta.import_label.name} - Errors.csv` : `Import ${moment().format('YYYY-MM-DD HH:mm')} - Errors.csv`;
 
         this.set('importResponse', {
             importedCount,

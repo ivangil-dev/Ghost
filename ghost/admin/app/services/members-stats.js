@@ -92,7 +92,7 @@ export default class MembersStatsService extends Service {
         let lastVal = initialDateInRangeVal ? initialDateInRangeVal.value : 0;
 
         while (currentRangeDate.isBefore(endDate)) {
-            let dateStr = currentRangeDate.format('DD-MM-YYYY');
+            let dateStr = currentRangeDate.format('YYYY-MM-DD');
             const dataOnDate = data.find(d => d.date === dateStr);
             output[dateStr] = dataOnDate ? dataOnDate.value : lastVal;
             lastVal = output[dateStr];
@@ -123,7 +123,7 @@ export default class MembersStatsService extends Service {
             total: initialDateInRangeVal ? (initialDateInRangeVal.paid + initialDateInRangeVal.free + initialDateInRangeVal.comped) : 0
         };
         while (currentRangeDate.isBefore(endDate)) {
-            let dateStr = currentRangeDate.format('DD-MM-YYYY');
+            let dateStr = currentRangeDate.format('YYYY-MM-DD');
             const dataOnDate = data.find(d => d.date === dateStr);
             output[dateStr] = dataOnDate ? {
                 paid: dataOnDate.paid,
@@ -165,7 +165,7 @@ export default class MembersStatsService extends Service {
         let stats = data.map((d) => {
             return {
                 subject: d.subject,
-                submittedAt: moment(d.submittedAtUTC).format('DD-MM-YYYY'),
+                submittedAt: moment(d.submittedAtUTC).format('YYYY-MM-DD'),
                 openRate: d.openRate
             };
         });
@@ -177,7 +177,7 @@ export default class MembersStatsService extends Service {
             for (let i = 0; i < pad; i++) {
                 paddedResults.push({
                     subject: '',
-                    submittedAt: moment(lastSubmittedAt).subtract(i + 1, 'days').format('DD-MM-YYYY'),
+                    submittedAt: moment(lastSubmittedAt).subtract(i + 1, 'days').format('YYYY-MM-DD'),
                     openRate: 0
                 });
             }

@@ -38,7 +38,7 @@ export default class MembersEventsFetcher extends Resource {
     }
 
     async setup() {
-        this.cursor = moment.utc().format('DD-MM-YYYY HH:mm:ss');
+        this.cursor = moment.utc().format('YYYY-MM-DD HH:mm:ss');
         let filter = `data.created_at:<'${this.cursor}'`;
 
         if (this.args.named.filter) {
@@ -67,7 +67,7 @@ export default class MembersEventsFetcher extends Resource {
             return;
         }
 
-        const cursor = moment.utc(lastEvent.data.created_at).format('DD-MM-YYYY HH:mm:ss');
+        const cursor = moment.utc(lastEvent.data.created_at).format('YYYY-MM-DD HH:mm:ss');
 
         if (cursor === this.cursor) {
             this.hasReachedEnd = true;

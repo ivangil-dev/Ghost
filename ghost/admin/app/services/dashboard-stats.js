@@ -6,14 +6,14 @@ import {tracked} from '@glimmer/tracking';
 /**
  * @typedef MrrStat
  * @type {Object}
- * @property {string} date The date (DD-MM-YYYY) on which this MRR was recorded
+ * @property {string} date The date (YYYY-MM-DD) on which this MRR was recorded
  * @property {number} mrr The MRR on this date
  */
 
 /**
  * @typedef MemberCountStat
  * @type {Object}
- * @property {string} date The date (DD-MM-YYYY) on which these counts were recorded
+ * @property {string} date The date (YYYY-MM-DD) on which these counts were recorded
  * @property {number} paid Amount of paid members
  * @property {number} free Amount of free members
  * @property {number} comped Amount of comped members
@@ -24,7 +24,7 @@ import {tracked} from '@glimmer/tracking';
 /**
  * @typedef AttributionCountStat
  * @type {Object}
- * @property {string} date The date (DD-MM-YYYY) on which these counts were recorded
+ * @property {string} date The date (YYYY-MM-DD) on which these counts were recorded
  * @property {number} source Attribution Source
  * @property {number} signups Total free members signed up for this source
  * @property {number} paidConversions Total paid conversions for this source
@@ -210,7 +210,7 @@ export default class DashboardStatsService extends Service {
         }
 
         // Search for the value at chartDays ago (if any, else the first before it, or the next one if not one before it)
-        const searchDate = moment().add(-this.chartDays, 'days').format('DD-MM-YYYY');
+        const searchDate = moment().add(-this.chartDays, 'days').format('YYYY-MM-DD');
 
         for (let index = this.memberCountStats.length - 1; index >= 0; index -= 1) {
             const stat = this.memberCountStats[index];
@@ -244,7 +244,7 @@ export default class DashboardStatsService extends Service {
             if (this.chartDays === 'all') {
                 return true;
             }
-            return stat.date >= moment().add(-this.chartDays, 'days').format('DD-MM-YYYY');
+            return stat.date >= moment().add(-this.chartDays, 'days').format('YYYY-MM-DD');
         }).reduce((acc, stat) => {
             const statSource = stat.source ?? '';
             const existingSource = acc.find(s => s.source === statSource);
@@ -274,7 +274,7 @@ export default class DashboardStatsService extends Service {
         }
 
         // Search for the value at chartDays ago (if any, else the first before it, or the next one if not one before it)
-        const searchDate = moment().add(-this.chartDays, 'days').format('DD-MM-YYYY');
+        const searchDate = moment().add(-this.chartDays, 'days').format('YYYY-MM-DD');
 
         for (let index = this.mrrStats.length - 1; index >= 0; index -= 1) {
             const stat = this.mrrStats[index];
@@ -756,7 +756,7 @@ export default class DashboardStatsService extends Service {
         let stats = data.map((d) => {
             return {
                 subject: d.subject,
-                submittedAt: moment(d.submittedAtUTC).format('DD-MM-YYYY'),
+                submittedAt: moment(d.submittedAtUTC).format('YYYY-MM-DD'),
                 openRate: d.openRate
             };
         });
@@ -768,7 +768,7 @@ export default class DashboardStatsService extends Service {
             for (let i = 0; i < pad; i++) {
                 paddedResults.push({
                     subject: '',
-                    submittedAt: moment(lastSubmittedAt).subtract(i + 1, 'days').format('DD-MM-YYYY'),
+                    submittedAt: moment(lastSubmittedAt).subtract(i + 1, 'days').format('YYYY-MM-DD'),
                     openRate: 0
                 });
             }
@@ -858,7 +858,7 @@ export default class DashboardStatsService extends Service {
         let lastVal = initialDateInRangeVal ? initialDateInRangeVal : defaultData;
 
         while (currentRangeDate.isBefore(endDate)) {
-            let dateStr = currentRangeDate.format('DD-MM-YYYY');
+            let dateStr = currentRangeDate.format('YYYY-MM-DD');
             const dataOnDate = data.find(d => d.date === dateStr);
             if (dataOnDate) {
                 lastVal = dataOnDate;

@@ -213,7 +213,7 @@ export default class GhPostSettingsMenu extends Component {
     setPublishedAtBlogDate(date) {
         // date is a Date object that contains the correct date string in the blog timezone
         let post = this.post;
-        let dateString = moment.tz(date, this.settings.get('timezone')).format('DD-MM-YYYY');
+        let dateString = moment.tz(date, this.settings.get('timezone')).format('YYYY-MM-DD');
 
         post.get('errors').remove('publishedAtBlogDate');
 
