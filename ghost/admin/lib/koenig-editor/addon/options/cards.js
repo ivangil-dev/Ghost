@@ -81,12 +81,12 @@ export default [
 
 export const CARD_MENU = [
     {
-        title: 'Primary',
+        title: 'Directas',
         rowLength: 1,
         items: [{
-            label: 'Image',
+            label: 'Imagen',
             icon: 'koenig/kg-card-type-image',
-            desc: 'Upload, or embed with /image [url]',
+            desc: 'Carga o inserta con /image [url]',
             iconClass: 'kg-card-type-native',
             matches: ['image', 'img'],
             type: 'card',
@@ -99,7 +99,7 @@ export const CARD_MENU = [
         {
             label: 'Markdown',
             icon: 'koenig/kg-card-type-markdown',
-            desc: 'Insert a Markdown editor card',
+            desc: 'Inserta un editor de Markdown',
             iconClass: 'kg-card-type-native',
             matches: ['markdown', 'md'],
             type: 'card',
@@ -108,16 +108,16 @@ export const CARD_MENU = [
         {
             label: 'HTML',
             icon: 'koenig/kg-card-type-html',
-            desc: 'Insert a raw HTML card',
+            desc: 'Escribe HTML sin tratar',
             iconClass: 'kg-card-type-native',
             matches: ['html'],
             type: 'card',
             replaceArg: 'html'
         },
         {
-            label: 'Gallery',
+            label: 'Galería',
             icon: 'koenig/kg-card-type-gallery',
-            desc: 'Create an image gallery',
+            desc: 'Crea una galería de fotos',
             iconClass: 'kg-card-type-native',
             matches: ['gallery'],
             type: 'card',
@@ -126,7 +126,7 @@ export const CARD_MENU = [
         {
             label: 'Divider',
             icon: 'koenig/kg-card-type-divider',
-            desc: 'Insert a dividing line',
+            desc: 'Inserta una linea divisora',
             iconClass: 'kg-card-type-native',
             matches: ['divider', 'horizontal-rule', 'hr'],
             type: 'card',
@@ -135,50 +135,50 @@ export const CARD_MENU = [
         {
             label: 'Bookmark',
             icon: 'koenig/kg-card-type-bookmark',
-            desc: 'Embed a link as a visual bookmark',
+            desc: 'Incluye un enlace con marcador visual',
             matches: ['bookmark'],
             type: 'card',
             replaceArg: 'bookmark',
             params: ['url']
         },
         {
-            label: 'Email content',
+            label: 'Contenido de email',
             icon: 'koenig/kg-card-type-email',
-            desc: 'Only visible when delivered by email',
+            desc: 'Sólo visible en email',
             matches: ['email'],
             type: 'card',
             replaceArg: 'email',
             postType: 'post'
         },
         {
-            label: 'Email call to action',
+            label: 'Llamada a la acción de Email',
             icon: 'koenig/kg-card-type-email-cta',
-            desc: 'Target free or paid members with a CTA',
+            desc: 'Incluir llamada a la acción para email',
             matches: ['email', 'cta'],
             type: 'card',
             replaceArg: 'email-cta',
             postType: 'post'
         },
         {
-            label: 'Public preview',
+            label: 'Vista previa publica',
             icon: 'koenig/kg-card-type-paywall',
-            desc: 'Attract signups with a public intro',
+            desc: 'Incluye un fragmento público en los artículos limitados',
             matches: ['public preview', 'preview', 'paywall'],
             type: 'card',
             replaceArg: 'paywall'
         },
         {
-            label: 'Button',
+            label: 'Botón',
             icon: 'koenig/kg-card-type-button',
-            desc: 'Add a button to your post',
+            desc: 'Incluye un botón',
             matches: ['button'],
             type: 'card',
             replaceArg: 'button'
         },
         {
-            label: 'Callout',
+            label: 'Caja de información',
             icon: 'koenig/kg-card-type-callout',
-            desc: 'Info boxes that stand out',
+            desc: 'Cajas de información destacadas',
             matches: ['callout', 'infobox'],
             type: 'card',
             replaceArg: 'callout'
@@ -186,7 +186,7 @@ export const CARD_MENU = [
         {
             label: 'GIF',
             icon: 'koenig/kg-card-type-gif',
-            desc: 'Search and embed gifs',
+            desc: 'Busca e inserta un gif',
             iconClass: 'kg-card-type-unsplash',
             matches: ['gif', 'giphy', 'tenor'],
             type: 'card',
@@ -198,17 +198,17 @@ export const CARD_MENU = [
             isAvailable: 'config.tenor.googleApiKey'
         },
         {
-            label: 'Toggle',
+            label: 'Plegable',
             icon: 'koenig/kg-card-type-toggle',
-            desc: 'Add collapsible content',
+            desc: 'Añade contenido plegable o expansible',
             matches: ['toggle'],
             type: 'card',
             replaceArg: 'toggle'
         },
         {
-            label: 'Video',
+            label: 'Vídeo',
             icon: 'koenig/kg-card-type-video',
-            desc: 'Upload and play a video',
+            desc: 'Carga y reproduce un vídeo',
             matches: ['video'],
             type: 'card',
             replaceArg: 'video',
@@ -219,7 +219,7 @@ export const CARD_MENU = [
         {
             label: 'Audio',
             icon: 'koenig/kg-card-type-audio',
-            desc: 'Upload and play an audio file',
+            desc: 'Carga y reproduce un archivo de audio',
             matches: ['audio'],
             type: 'card',
             replaceArg: 'audio',
@@ -228,9 +228,9 @@ export const CARD_MENU = [
             }
         },
         {
-            label: 'File',
+            label: 'Archivo',
             icon: 'koenig/kg-card-type-file',
-            desc: 'Upload a downloadable file',
+            desc: 'Carga y pega un archivo descargable',
             matches: ['file', 'upload'],
             type: 'card',
             replaceArg: 'file',
@@ -239,17 +239,17 @@ export const CARD_MENU = [
             }
         },
         {
-            label: 'Product',
+            label: 'Producto',
             icon: 'koenig/kg-card-type-product',
-            desc: 'Add a product recommendation',
+            desc: 'Añade un producto recomendado',
             matches: ['product'],
             type: 'card',
             replaceArg: 'product'
         },
         {
-            label: 'Before/After',
+            label: 'Antes/Después',
             icon: 'koenig/kg-card-type-before-after',
-            desc: 'Compare two images',
+            desc: 'Comparativa de dos imágenes',
             matches: ['before', 'after', 'compare'],
             type: 'card',
             replaceArg: 'before-after',
@@ -264,7 +264,7 @@ export const CARD_MENU = [
         }]
     },
     {
-        title: 'Embed',
+        title: 'Insertadas',
         rowLength: 1,
         items: [{
             label: 'YouTube',
@@ -346,7 +346,7 @@ export const CARD_MENU = [
             params: ['url']
         },
         {
-            label: 'Other...',
+            label: 'Otros...',
             icon: 'koenig/kg-card-type-other',
             desc: '/embed [url]',
             iconClass: 'kg-card-type-native',
