@@ -428,7 +428,7 @@ export default class MembersController extends Controller {
         this.members = yield this.ellaSparse.array((range = {}, query = {}) => {
             const searchQuery = this.getApiQueryObject({
                 params,
-                extraFilters: [`created_at:<='${moment.utc(this._startDate).format('DD-MM-YYYY HH:mm:ss')}'`]
+                extraFilters: [`created_at:<='${moment.utc(this._startDate).format('YYYY-MM-DD HH:mm:ss')}'`]
             });
             const order = orderParam ? `${orderParam} desc` : `created_at desc`;
             const includes = ['labels', 'tiers'];

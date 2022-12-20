@@ -7,7 +7,7 @@ import {or, reads} from '@ember/object/computed';
 import {inject as service} from '@ember/service';
 import {tagName} from '@ember-decorators/component';
 
-const DATE_FORMAT = 'DD-MM-YYYY';
+const DATE_FORMAT = 'YYYY-MM-DD';
 
 @classic
 @tagName('')
@@ -213,7 +213,7 @@ export default class GhDateTimePicker extends Component {
     onDateBlur(event) {
         // make sure we're not doing anything just because the calendar dropdown
         // is opened and clicked
-        if (event.target.value === this._date.format('DD-MM-YYYY')) {
+        if (event.target.value === this._date.format('YYYY-MM-DD')) {
             this._resetScratchDate();
             return;
         }
@@ -275,7 +275,7 @@ export default class GhDateTimePicker extends Component {
 
     _setDate(dateStr) {
         if (!dateStr.match(/^\d\d\d\d-\d\d-\d\d$/)) {
-            this._setScratchDateError('Invalid date format, must be DD-MM-YYYY');
+            this._setScratchDateError('Invalid date format, must be YYYY-MM-DD');
             return false;
         }
 

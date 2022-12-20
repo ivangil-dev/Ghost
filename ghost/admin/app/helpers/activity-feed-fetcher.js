@@ -51,7 +51,7 @@ export default class ActivityFeedFetcher extends Resource {
     }
 
     async setup() {
-        const currentTime = moment.utc().format('DD-MM-YYYY HH:mm:ss');
+        const currentTime = moment.utc().format('YYYY-MM-DD HH:mm:ss');
         let filter = `data.created_at:<'${currentTime}'`;
         this.eventsBookmarks.push(filter);
 
@@ -75,7 +75,7 @@ export default class ActivityFeedFetcher extends Resource {
             return;
         }
         const lastEvent = this.data[this.data.length - 1];
-        const lastEventDate = moment.utc(lastEvent.data.created_at).format('DD-MM-YYYY HH:mm:ss');
+        const lastEventDate = moment.utc(lastEvent.data.created_at).format('YYYY-MM-DD HH:mm:ss');
         const lastEventId = lastEvent.data.id;
 
         let filter = `(data.created_at:<'${lastEventDate}',(data.created_at:'${lastEventDate}'+id:<'${lastEventId}'))`;

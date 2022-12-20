@@ -375,7 +375,7 @@ export default Model.extend(Comparable, ValidationEngine, {
             let blogTimezone = this.settings.timezone;
             let publishedAtBlog = moment.tz(momentDate, blogTimezone);
 
-            this.set('publishedAtBlogDate', publishedAtBlog.format('DD-MM-YYYY'));
+            this.set('publishedAtBlogDate', publishedAtBlog.format('YYYY-MM-DD'));
             this.set('publishedAtBlogTime', publishedAtBlog.format('HH:mm'));
         } else {
             this.set('publishedAtBlogDate', '');
