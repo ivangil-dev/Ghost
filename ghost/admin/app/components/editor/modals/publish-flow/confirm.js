@@ -23,24 +23,24 @@ export default class PublishFlowOptions extends Component {
 
     buttonTextMap = {
         'publish+send': {
-            idle: 'Publish & send',
-            running: 'Publishing & sending',
-            success: 'Published & sent'
+            idle: 'Publicar y enviar',
+            running: 'Publicando y enviando',
+            success: 'Publicado y enviado'
         },
         send: {
-            idle: 'Send email',
-            running: 'Sending',
-            success: 'Sent'
+            idle: 'Enviar email',
+            running: 'Enviando',
+            success: 'Enviado'
         },
         publish: {
-            idle: 'Publish',
-            running: 'Publishing',
-            success: 'Published'
+            idle: 'Publicar',
+            running: 'Publicando',
+            success: 'Publicado'
         },
         schedule: {
             // idle: '', - uses underlying publish type text
-            running: 'Scheduling',
-            success: 'Scheduled'
+            running: 'Programando',
+            success: 'Programado'
         }
     };
 
@@ -67,9 +67,9 @@ export default class PublishFlowOptions extends Component {
 
         if (this.args.publishOptions.isScheduled) {
             const scheduleMoment = moment.tz(this.args.publishOptions.scheduledAtUTC, this.settings.timezone);
-            buttonText += `, on ${scheduleMoment.format('MMMM Do')}`;
+            buttonText += `, el ${scheduleMoment.format('D MMMM')}`;
         } else {
-            buttonText += ', right now';
+            buttonText += ', en este momento';
         }
 
         return buttonText;

@@ -123,7 +123,7 @@ export default class GhPostSettingsMenu extends Component {
 
     @computed('metaTitleScratch', 'post.titleScratch')
     get seoTitle() {
-        return this.metaTitleScratch || this.post.titleScratch || '(Untitled)';
+        return this.metaTitleScratch || this.post.titleScratch || '(Sin título)';
     }
 
     @computed('post.{slug,canonicalUrl}', 'config.blogUrl')

@@ -49,7 +49,7 @@ export default class ModalPostPreviewSocialComponent extends Component {
     // SERP
 
     get serpTitle() {
-        return this.args.post.metaTitle || this.args.post.title || '(Untitled)';
+        return this.args.post.metaTitle || this.args.post.title || '(Sin título)';
     }
 
     get serpURL() {
