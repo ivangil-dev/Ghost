@@ -4,16 +4,16 @@
             {{#if this.fromAnalytics}}
                 <div class="gh-canvas-breadcrumb">
                     <LinkTo @route="posts">
-                        Posts
+                        Artículos
                     </LinkTo>
                     {{svg-jar "arrow-right-small"}}
                     <LinkTo @route="posts.analytics" @models={{this.fromAnalytics}}>
-                        Analytics
+                        Estadísticas
                     </LinkTo>
-                    {{svg-jar "arrow-right-small"}}Members
+                    {{svg-jar "arrow-right-small"}}Suscriptores
                 </div>
             {{/if}}
-            <h2 class="gh-canvas-title" data-test-screen-title>Members</h2>
+            <h2 class="gh-canvas-title" data-test-screen-title>Suscriptores</h2>
         </div>
         {{#if (not-eq this.settings.membersSignupAccess "none")}}
             <section class="view-actions">
@@ -22,9 +22,9 @@
                         {{svg-jar "search" class="gh-input-search-icon"}}
                         <input
                             type="text"
-                            placeholder="Search members..."
+                            placeholder="Buscar suscriptores..."
                             value={{this.searchParam}}
-                            aria-label="Search members"
+                            aria-label="Buscar suscriptores"
                             class="gh-input gh-members-list-searchfield {{if this.searchParam "active"}}"
                             {{on "input" this.search}}
                             {{on "focus" (fn (mut this.searchIsFocused) true)}}
@@ -51,12 +51,12 @@
                         <GhDropdownButton
                             @dropdownName="members-actions-menu"
                             @classNames="gh-btn gh-btn-icon icon-only gh-btn-action-icon"
-                            @title="Members Actions"
+                            @title="Acciones de los suscriptores"
                             data-test-button="members-actions"
                         >
                             <span>
                                 {{svg-jar "settings"}}
-                                <span class="hidden">Actions</span>
+                                <span class="hidden">Acciones</span>
                             </span>
                         </GhDropdownButton>
                         <GhDropdown
@@ -66,21 +66,21 @@
                         >
                             <li>
                                 <LinkTo @route="members.import" class="mr2" data-test-link="import-csv">
-                                    <span>Import members</span>
+                                    <span>Importar suscriptores</span>
                                 </LinkTo>
                             </li>
                             <li class="{{if this.members.length "" "disabled"}}">
                                 {{#if this.members.length}}
                                     <button class="mr2" type="button" {{on "click" this.exportData}} data-test-button="export-members">
                                         {{#if this.showingAll}}
-                                            <span>Export all members</span>
+                                            <span>Exportar todos los suscriptores</span>
                                         {{else}}
-                                            <span>Export selected members ({{this.members.length}})</span>
+                                            <span>Exportar suscriptores seleccionados ({{this.members.length}})</span>
                                         {{/if}}
                                     </button>
                                 {{else}}
                                     <button class="mr2" disabled="true" type="button" data-test-button="export-members">
-                                        <span>Export selected members (0)</span>
+                                        <span>Exportar suscriptores señalados (0)</span>
                                     </button>
                                 {{/if}}
                             </li>
@@ -88,29 +88,29 @@
                                 <li class="divider"></li>
                                 <li>
                                     <button class="mr2" data-test-button="add-label-selected" type="button" {{on "click" this.bulkAddLabel}}>
-                                        <span>Add label for selected members ({{this.members.length}})</span>
+                                        <span>Añadir etiqueta para miembros seleccionados ({{this.members.length}})</span>
                                     </button>
                                 </li>
                                 <li>
                                     <button class="mr2" data-test-button="remove-label-selected" type="button" {{on "click" this.bulkRemoveLabel}}>
-                                        <span>Remove label from selected members ({{this.members.length}})</span>
+                                        <span>Borrar etiqueta para miembros seleccionados ({{this.members.length}})</span>
                                     </button>
                                 </li>
                                 <li>
                                     <button class="mr2" data-test-button="unsubscribe-selected" type="button" {{on "click" this.bulkUnsubscribe}}>
-                                        <span>Unsubscribe selected members ({{this.members.length}})</span>
+                                        <span>Dar de baja suscriptores señalados ({{this.members.length}})</span>
                                     </button>
                                 </li>
                                 <li class="divider"></li>
                                 <li>
                                     <button class="mr2" data-test-button="delete-selected" type="button" {{on "click" this.bulkDelete}}>
-                                        <span class="red">Delete selected members ({{this.members.length}})</span>
+                                        <span class="red">Borrar suscriptores seleccionados ({{this.members.length}})</span>
                                     </button>
                                 </li>
                             {{/if}}
                         </GhDropdown>
                     </span>
-                    <LinkTo @route="member.new" class="gh-btn gh-btn-primary" data-test-new-member-button="true"><span>New member</span><span class="gh-btn-text-hide-for-mobile">New</span></LinkTo>
+                    <LinkTo @route="member.new" class="gh-btn gh-btn-primary" data-test-new-member-button="true"><span>Nuevo suscriptor</span><span class="gh-btn-text-hide-for-mobile">Nuevo</span></LinkTo>
                 </div>
             </section>
         {{/if}}
@@ -128,12 +128,12 @@
                         <thead>
                             <tr>
                                 <th>{{this.listHeader}}</th>
-                                <th data-test-table-column="status">Status</th>
+                                <th data-test-table-column="status">Estado</th>
                                 {{#if (and (not-eq this.settings.editorDefaultEmailRecipients "disabled") this.settings.emailTrackOpens)}}
-                                    <th data-test-table-column="email_open_rate">Open rate</th>
+                                    <th data-test-table-column="email_open_rate">Tasa de apertura</th>
                                 {{/if}}
-                                <th data-test-table-column="location">Location</th>
-                                <th data-test-table-column="created">Created</th>
+                                <th data-test-table-column="location">Ubicación</th>
+                                <th data-test-table-column="created">Creado</th>
                                 {{#each this.filterColumns as |column|}}
                                     <th data-test-table-column={{column.name}}>{{column.label}}</th>
                                 {{/each}}
@@ -162,16 +162,16 @@
                 {{else}}
                     <div class="gh-members-empty" data-test-no-matching-members>
                         {{svg-jar "members-placeholder" class="gh-members-placeholder"}}
-                        <h4>No members match the current filter</h4>
+                        <h4>No se han encontrado suscriptores con el filtro actual</h4>
                         <LinkTo @route="members" @query={{reset-query-params "members.index"}} class="gh-btn mt4" data-test-button="show-all-members">
-                            <span>Show all members</span>
+                            <span>Ver todos los suscriptores</span>
                         </LinkTo>
                     </div>
                 {{/if}}
             {{/if}}
             {{#if (lt this.members.length 6)}}
                 <div class="gh-main-section gh-members-help">
-                    <h2 class="gh-main-section-header small bn">Get started with memberships</h2>
+                    <h2 class="gh-main-section-header small bn">Empieza con las embresías</h2>
                     <div class="gh-main-section-block">
                         <div class="gh-main-section-content grey">
                             <a href="https://ghost.org/resources/build-audience-subscriber-signups/" target="_blank" class="gh-members-help-card" rel="noopener noreferrer">

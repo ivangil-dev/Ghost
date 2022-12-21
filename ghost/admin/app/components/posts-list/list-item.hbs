@@ -60,12 +60,12 @@
                         {{#if @post.primaryTag}}
                             en <span class="midgrey-l2 fw5">{{@post.primaryTag.name}}</span>
                         {{/if}}
-                        - 
+                        -
                     </span>
                     <span class="gh-content-entry-date" {{on "mouseover" (fn (mut this.isDateHovered) true)}} {{on "mouseleave" (fn (mut this.isDateHovered) false)}}>
                         {{gh-format-post-time @post.updatedAtUTC draft=true}}
                         {{#if this.isDateHovered}}
-                            <span {{css-transition "anim-fade-in-scale"}}>on {{gh-format-post-time @post.updatedAtUTC format="D MMM YYYY"}}</span>
+                            <span {{css-transition "anim-fade-in-scale"}}>el {{gh-format-post-time @post.updatedAtUTC format="D MMM YYYY"}}</span>
                         {{/if}}
                     </span>
                     {{!-- {{#if @post.lexical}}
@@ -109,7 +109,7 @@
                             {{#if @post.didEmailFail}}
                                 No se ha podido enviar por email
                             {{else}}
-                                Enviado 
+                                Enviado
                                 {{#if this.isHovered}}
                                     <span {{css-transition "anim-fade-in-scale"}}>a {{gh-pluralize @post.email.emailCount "suscriptor"}}</span>
                                 {{/if}}
@@ -149,7 +149,7 @@
             {{!-- Empty on purpose --}}
         </LinkTo>
     {{/if}}
-    
+
     {{!-- Clicked / Conversions column --}}
     {{#if @post.showEmailClickAnalytics }}
         <LinkTo @route="members" @query={{hash filterParam=(concat "clicked_links.post_id:[" @post.id "]") }} class="permalink gh-list-data gh-post-list-metrics">

@@ -15,13 +15,13 @@ import {task, timeout} from 'ember-concurrency';
 import {tracked} from '@glimmer/tracking';
 
 const PAID_PARAMS = [{
-    name: 'All members',
+    name: 'Todos los suscriptores',
     value: null
 }, {
-    name: 'Free members',
+    name: 'Suscripciones gratuitas',
     value: 'false'
 }, {
-    name: 'Paid members',
+    name: 'Suscriptores de pago',
     value: 'true'
 }];
 
@@ -82,20 +82,20 @@ export default class MembersController extends Controller {
         let {searchParam, selectedLabel, members} = this;
 
         if (members.loading) {
-            return 'Loading...';
+            return 'Cargando...';
         }
 
         if (searchParam) {
-            return 'Search result';
+            return 'Resultado de búsqueda';
         }
 
         let count = ghPluralize(members.length, 'member');
 
         if (selectedLabel && selectedLabel.slug) {
             if (members.length > 1) {
-                return `${count} match current filter`;
+                return `${count} coincidencia con el filtro actual`;
             } else {
-                return `${count} matches current filter`;
+                return `${count} coincidencias con el filtro actual`;
             }
         }
 
@@ -118,10 +118,10 @@ export default class MembersController extends Controller {
 
         if (this.feature.get('emailAnalytics')) {
             return [{
-                name: 'Newest',
+                name: 'Nuevos',
                 value: null
             }, {
-                name: 'Open rate',
+                name: 'Tasa de apertura',
                 value: 'email_open_rate'
             }];
         }
