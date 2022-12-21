@@ -1,11 +1,11 @@
 <div class="gh-main-section">
-    <h4 class="gh-main-section-header small bn">Basic settings</h4>
+    <h4 class="gh-main-section-header small bn">Ajustes básicos</h4>
     <section class="gh-main-section-block">
         <div class="gh-main-section-content grey columns-2">
             <div>
                 <div class="gh-tag-settings-multiprop">
                     <GhFormGroup @errors={{@tag.errors}} @hasValidated={{@tag.hasValidated}} @property="name" class="mr2 flex-auto">
-                        <label for="tag-name">Name</label>
+                        <label for="tag-name">Nombre</label>
                         <input
                             type="text"
                             class="gh-input"
@@ -21,8 +21,8 @@
                             <GhErrorMessage @errors={{@tag.errors}} @property="accentColor" data-test-error="accentColor" />
                         </span>
                         <p class="description">
-                            Start with # to create internal tags
-                            <a href="https://ghost.org/help/organising-content/#private-tags" target="_blank" rel="noopener noreferrer">Learn more</a>
+                            Pon el símbolo de hashtag # delante para convertirla en una etiqueta interna
+                            <a href="https://ghost.org/help/organising-content/#private-tags" target="_blank" rel="noopener noreferrer">Leer más</a>
                         </p>
                     </GhFormGroup>
 
@@ -39,7 +39,7 @@
                                 class="gh-input"
                                 {{on "input" (perform this.debounceUpdateAccentColorTask)}}
                                 {{on "blur" this.updateAccentColor}}
-                                aria-label="Accent color hex value"
+                                aria-label="Valor hexadecimal de color acentuado"
                                 data-test-input="accentColor"
                             />
                             <div class="color-picker-horizontal-divider"></div>
@@ -53,7 +53,7 @@
                                     class="color-picker"
                                     value={{this.accentColorPickerValue}}
                                     {{on "input" (perform this.debounceUpdateAccentColorTask)}}
-                                    aria-label="Accent color picker"
+                                    aria-label="Selector de color acentuado"
                                 >
                             </div>
                         </div>
@@ -61,7 +61,7 @@
                 </div>
 
                 <GhFormGroup @errors={{@tag.errors}} @hasValidated={{@tag.hasValidated}} @property="slug">
-                    <label for="tag-slug">Slug</label>
+                    <label for="tag-slug">Abreviatura</label>
                     <input
                         type="text"
                         value={{@tag.slug}}
@@ -77,7 +77,7 @@
                 </GhFormGroup>
 
                 <GhFormGroup class="no-margin" @errors={{@tag.errors}} @hasValidated={{@tag.hasValidated}} @property="description">
-                    <label for="tag-description">Description</label>
+                    <label for="tag-description">Descripción</label>
                     <textarea
                         id="tag-description"
                         name="description"
@@ -88,14 +88,14 @@
                     >{{@tag.description}}</textarea>
 
                     <GhErrorMessage @errors={{@tag.errors}} @property="description" />
-                    <p>Maximum: <b>500</b> characters. You’ve used {{gh-count-down-characters @tag.description 500}}</p>
+                    <p>Máximo: <b>500</b> caracteres. Has usado {{gh-count-down-characters @tag.description 500}}</p>
                 </GhFormGroup>
             </div>
             <GhFormGroup class="gh-tag-image-uploader no-margin" @errors={{@tag.errors}} @hasValidated={{@tag.hasValidated}} @property="featureImage">
-                <label for="tag-image">Tag image</label>
+                <label for="tag-image">Imagen de la etiqueta</label>
                 <GhImageUploaderWithPreview
                     @image={{@tag.featureImage}}
-                    @text="Upload tag image"
+                    @text="Subir imagen para la etiqueta"
                     @allowUnsplash={{true}}
                     @update={{fn this.setTagProperty "featureImage"}}
                     @remove={{fn this.setTagProperty "featureImage" ""}}
@@ -109,10 +109,10 @@
     <div class="gh-expandable-block">
         <div class="gh-expandable-header">
             <div>
-                <h4 class="gh-expandable-title">Meta data</h4>
-                <p class="gh-expandable-description">Extra content for search engines.</p>
+                <h4 class="gh-expandable-title">Meta datos</h4>
+                <p class="gh-expandable-description">Contenido extra para los buscadores.</p>
             </div>
-            <button type="button" class="gh-btn gh-btn-expand" {{on "click" (toggle "metadataOpen" this)}}><span>{{if this.metadataOpen "Close" "Expand"}}</span></button>
+            <button type="button" class="gh-btn gh-btn-expand" {{on "click" (toggle "metadataOpen" this)}}><span>{{if this.metadataOpen "Cerrar" "abrir"}}</span></button>
         </div>
 
         <div class="gh-expandable-content">
@@ -121,7 +121,7 @@
                 <div class="gh-seo-settings">
                     <div class="gh-seo-settings-left flex-basis-1-2-m flex-basis-2-3-l">
                         <GhFormGroup @errors={{@tag.errors}} @hasValidated={{@tag.hasValidated}} @property="metaTitle">
-                            <label for="meta-title">Meta title</label>
+                            <label for="meta-title">Meta título</label>
                             <input
                                 id="meta-title"
                                 name="metaTitle"
@@ -132,11 +132,11 @@
                                 {{on "blur" (fn this.validateTagProperty "metaTitle")}}
                             />
                             <GhErrorMessage @errors={{@tag.errors}} @property="metaTitle" />
-                            <p>Recommended: <b>70</b> characters. You’ve used {{gh-count-down-characters @tag.metaTitle 70}}</p>
+                            <p>Recomendado: <b>70</b> caracteres. Has usado {{gh-count-down-characters @tag.metaTitle 70}}</p>
                         </GhFormGroup>
 
                         <GhFormGroup @errors={{@tag.errors}} @hasValidated={{@tag.hasValidated}} @property="metaDescription">
-                            <label for="meta-description">Meta description</label>
+                            <label for="meta-description">Meta descripción</label>
                             <textarea
                                 id="meta-description"
                                 name="metaDescription"
@@ -146,11 +146,11 @@
                                 {{on "blur" (fn this.validateTagProperty "metaDescription")}}
                             >{{@tag.metaDescription}}</textarea>
                             <GhErrorMessage @errors={{@tag.errors}} @property="metaDescription" />
-                            <p>Recommended: <b>156</b> characters. You’ve used {{gh-count-down-characters @tag.metaDescription 156}}</p>
+                            <p>Recomendado: <b>156</b> caracteres. Has usado {{gh-count-down-characters @tag.metaDescription 156}}</p>
                         </GhFormGroup>
 
                         <GhFormGroup @errors={{@tag.errors}} @hasValidated={{@tag.hasValidated}} @property="canonicalUrl">
-                            <label for="canonical-url">Canonical URL</label>
+                            <label for="canonical-url">URL canónica (URL Original)</label>
                             <input
                                 id="canonical-url"
                                 name="canonicalUrl"
@@ -164,7 +164,7 @@
                     </div>
 
                     <div class="flex-basis-1-2-m flex-basis-1-3-l">
-                        <label>Search Engine Result Preview</label>
+                        <label>Vista previa en el buscador</label>
                         <div class="gh-seo-container">
                             <div class="gh-seo-preview">
                                 <div class="flex mb7">
@@ -186,10 +186,10 @@
     <div class="gh-expandable-block">
         <div class="gh-expandable-header">
             <div>
-                <h4 class="gh-expandable-title">Twitter card</h4>
-                <p class="gh-expandable-description">Customized structured data for Twitter.</p>
+                <h4 class="gh-expandable-title">Tarjeta de Twitter</h4>
+                <p class="gh-expandable-description">Personaliza como se ve si enlazas a Twitter.</p>
             </div>
-            <button type="button" class="gh-btn gh-btn-expand" {{on "click" (toggle "twitterMetadataOpen" this)}}><span>{{if this.twitterMetadataOpen "Close" "Expand"}}</span></button>
+            <button type="button" class="gh-btn gh-btn-expand" {{on "click" (toggle "twitterMetadataOpen" this)}}><span>{{if this.twitterMetadataOpen "Cerrar" "Expandir"}}</span></button>
         </div>
 
         <div class="gh-expandable-content">
@@ -221,7 +221,7 @@
                                 {{on "blur" (fn this.validateTagProperty "twitterTitle")}}
                             />
                             <GhErrorMessage @errors={{@tag.errors}} @property="twitterTitle" />
-                            <p>Recommended: <b>70</b> characters. You’ve used {{gh-count-down-characters @tag.twitterTitle 70}}</p>
+                            <p>Recomendado: <b>70</b> caracteres. Has usado {{gh-count-down-characters @tag.twitterTitle 70}}</p>
                         </GhFormGroup>
 
                         <GhFormGroup @errors={{@tag.errors}} @hasValidated={{@tag.hasValidated}} @property="twitterDesctiption">
@@ -235,7 +235,7 @@
                                 {{on "blur" (fn this.validateTagProperty "twitterDescription")}}
                             >{{@tag.twitterDescription}}</textarea>
                             <GhErrorMessage @errors={{@tag.errors}} @property="twitterDescription" />
-                            <p>Recommended: <b>125</b> characters. You’ve used {{gh-count-down-characters @tag.twitterDescription 125}}</p>
+                            <p>Recomendado: <b>125</b> caracteres. Has usado {{gh-count-down-characters @tag.twitterDescription 125}}</p>
                         </GhFormGroup>
                     </div>
 
@@ -283,10 +283,10 @@
     <div class="gh-expandable-block">
         <div class="gh-expandable-header">
             <div>
-                <h4 class="gh-expandable-title">Facebook card</h4>
-                <p class="gh-expandable-description">Customize Open Graph data.</p>
+                <h4 class="gh-expandable-title">Tarjeta de Facebook</h4>
+                <p class="gh-expandable-description">Personaliza como se ve si enlazas a Facebook.</p>
             </div>
-            <button type="button" class="gh-btn gh-btn-expand" {{on "click" (toggle "facebookMetadataOpen" this)}}><span>{{if this.facebookMetadataOpen "Close" "Expand"}}</span></button>
+            <button type="button" class="gh-btn gh-btn-expand" {{on "click" (toggle "facebookMetadataOpen" this)}}><span>{{if this.facebookMetadataOpen "Cerrar" "Expandir"}}</span></button>
         </div>
 
         <div class="gh-expandable-content">
@@ -318,7 +318,7 @@
                                 {{on "blur" (fn this.validateTagProperty "ogTitle")}}
                             />
                             <GhErrorMessage @errors={{@tag.errors}} @property="ogTitle" />
-                            <p>Recommended: <b>100</b> characters. You’ve used {{gh-count-down-characters @tag.ogTitle 100}}</p>
+                            <p>Recomendado: <b>100</b> caracteres. Has usado {{gh-count-down-characters @tag.ogTitle 100}}</p>
                         </GhFormGroup>
 
                         <GhFormGroup @errors={{@tag.errors}} @hasValidated={{@tag.hasValidated}} @property="ogDescription">
@@ -332,7 +332,7 @@
                                 {{on "blur" (fn this.validateTagProperty "ogDescription")}}
                             >{{@tag.ogDescription}}</textarea>
                             <GhErrorMessage @errors={{@tag.errors}} @property="ogDescription" />
-                            <p>Recommended: <b>65</b> characters. You’ve used {{gh-count-down-characters @tag.ogDescription 65}}</p>
+                            <p>Recomendado: <b>65</b> caracteres. Has usado {{gh-count-down-characters @tag.ogDescription 65}}</p>
                         </GhFormGroup>
                     </div>
 
@@ -381,17 +381,17 @@
     <div class="gh-expandable-block">
         <div class="gh-expandable-header">
             <div>
-                <h4 class="gh-expandable-title">Code injection</h4>
-                <p class="gh-expandable-description">Add styles/scripts to the header and footer.</p>
+                <h4 class="gh-expandable-title">Inyectar código</h4>
+                <p class="gh-expandable-description">Añade estilos y scripts en la cabecera y el pié.</p>
             </div>
-            <button type="button" class="gh-btn gh-btn-expand" {{on "click" (toggle "codeInjectionOpen" this)}}><span>{{if this.codeInjectionOpen "Close" "Expand"}}</span></button>
+            <button type="button" class="gh-btn gh-btn-expand" {{on "click" (toggle "codeInjectionOpen" this)}}><span>{{if this.codeInjectionOpen "Cerrar" "Expandir"}}</span></button>
         </div>
 
         <div class="gh-expandable-content">
             {{#liquid-if this.codeInjectionOpen}}
             <div class="gh-main-section">
                 <GhFormGroup class="gh-main-section-block settings-code" @errors={{@tag.errors}} @hasValidated={{@tag.hasValidated}} @property="codeinjectionHead">
-                    <label for="codeinjection-head" class="gh-tag-setting-codeheader">Tag header <code class="fw4 ml1">\{{ghost_head}}</code></label>
+                    <label for="codeinjection-head" class="gh-tag-setting-codeheader">Cabecera de etiqueta <code class="fw4 ml1">\{{ghost_head}}</code></label>
                     <GhCmEditor
                         @value={{@tag.codeinjectionHead}}
                         @id="tag-setting-codeinjection-head"
@@ -405,7 +405,7 @@
                 </GhFormGroup>
 
                 <GhFormGroup class="gh-main-section-block settings-code" @errors={{@tag.errors}} @hasValidated={{@tag.hasValidated}} @property="codeinjectionFoot">
-                    <label for="codeinjection-foot"class="gh-tag-setting-codeheader">Tag footer <code class="fw4 ml1">\{{ghost_foot}}</code></label>
+                    <label for="codeinjection-foot"class="gh-tag-setting-codeheader">Pié de etiqueta <code class="fw4 ml1">\{{ghost_foot}}</code></label>
                     <GhCmEditor @value={{@tag.codeinjectionFoot}}
                         @id="tag-setting-codeinjection-foot"
                         @class="gh-tag-setting-codeinjection"

@@ -1,6 +1,6 @@
 <section class="gh-canvas">
     <GhCanvasHeader class="gh-canvas-header sticky break tablet post-header">
-        <GhCustomViewTitle @title={{if this.session.user.isContributor (concat this.config.blogTitle " posts") "Posts"}} @query={{reset-query-params "posts"}} />
+        <GhCustomViewTitle @title={{if this.session.user.isContributor (concat "Artículos" this.config.blogTitle) "Artículos"}} @query={{reset-query-params "posts"}} />
         <section class="view-actions">
             <PostsList::ContentFilter
                 @currentUser={{this.session.user}}
@@ -21,7 +21,7 @@
                 @onOrderChange={{optional null}}
             />
 
-            <LinkTo @route="editor.new" @model="post" class="gh-btn gh-btn-primary view-actions-top-row" data-test-new-post-button={{true}}><span>New post</span></LinkTo>
+            <LinkTo @route="editor.new" @model="post" class="gh-btn gh-btn-primary view-actions-top-row" data-test-new-post-button={{true}}><span>Nuevo artículo</span></LinkTo>
         </section>
     </GhCanvasHeader>
 

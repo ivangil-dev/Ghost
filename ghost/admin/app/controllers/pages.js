@@ -3,30 +3,30 @@ import {action} from '@ember/object';
 import {inject as service} from '@ember/service';
 
 const TYPES = [{
-    name: 'All pages',
+    name: 'Todas las páginas',
     value: null
 }, {
-    name: 'Draft pages',
+    name: 'Borradores',
     value: 'draft'
 }, {
-    name: 'Published pages',
+    name: 'Publicadas',
     value: 'published'
 }, {
-    name: 'Scheduled pages',
+    name: 'Programadas',
     value: 'scheduled'
 }, {
-    name: 'Featured pages',
+    name: 'Destacadas',
     value: 'featured'
 }];
 
 const ORDERS = [{
-    name: 'Newest first',
+    name: 'Nuevas primero',
     value: null
 }, {
-    name: 'Oldest first',
+    name: 'Antiguas primero',
     value: 'published_at asc'
 }, {
-    name: 'Recently updated',
+    name: 'Recientemente actualizadas',
     value: 'updated_at desc'
 }];
 
